@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Request Debugger</title>
+  </head>
+  <body>
+    <h1>Request Debugger</h1>
+
+    <p>Click <a href="/my-data-url">here</a> to send a GET request to /my-data-url.</p>
+
+    <p>Fill out this form to send a POST request to /my-data-url:</p>
+    <form action="/my-data-url" method="POST">
+
+      <input type="text" name="my-text-input" placeholder="type any value" />
+      <br/><br/>
+
+      <input type="radio" name="my-radio-input" value="yes"> Yes
+      <br/>
+      <input type="radio" name="my-radio-input" value="no"> No
+      <br/>
+      <input type="radio" name="my-radio-input" value="maybe"> Maybe
+      <br/><br/>
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>

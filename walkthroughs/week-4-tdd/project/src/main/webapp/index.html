@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Meeting Scheduler</title>
+    <link rel="stylesheet" href="style.css"></link>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meeting Scheduler</h1>
+      <p>Enter who needs to be at the meeting and how long the meeting is, and
+         the tool will find possible times for your meeting to happen!</p>
+
+      <h2>Calendar</h2>
+      <div id="timeline" style="height: 240px;"></div>
+
+      <h2>Attendees</h2>
+      <p>Who needs to attend the meeting (comma-separated list)?</p>
+      <input id="attendees" type="text" placeholder="Amelia, Ava, Emma" />
+
+      <h2>Duration</h2>
+      <p>How long is your meeting (minutes)?</p>
+      <input id="duration" type="number" min="0" />
+
+      <br/>
+      <button id="submit" onclick="sendMeetingRequest()">Submit</button>
+
+      <hr/>
+      <h2>Results</h2>
+      <ul id="results"></ul>
+    </div>
+  </body>
+</html>

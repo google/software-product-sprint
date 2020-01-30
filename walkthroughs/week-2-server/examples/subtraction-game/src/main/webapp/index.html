@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The Subtraction Game</title>
+    <script src="script.js"></script>
+  </head>
+  <body onload="getSubtractionGame()">
+    <h1>The Subtraction Game</h1>
+    <p>Take turns subtracting 1, 2, or 3 from the total.<p>
+    <p>The player who reaches 0 wins!</p>
+
+    <ul id="history"></ul>
+    <h1 id="total"></h1>
+
+    <form action="/subtraction-game" method="POST">
+
+      <p>Subtract:</p>
+      <input type="number" name="player-choice" min="1" max="3" value="1">
+      <br/><br/>
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>

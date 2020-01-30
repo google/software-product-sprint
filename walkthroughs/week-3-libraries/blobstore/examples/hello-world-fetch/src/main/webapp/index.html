@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Blobstore Fetch Example</title>
+    <script src="script.js"></script>
+    <style>
+      /* Form is hidden by default. */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body onload="fetchBlobstoreUrlAndShowForm()">
+    <h1>Blobstore Fetch Example</h1>
+    <p>Type a message and click submit:</p>
+
+    <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
+      <p>Type some text:</p>
+      <textarea name="message"></textarea>
+      <br/>
+      <p>Upload an image:</p>
+      <input type="file" name="image">
+      <br/><br/>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
