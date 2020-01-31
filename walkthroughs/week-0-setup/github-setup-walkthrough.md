@@ -106,6 +106,22 @@ set your repo to require pull requests.
 7.  Click `Create`.
 8.  Click `Save changes`.
 
+## Tell git Who You Are
+
+Before you can do anything else with git, you need to tell it who you are, so
+it knows who to attribute commits to. First set your email (make sure to use
+the same email as your github account, and not your SPS one):
+
+```bash
+git config --global user.email "you@example.com"
+```
+
+and then your name:
+
+```bash
+git config --global user.name "Your Name"
+```
+
 ## Modify README
 
 To test that everything is connected, modify the `README.md` file.
