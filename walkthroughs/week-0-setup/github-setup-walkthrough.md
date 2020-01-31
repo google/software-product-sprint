@@ -32,7 +32,14 @@ Right now, this code still points to Google's repository instead of your
 repository. To fix that, you're first going to remove the pointer to Google's
 repo.
 
-To unlink this directory from Google's repo, execute this command:
+Make sure you're inside the git repository you just cloned for the rest of
+this walkthrough:
+
+```bash
+cd ~/software-product-sprint
+```
+
+Now to unlink this directory from Google's repo, execute this command:
 
 ```bash
 git remote remove origin
