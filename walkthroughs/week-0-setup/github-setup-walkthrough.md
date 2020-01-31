@@ -32,7 +32,14 @@ Right now, this code still points to Google's repository instead of your
 repository. To fix that, you're first going to remove the pointer to Google's
 repo.
 
-To unlink this directory from Google's repo, execute this command:
+Make sure you're inside the git repository you just cloned for the rest of
+this walkthrough:
+
+```bash
+cd ~/software-product-sprint
+```
+
+Now to unlink this directory from Google's repo, execute this command:
 
 ```bash
 git remote remove origin
@@ -67,7 +74,7 @@ Then to store this directory in your repo, run this command:
 git push -u origin master
 ```
 
-You should now see this code in your team's repo on GitHub!
+You should now see this code in your repo on GitHub!
 
 ## Add Collaborators
 
@@ -98,6 +105,22 @@ set your repo to require pull requests.
     administrators`.
 7.  Click `Create`.
 8.  Click `Save changes`.
+
+## Tell git Who You Are
+
+Before you can do anything else with git, you need to tell it who you are, so
+it knows who to attribute commits to. First set your email (make sure to use
+the same email as your github account, and not your SPS one):
+
+```bash
+git config --global user.email "you@example.com"
+```
+
+and then your name:
+
+```bash
+git config --global user.name "Your Name"
+```
 
 ## Modify README
 
