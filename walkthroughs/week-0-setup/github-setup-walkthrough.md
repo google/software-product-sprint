@@ -74,7 +74,7 @@ Then to store this directory in your repo, run this command:
 git push -u origin master
 ```
 
-You should now see this code in your team's repo on GitHub!
+You should now see this code in your repo on GitHub!
 
 ## Add Collaborators
 
