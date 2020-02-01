@@ -50,8 +50,8 @@ git remote remove origin
 On [GitHub](https://github.com/), click on the `+` in the top-right and click on
 `new repository`. This will take you to a page to create your repo on GitHub.
 
-1.  Enter a repository name. Something like `sps` or `my-portfolio` is a fine
-    name.
+1.  Enter a repository name. Something like `software-product-sprint` or
+    `my-portfolio` is a fine name.
 2.  Set your repo to public. This allows anyone to see your code.
 3.  Click the green `create repository` button!
 
@@ -124,11 +124,13 @@ git config --global user.name "Your Name"
 
 ## Modify README
 
-To test that everything is connected, modify the `README.md` file.
+To test that everything is connected, modify your
+<walkthrough-editor-open-file filePath="software-product-sprint/README.md">README.md</walkthrough-editor-open-file>
+file.
 
-The `README.md` file contains the content that shows in your repo's GitHub page.
-Change the `README.md` file to say "This repo contains [your name]'s portfolio
-and SPS projects."
+This file contains the content that shows in your repo's GitHub page.
+Change it to say "This repo contains [your name]'s portfolio and
+SPS projects."
 
 The `README.md` file now belongs to you. You should feel free to customize it
 and make it your own!
