@@ -38,7 +38,8 @@ You'll learn more about these files in the following steps.
 This project is a web application that contains HTML files. To make that HTML
 available to your web browser, you need to run a **server** to host the file.
 
-To run a development server, execute this command:
+To run a development server, navigate back to the `portfolio` directory and 
+execute this command:
 
 ```bash
 mvn appengine:devserver
