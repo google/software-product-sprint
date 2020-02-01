@@ -6,7 +6,7 @@ using throughout SPS.
 You can return to this walkthrough anytime by executing this command:
 
 ```bash
-teachme intro-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md
 ```
 
 Let's get started!
@@ -33,14 +33,14 @@ in a panel on the right, then you're already using Cloud Shell!
 Cloud Shell comes with a built-in code editor that allows you to browse file
 directories and view and edit files.
 
-To start, open the editor by clicking on the
-<walkthrough-cloud-shell-editor-icon></walkthrough-cloud-shell-editor-icon> icon
-to toggle the editor panel.
-
 The editor displays the directory structure in its left-hand panel. You'll learn
 more about these files throughout SPS, but for now try clicking around to
-explore. Try opening the `intro-walkthrough.md` file to view the source for this
-walkthrough!
+explore. Try opening the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md">
+  intro-walkthrough.md
+</walkthrough-editor-open-file>
+file to view the source for this walkthrough!
 
 You'll be using the Cloud Shell editor quite a bit in the coming weeks, so take
 some time to familiarize yourself now. You can read more about Cloud Shell
@@ -50,9 +50,6 @@ Editor [here](https://cloud.google.com/shell/docs/viewing-and-editing-files).
 
 Cloud Shell also comes with a command line console that lets you run commands in
 Google Cloud.
-
-Click the <walkthrough-cloud-shell-icon></walkthrough-cloud-shell-icon> icon to
-toggle the Cloud Shell console.
 
 You can type commands into the console to run programs, compile your code, and
 deploy to Google Cloud.
@@ -74,7 +71,7 @@ ls
 To move to a different directory:
 
 ```bash
-cd src
+cd portfolio
 ```
 
 To go back up a directory:
@@ -97,10 +94,10 @@ Wherever you see a file that ends with `-walkthrough.md`, you can run the
 this command runs the walkthrough you're currently reading:
 
 ```bash
-teachme intro-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md
 ```
 
-You'll use this command to run walkthroughs each week.
+You'll use the `teachme` command to run walkthroughs each week.
 
 ## The `portfolio` Directory
 

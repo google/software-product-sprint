@@ -5,7 +5,7 @@ Follow this walkthrough to setup your GitHub repo.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme github-setup-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md
 ```
 
 Click the `Start` button to start the walkthrough!
