@@ -7,7 +7,7 @@ This walkthrough introduces Datastore, which lets you store data permanently.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme step-5-datastore-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-5-datastore-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -15,7 +15,7 @@ Click the **Start** button to begin!
 ## The Goal
 
 The goal of this project is to use Datastore to permanently store the comments
-you implemented in week 2.
+you implemented in the previous step.
 
 This walkthrough introduces a lot of concepts, but you don't have to use all of
 them. Decide what makes sense for your goal.
@@ -38,11 +38,6 @@ want to store permanently.
 The solution to this problem is to use **persistent storage** to store the data
 somewhere safer. You might use a database, or file storage.
 
-This walkthrough introduces a tool called Datastore, which lets you store data
-using a Java library.
-
-## Datastore
-
 [Datastore](https://cloud.google.com/appengine/docs/standard/java/datastore/) is
 a [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database that allows you to store
 and load data using Java code.
@@ -59,7 +54,12 @@ example project.
 ## Maven Dependency
 
 Datastore comes with the App Engine environment, so to use Datastore, first add
-the App Engine dependency to your `pom.xml` file:
+the App Engine dependency to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file:
 
 ```xml
 <dependency>
@@ -72,12 +72,14 @@ the App Engine dependency to your `pom.xml` file:
 This dependency allows you to reference the classes that come with the App
 Engine SDK, which includes Datastore.
 
-Add this dependency to the `pom.xml` file in your portfolio directory.
-
 ## DatastoreService
 
-Open the `NewTaskServlet.java` file in the `todo-list` directory to see how it
-uses Datastore to save a task.
+Open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
+  NewTaskServlet.java
+</walkthrough-editor-open-file>
+file in the `todo-list` directory to see how it uses Datastore to save a task.
 
 To use Datastore, you first need an instance of the `DatastoreService` class.
 You can call the `DatastoreServiceFactory.getDatastoreService()` function:
@@ -98,9 +100,12 @@ similar to how you think about an instance of a class in Java.
 
 An entity has a **kind**, which is similar to a class name.
 
-Look at the `doPost()` function in the `NewTaskServlet.java` file in the
-`todo-list` directory to see how it creates an `Entity` by giving it a *kind* of
-`Task`:
+Look at the `doPost()` function in the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
+  NewTaskServlet.java
+</walkthrough-editor-open-file>
+file to see how it creates an `Entity` by giving it a *kind* of `Task`:
 
 ```java
 Entity taskEntity = new Entity("Task");
@@ -135,25 +140,41 @@ datastore.put(taskEntity);
 This function stores `taskEntity` in Datastore so that you can load it next time
 you need it.
 
-### Your Turn
+## Your Turn
 
-Your first goal this week is to store comments as entities in Datastore. Get
-this working before you worry about loading the data.
+Modify your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+  DataServlet.java
+</walkthrough-editor-open-file>
+file to store the comments as entities in Datastore. Get this working before
+you worry about loading the data.
 
-You can test this by running a dev server and then navigating to
-[http://localhost:8080/_ah/admin](http://localhost:8080/_ah/admin) to view the
-data in your local Datastore instance.
+### Admin Page
 
-After you get this step working, create a pull request and send it to your
-advisor for review!
+Datastore includes an admin page that gives you access to its data. This is very
+useful for debugging and managing your data.
+
+To view your admin page, run a dev server and then navigate to `/_ah/admin`.
+
+To view the admin page for your live server, go to
+[https://console.cloud.google.com/datastore](https://console.cloud.google.com/datastore).
+
+Use the admin page to confirm that your data is stored correctly. After you get
+this step working, create a pull request and send it to your advisor for
+review!
 
 ## Loading Entities
 
 Now that you have data stored in Datastore, you can load it whenever a user
 requests it.
 
-Read through the `doGet()` function of the `ListTasksServlet.java` file in the
-`todo-list` directory to see an example of loading entities form Datastore.
+The `todo-list` example contains a
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/ListTasksServlet.java">
+  ListTasksServlet.java
+</walkthrough-editor-open-file>
+file that loads entities from Datastore.
 
 First create a `Query` instance with the kind of entity you want to load, then
 pass that `Query` into the `datastore.prepare()` function, which gives you a
@@ -175,47 +196,31 @@ app is shut down or restarted.
 
 ### Your Turn
 
-Next, add some code to your `DataServlet.java` file that loads comments from
-Datastore.
+Next, add some code to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+  DataServlet.java
+</walkthrough-editor-open-file>
+file that loads comments from Datastore.
 
 Test that your code works by running a local dev server, adding a few comments,
 and then restarting your server. Your comments should remain when you refresh
 the page, and even when you restart your server!
-
-## Admin Page
-
-Datastore includes an admin page that gives you access to its data. This is very
-useful for debugging and managing your data.
-
-To view an admin page for your local dev server, go to
-[http://localhost:8080/_ah/admin](http://localhost:8080/_ah/admin).
-
-To view the admin page for your live server, go to
-[https://console.cloud.google.com/datastore](https://console.cloud.google.com/datastore).
-
-## Live Server
-
-When you're happy with your feature and you're ready to show it to the world,
-you can deploy it to your live server!
-
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
-
-```bash
-mvn appengine:update
-```
-
-After the command successfully completes, you can navigate to
-`YOUR_PROJECT_ID.appspot.com` to see your portfolio and test your feature.
-
-When you're done, share this link in the chat and with your team!
 
 ## Congratulations
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
 Congratulations! Your portfolio page should now support comments that are
-permanently stored in Datastore.
+permanently stored in Datastore. Run a dev server to confirm that everything
+works, and then create a pull request and send that to your advisor for a code
+review!
+
+Then go back to the comments walkthrough to continue:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+```
 
 ### Learn More
 
