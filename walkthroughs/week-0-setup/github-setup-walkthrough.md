@@ -12,11 +12,12 @@ Click the `Start` button to start the walkthrough!
 
 ## Getting Started
 
+[Git](https://git-scm.com/) is a distributed [version control](https://en.wikipedia.org/wiki/Version_control) 
+system, which lets you track changes to your files and collaborate with others.
 [GitHub](https://github.com/) is a Git repository host, which means that it's a
-website that allows you to store code. This is useful for
-[version control](https://en.wikipedia.org/wiki/Version_control), to release
-code as open source, or to collaborate with a team. You're going to use GitHub
-to store your projects.
+website that allows you to store your repository and let others access it. 
+This is useful to release code as open source, or to use the advanced collaboration tools with a team.
+You're going to use GitHub to store your projects.
 
 ## Register
 
@@ -28,9 +29,11 @@ Make sure you use your own email address here, not your SPS account!
 
 ## Unlink Google's Repo
 
-Right now, this code still points to Google's repository instead of your
-repository. To fix that, you're first going to remove the pointer to Google's
-repo.
+When you ran the command `git clone https://github.com/google/software-product-sprint.git`, 
+you downloaded the official repository to your Cloud Shell worksapce.
+
+Right now, this repository still points to Google's GitHub account instead of yours.
+To fix that, you're first going to remove the pointer to Google's repo.
 
 Make sure you're inside the git repository you just cloned for the rest of
 this walkthrough:
@@ -62,7 +65,7 @@ At this point you should have an empty repo.
 In your GitHub repo page, find your repo's URL. It should end in `.git`, like
 `https://github.com/your-username/your-repo-name.git`. Copy that URL.
 
-To link this directory to your repo, execute this command:
+To link this local copy to your GitHub project, execute this command:
 
 ```bash
 git remote add origin YOUR_URL_HERE
@@ -73,6 +76,10 @@ Then to store this directory in your repo, run this command:
 ```bash
 git push -u origin master
 ```
+
+This should prompt you for your username/password the first time that
+you're pushing to GitHub. If your GitHub account is set up with two-factor 
+authentication, you'll need to create an [API Key](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) and use that instead of a password.
 
 You should now see this code in your repo on GitHub!
 
