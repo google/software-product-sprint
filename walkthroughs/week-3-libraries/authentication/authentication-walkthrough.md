@@ -8,7 +8,7 @@ webapp.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme authentication-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/authentication/authentication-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -29,7 +29,7 @@ add extra features if you have time left over.
 ## Authentication
 
 At this point you can use App Engine to deploy servlets that respond to `GET`
-and `POST` requests, and you can store that data in memory.
+and `POST` requests, and you can store that data in Datastore.
 
 That works for simple cases where you only want to store anonymous data, but if
 you want to associate data with a specific user, then you need to implement
@@ -49,12 +49,24 @@ The Users API handles registration and login, so you don't have to. You give the
 user a link to Google's login page, and you can then ask Google's login page to
 redirect back to your page after the user logs in.
 
+When you deploy to a local dev server, the Users API will use a dummy sign-in
+page that allows you to pretend to be any user. This is handy for testing your
+code out locally before deploying it to your live server.
+
+When you deploy to your live server, the Users API will use the real Google
+sign-in page.
+
 The next few steps walk through a few examples.
 
 ## Maven Dependency
 
 The Users API comes with the App Engine environment, so to use it, first add the
-App Engine dependency to your `pom.xml` file:
+App Engine dependency to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file:
 
 ```xml
 <dependency>
@@ -67,12 +79,17 @@ App Engine dependency to your `pom.xml` file:
 This dependency allows you to reference the classes that come with the App
 Engine SDK, which includes the Users API.
 
-Add this dependency to the `pom.xml` file in your portfolio directory.
-
 ## UserService
 
-The `hello-world` directory contains a servlet that uses the Users API to output
-HTML.
+The `hello-world` directory contains an example project that uses the Users API
+to output HTML based on the user's login status.
+
+Read through the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/authentication/examples/hello-world/src/main/java/com/google/sps/servlets/HomeServlet.java">
+  HomeServlet.java
+</walkthrough-editor-open-file>
+file to see the Users API in action.
 
 First, the code gets a reference to `UserService`:
 
@@ -116,7 +133,20 @@ uploaded by the user), you'd store the user ID alongside that data, for example
 in a `HashMap` or in Datastore. Then to fetch the data, you'd query for the data
 that contains the user ID.
 
-The `shoutbox-v3` directory contains an example that takes this approach.
+The `shoutbox-v3` directory contains an example that takes this approach. The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/authentication/examples/shoutbox-v3/src/main/java/com/google/sps/servlets/ShoutboxServlet.java">
+  ShoutboxServlet.java
+</walkthrough-editor-open-file>
+file gets the user's email and adds it to the stored message:
+
+```java
+String email = userService.getCurrentUser().getEmail();
+messageEntity.setProperty("email", email);
+```
+
+`cd` into the `shoutbox-v3` directory and run a dev server to see this in
+action.
 
 ## Nicknames
 
@@ -124,16 +154,23 @@ You probably shouldn't display user email addresses in your site. Instead, you
 might want to allow users to specify display names.
 
 The `user-nicknames` directory contains an example that supports user
-display names.
+display names. The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/authentication/examples/user-nicknames/src/main/java/com/google/sps/servlets/HomeServlet.java">
+  HomeServlet.java
+</walkthrough-editor-open-file>
+file shows an example that prompts the user for a nickname before continuing.
 
-## Dev Server vs Live Server
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/authentication/examples/user-nicknames/src/main/java/com/google/sps/servlets/NicknameServlet.java">
+  NicknameServlet.java
+</walkthrough-editor-open-file>
+file renders a form that allows logged-in users to specify a nickname and
+handles the resulting POST request.
 
-When you deploy to a local dev server, the Users API will use a dummy sign-in
-page that allows you to pretend to be any user. This is handy for testing your
-code out locally before deploying it to your live server.
-
-When you deploy to your live server, the Users API will use the real Google
-sign-in page.
+`cd` into the `user-nicknames` directory and run a dev server to see this in
+action.
 
 ## Other Approaches
 
@@ -156,21 +193,35 @@ they can post a comment.
 Try to break this goal down into smaller steps, and then take each step on
 individually.
 
--   Add the App Engine dependency to your `pom.xml` file.
+-   Add the App Engine dependency to your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file>
+    file.
 -   Add a servlet that returns the login status of the user.
     -   Test that this works by running a dev server and navigating to the
         servlet's URL.
     -   When you get this step working, create a pull request and send it to
         your advisor for review!
--   Hide the comments form by default. Write JavaScript that fetches the login
-    status from the servlet. If the user is logged in, unhide the form. If the
-    user is not logged in, display a login link.
+-   Hide the comments form by default. Modify your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/script.js">
+      script.js
+    </walkthrough-editor-open-file>
+    file to fetch the login status from the servlet. If the user is logged in,
+    unhide the form. If the user is not logged in, display a login link.
     -   Test that this works by running a dev server and making sure your page
         shows the right content.
     -   When you get this step working, create a pull request and send it to
         your advisor for review!
--   Modify your comments servlet to get the current user's email address, and
-    store it alongside the text of the comment.
+-   Modify your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+      DataServlet.java
+    </walkthrough-editor-open-file>
+    file to get the current user's email address, and store it alongside the
+    text of the comment.
 -   Add the user's email address to the JSON returned by your comments servlet.
     -   Test that this works by running a dev server and navigating to the
         comments servlet's URL. You should see the JSON in the browser.
@@ -188,8 +239,13 @@ individually.
 When you're happy with your feature and you're ready to show it to the world,
 you can deploy it to your live server!
 
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+Your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update

@@ -8,7 +8,7 @@ and extract information like sentiment.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme sentiment-analysis-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/sentiment-analysis/sentiment-analysis-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -81,7 +81,12 @@ available as a web service, or as a library that can be called from many
 languages. You're going to use it as a Java library.
 
 To use the Cloud Natural Language library, first add the App Engine dependency
-to your `pom.xml` file:
+to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file:
 
 ```xml
 <dependency>

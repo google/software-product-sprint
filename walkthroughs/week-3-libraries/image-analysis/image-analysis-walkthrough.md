@@ -7,7 +7,7 @@ This walkthrough introduces Cloud Vision, which lets you analyze images.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme image-analysis-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/image-analysis/image-analysis-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -74,7 +74,12 @@ library to your classpath, add this Maven dependency:
 </dependency>
 ```
 
-Add this dependency to the `pom.xml` file in your portfolio directory.
+Add this dependency to the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file in your portfolio directory.
 
 ## Example
 
