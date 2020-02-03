@@ -52,9 +52,8 @@ Specifically, open the
     filePath="software-product-sprint/walkthroughs/week-2-server/examples/page-view-counter/src/main/java/com/google/sps/servlets/PageViewServlet.java">
   PageViewServlet.java
 </walkthrough-editor-open-file>
-file. This is a servlet class that
-handles the `/page-views` URL and responds with HTML that contains a count of
-how many times the page has been loaded.
+file. This is a servlet class that handles the `/page-views` URL and responds
+with HTML that contains a count of how many times the page has been loaded.
 
 This file contains a few interesting lines:
 
