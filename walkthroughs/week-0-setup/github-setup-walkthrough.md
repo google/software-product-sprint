@@ -81,6 +81,12 @@ This should prompt you for your username/password the first time that
 you're pushing to GitHub. If your GitHub account is set up with two-factor 
 authentication, you'll need to create an [API Key](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) and use that instead of a password.
 
+If you'd like Git to store the username/password for pushing to GitHub, change this setting:
+
+```bash
+git config credential.helper store
+```
+
 You should now see this code in your repo on GitHub!
 
 ## Add Collaborators
