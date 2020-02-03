@@ -182,8 +182,8 @@ keep your images in one place, create a new `images` directory inside the
 `webapp` directory. To create a new directory, right click on the `webapp`
 directory. Then select "New Folder". 
 
-Once you've created the `images` directory, right-click it and select `Upload Files...` to select an image from your
-computer.
+Once you've created the `images` directory, right-click it and select
+`Upload Files...` to select an image from your computer.
 
 To reference an image in your `images` directory, use a path that starts with a
 `/` forward slash, like `/images/cat.jpg`. This path will work on a development
