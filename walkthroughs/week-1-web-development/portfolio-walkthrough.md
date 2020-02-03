@@ -176,8 +176,11 @@ file to contain a `<p>` element that introduces you. Then run a dev server and
 confirm that you can see your change.
 
 ## Uploading Images
+
 All  of the client-side files are stored in the `webapp` directory. In order to
-keep your images in one place, create a new `images` directory inside the `webapp` directory. 
+keep your images in one place, create a new `images` directory inside the
+`webapp` directory. To create a new directory, right click on the `webapp`
+directory. Then select "New Folder". 
 
 Once you've created the `images` directory, right-click it and select `Upload Files...` to select an image from your
 computer.
