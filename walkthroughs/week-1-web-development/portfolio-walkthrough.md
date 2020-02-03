@@ -177,9 +177,13 @@ confirm that you can see your change.
 
 ## Uploading Images
 
-To add images to your project, right-click the `src/main/webapp/images`
-directory and then select `Upload Files...` to select an image from your
-computer.
+All  of the client-side files are stored in the `webapp` directory. In order to
+keep your images in one place, create a new `images` directory inside the
+`webapp` directory. To create a new directory, right click on the `webapp`
+directory. Then select "New Folder". 
+
+Once you've created the `images` directory, right-click it and select
+`Upload Files...` to select an image from your computer.
 
 To reference an image in your `images` directory, use a path that starts with a
 `/` forward slash, like `/images/cat.jpg`. This path will work on a development
