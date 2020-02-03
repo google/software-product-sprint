@@ -8,7 +8,7 @@ server to the client.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme step-3-json-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-3-json-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -18,8 +18,12 @@ Click the **Start** button to begin!
 So far, you've seen an example that returns a random quote from the server, and
 you've modified `DataServlet` to return your name. You've seen how to return a
 single string value from the server, but you'll normally want to return more
-than one value in the response from a server. For example, `DataServlet` will
-eventually return a list of comments, rather than a single comment.
+than one value in the response from a server. For example,
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+  DataServlet.java
+</walkthrough-editor-open-file>
+will eventually return a list of comments, rather than a single string.
 
 To return multiple values, you can use any format you want: XML and key-value
 pairs are popular choices.
@@ -92,8 +96,12 @@ referenced an array of objects. Each object has a `.name` and a `.birthYear` fie
 Generally, you'll create a JSON string on the server, in Java. One way to do
 that is by manually building the string yourself.
 
-To see an example, look at the `ServerStatsServlet` class in the `server-stats`
-directory. This class creates an instance of a `ServerStats` class, and its
+The `server-stats` directory contains an example that uses JSON. Open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/server-stats/src/main/java/com/google/sps/servlets/ServerStatsServlet.java">
+  ServerStatsServlet.java
+</walkthrough-editor-open-file>
+file. This class creates an instance of a `ServerStats` class, and its
 `convertToJson()` function converts that instance to a JSON-formatted string
 by manually building a string. The servlet then sends this JSON string to the
 client as the response.
@@ -107,14 +115,23 @@ Formatting data as JSON can be tedious and error-prone. Instead of doing it
 yourself, you can use a library that does it for you!
 
 [Gson](https://github.com/google/gson) is an open-source Java library that
-formats Java objects as JSON strings. The `ServerStatsServlet` class contains a
-`convertToJsonUsingGson()` function that converts a `ServerStats` instance to
-JSON using the Gson library.
+formats Java objects as JSON strings. The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/server-stats/src/main/java/com/google/sps/servlets/ServerStatsServlet.java">
+  ServerStatsServlet.java
+</walkthrough-editor-open-file>
+file contains an example `convertToJsonUsingGson()` function that converts a
+`ServerStats` instance to JSON using the Gson library.
 
 The output of the `convertToJson()` function and the `convertToJsonUsingGson()`
 function is the same JSON string. You can use whichever approach you prefer.
 
-**Note:** To use Gson, first add this dependency to your `pom.xml` file:
+**Note:** To use Gson, first add this dependency to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file:
 
 ```xml
 <dependency>
@@ -148,9 +165,14 @@ fetch('/my-data-url')  // sends a request to /my-data-url
 });
 ```
 
-To see a more complete example, look at the `script.js` file in the
-`server-stats` directory. The `getServerStats()` function calls `fetch()`,
-parses the response as JSON, and then uses the object to build HTML content.
+To see a more complete example, look at the example
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/server-stats/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+file in the `server-stats` directory. The `getServerStats()` function calls
+`fetch()`, parses the response as JSON, and then uses the object to build HTML
+content.
 
 Run a development server from the `server-stats` directory, and then navigate to
 `/index.html` to see this in action.
@@ -160,9 +182,17 @@ Run a development server from the `server-stats` directory, and then navigate to
 Remember that your goal this week is to create a servlet that stores comments,
 and to write JavaScript that builds a UI from that data.
 
-To get closer to this goal, modify `DataServlet` to return some hard-coded JSON
-data, and then write JavaScript that fetches that JSON and builds a UI from it.
-To break it down into smaller steps:
+To get closer to this goal, modify
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+  DataServlet.java
+</walkthrough-editor-open-file>
+to return some hard-coded JSON data, and then modify
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+to fetch that JSON and build a UI from it. To break it down into smaller steps:
 
 1.  Modify `DataServlet` to contain an `ArrayList<String>` variable containing a
     few hard-coded messages. Keep it simple! An `ArrayList` containing three
@@ -194,3 +224,9 @@ to the page.
 
 Create a pull request from what you have so far, and send it to your advisor for
 review.
+
+Then go back to the comments walkthrough to continue:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+```

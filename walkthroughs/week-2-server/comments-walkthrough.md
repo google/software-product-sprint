@@ -2,14 +2,14 @@
 
 ## Getting Started
 
-Last week you created a portfolio page and deployed servers, allowing web
+Last week you created a portfolio page and deployed a live server, allowing web
 browsers to view your portfolio. This week you'll extend it to support user
 comments.
 
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme comments-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -42,7 +42,7 @@ To learn about servlets, follow the `step-1-servlets-walkthrough.md`
 walkthrough:
 
 ```bash
-teachme step-1-servlets-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-1-servlets-walkthrough.md
 ```
 
 Work through the servlets walkthrough and then return here.
@@ -67,7 +67,7 @@ To learn about the `fetch()` function, follow the `step-2-fetch-walkthrough.md`
 walkthrough:
 
 ```bash
-teachme step-2-fetch-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-2-fetch-walkthrough.md
 ```
 
 Work through the fetch walkthrough and then return here.
@@ -95,7 +95,7 @@ libraries, which makes it a popular choice for representing data in JavaScript.
 To learn about JSON, follow the `step-3-json-walkthrough.md` walkthrough:
 
 ```bash
-teachme step-3-json-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-3-json-walkthrough.md
 ```
 
 Work through the JSON walkthrough and then return here.
@@ -118,7 +118,7 @@ To learn about HTML forms and POST requests, follow the
 `step-4-post-walkthrough.md` walkthrough:
 
 ```bash
-teachme step-4-post-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-4-post-walkthrough.md
 ```
 
 Work through the POST walkthrough and then return here.
@@ -138,7 +138,7 @@ To learn about Datastore, follow the `step-5-datastore-walkthrough.md`
 walkthrough:
 
 ```bash
-teachme step-5-datastore-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-5-datastore-walkthrough.md
 ```
 
 Work through the Datastore walkthrough and then return here.
@@ -154,8 +154,13 @@ create a pull request and send it to your advisor for a code review.
 When you're happy with your comments feature and you're ready to show it to the
 world, you can deploy it to your live server!
 
-Last week, you should have added your project ID to your `appengine-web.xml`
-file. If so, you can deploy to your live server by executing this command:
+Last week, you should have added your project ID to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file. If so, you can deploy to your live server by executing this command from
+the `portfolio` directory:
 
 ```bash
 mvn appengine:update

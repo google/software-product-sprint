@@ -8,7 +8,7 @@ JavaScript code that sends requests to a server.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme step-2-fetch-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-2-fetch-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -33,19 +33,29 @@ Let's look at an example of this in action.
 
 ## Random Quote Generator
 
-Open up the `examples/random-quotes` directory. This directory contains a webapp
-that shows a button that fetches a random quote from the server.
+The `examples/random-quotes` directory contains a webapp that shows a button
+that fetches a random quote from the server.
 
 The project contains a few interesting files:
 
--   `RandomQuoteServlet.java` is a servlet that responds with a random quote
-    when a client requests the `/random-quote` URL.
--   `index.html` is the static HTML content, including the button.
--   `script.js` is JavaScript that fetches content from the server and
-    adds it to the DOM.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/java/com/google/sps/servlets/RandomQuoteServlet.java">
+      RandomQuoteServlet.java
+    </walkthrough-editor-open-file>
+    is a servlet that responds with a random quote when a client requests the
+    `/random-quote` URL.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/index.html">
+      index.html
+    </walkthrough-editor-open-file>
+    is the static HTML content, including the button.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/script.js">
+      script.js
+    </walkthrough-editor-open-file>
+    is JavaScript that fetches content from the server and adds it to the DOM.
 
-The `script.js` file is a lot of code, but we'll break it down in the next few
-steps.
+The next few steps walk through these files in more detail.
 
 ## Server Content
 
@@ -78,8 +88,12 @@ Imagine writing a whole HTML page using Java print statements!
 Instead, you can write client-side JavaScript code that **fetches** the content
 from the server and adds it to an existing HTML file.
 
-Open the `script.js` file inside the `random-quotes` directory to see an
-example.
+Open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+file to see an example.
 
 This is a lot of code, but let's read through it line-by-line to understand it.
 
@@ -161,10 +175,19 @@ The `getRandomQuoteUsingAsyncAwait()` function is an example of this approach.
 At this point, your `portfolio` directory should contain a `DataServlet` that
 responds with `"Hello [YourName]!"` when a client requests the `/data` URL.
 
-Modify `index.html` and `script.js` to use `fetch()` to request this content
-from the server and add it to the page. You can use a button like the example
-above, or you can use the `onload` attribute of the `<body>` element to fetch
-the content when the page loads.
+Modify
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+and
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+to use `fetch()` to request this content from the server and add it to the
+page. You can use a button like the example above, or you can use the `onload`
+attribute of the `<body>` element to fetch the content when the page loads.
 
 When you're finished, you should have a page that fetches a message from the
 server and adds it to the DOM. It's okay if the message is hard-coded for now.
@@ -178,3 +201,9 @@ data from your server.
 
 After running a dev server to confirm that everything works, create a pull
 request from what you have so far, and send that to your advisor for review!
+
+Then go back to the comments walkthrough to continue:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+```

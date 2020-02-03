@@ -8,7 +8,7 @@ server.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme post-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-4-post-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -32,8 +32,12 @@ A `<form>` element has attributes that tell the page where to send the data, and
 contains input elements that let the user specify the data to send.
 
 To see an example, explore the `text-processor` directory and open the
-`index.html` file. This file includes a form, which contains a text input, two
-checkboxes, and a submit button.
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/text-processor/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file. This file includes a form, which contains a text input, two checkboxes,
+and a submit button.
 
 The user can enter data, and when they click the submit button, the browser
 sends a `POST` request to the URL specified in the form's `action` attribute.
@@ -51,7 +55,12 @@ When the user clicks the `Submit` button, the form sends a `POST` request to the
 URL specified in the form's `action` attribute. The server looks for a servlet
 that maps to that URL, and then runs its `doPost()` function.
 
-Open the `TextProcessorServlet.java` file to see that code.
+Open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/text-processor/src/main/java/com/google/sps/servlets/TextProcessorServlet.java">
+  TextProcessorServlet.java
+</walkthrough-editor-open-file>
+file to see that code.
 
 To get the values from a submitted form, use the `request.getParameter()`
 function. The request contains parameters with names that match the names of the
@@ -60,7 +69,8 @@ with a name of `text-input`, so on the server, you can call
 `request.getParameter("text-input")` to get the value entered by the user into
 that input.
 
-Run a development server:
+To see this example in action, `cd` into the `text-processor` directory and
+then run a development server:
 
 ```bash
 mvn appengine:devserver
@@ -71,8 +81,13 @@ server.
 
 ## Redirects
 
-The `text-processor` example code takes the input from the `POST` request and
-outputs it directly in the page as the response to that request.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/text-processor/src/main/java/com/google/sps/servlets/TextProcessorServlet.java">
+  TextProcessorServlet.java
+</walkthrough-editor-open-file>
+file takes the input from the `POST` request and outputs it directly in the
+page as the response to that request.
 
 But most of the time, you'll probably want to process or store the data, and
 then **redirect** the user to another page. For example, when a user leaves a
@@ -95,17 +110,31 @@ Explore the `subtraction-game` directory to see an example that uses POST
 requests, redirects, GET requests, and JSON to implement the
 [subtraction game](https://en.wikipedia.org/wiki/Nim#The_subtraction_game_S\(1,_2,_._._.,_k\)).
 
-The `SubtractionServlet` class contains a `doPost()` function that takes user
-input and changes the state of the game, and a `doGet()` function that returns
-the current state of the game.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/subtraction-game/src/main/java/com/google/sps/servlets/SubtractionServlet.java">
+  SubtractionServlet.java
+</walkthrough-editor-open-file>
+file contains a `doPost()` function that takes user input and changes the state
+of the game, and a `doGet()` function that returns the current state of the
+game.
 
-The `index.html` file contains HTML that includes a form that lets the user send
-a value to the server. The `<body>` element has an `onload` attribute that
-points to the `getSubtractionForm()` function, which tells JavaScript to call
-that function when the page loads.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/subtraction-game/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file contains HTML that includes a form that lets the user send a value to the
+server. The `<body>` element has an `onload` attribute that points to the
+`getSubtractionForm()` function, which tells JavaScript to call that function
+when the page loads.
 
-The `script.js` file contains JavaScript that fetches the state of the game and
-builds the UI.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/subtraction-game/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+file contains JavaScript that fetches the state of the game and builds the UI.
 
 All of these files work together to implement the subtraction game, and they
 demonstrate a common pattern:
@@ -122,10 +151,15 @@ You can use this pattern to implement comments, and many other features!
 
 To complete your comments feature, add a `<form>` element to your portfolio
 page. It's up to you what input elements are in the form, but at a minimum you
-probably want a text input for the user to add a comment. Then add a `doPost()`
-function to your `DataServlet` class that takes the data from the request to
-populate your comments data structure. An `ArrayList` of `String` values is
-fine.
+probably want a text input for the user to add a comment.
+
+Then add a `doPost()` function to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+  DataServlet.java
+</walkthrough-editor-open-file>
+file that takes the data from the request to populate your comments data
+structure. An `ArrayList` of `String` values is fine.
 
 Don't forget to remove the hard-coded data you added in the previous step.
 
@@ -138,3 +172,9 @@ Congratulations!
 At this point you should have a fully functional comments feature! Run a
 dev server to confirm that everything works, and then create a pull request and
 send that to your advisor for a code review!
+
+Then go back to the comments walkthrough to continue:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+```
