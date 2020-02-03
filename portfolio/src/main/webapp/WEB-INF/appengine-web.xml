@@ -5,4 +5,8 @@
   <threadsafe>false</threadsafe>
   <sessions-enabled>true</sessions-enabled>
   <runtime>java8</runtime>
+  <static-files>
+    <!-- prevent unwanted caching when accessing via the web preview server -->
+    <include path="/**" expiration="0" />
+  </static-files>
 </appengine-web-app>
