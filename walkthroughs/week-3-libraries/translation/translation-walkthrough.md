@@ -8,7 +8,7 @@ from one language to another.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme translation-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/translation/translation-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -72,8 +72,12 @@ As mentioned above, the Cloud Translation API allows you to write code that
 translates text. It's available as a web service, or as a library that can be
 called from many languages. You're going to use it as a Java library.
 
-To use the Cloud Translation library, first add the dependency to the `pom.xml`
-file:
+To use the Cloud Translation library, first add the dependency to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file.
 
 ```xml
 <dependency>

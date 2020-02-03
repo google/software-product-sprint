@@ -7,7 +7,7 @@ This walkthrough introduces Blobstore, which lets you store files like images.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme blobstore-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/blobstore/blobstore-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -42,7 +42,12 @@ example, you can use Blobstore to allow users to upload images or videos.
 ## Maven Dependency
 
 Blobstore comes with the App Engine environment, so to use Blobstore, first add
-the App Engine dependency to your `pom.xml` file:
+the App Engine dependency to your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
+</walkthrough-editor-open-file>
+file:
 
 ```xml
 <dependency>

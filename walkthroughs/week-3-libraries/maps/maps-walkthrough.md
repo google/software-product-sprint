@@ -8,7 +8,7 @@ interactive Google Map to your page.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme maps-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/maps/maps-walkthrough.md
 ```
 
 Click the **Start** button to begin!
