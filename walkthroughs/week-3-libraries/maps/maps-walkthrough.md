@@ -2,12 +2,6 @@
 
 ## Getting Started
 
-Over the past 2 weeks, you've learned about client-side HTML and JavaScript and
-server-side Java.
-
-This week, you're going to learn about libraries that provide access to various
-features of Google Cloud.
-
 This walkthrough introduces the Google Maps library, which lets you add an
 interactive Google Map to your page.
 
