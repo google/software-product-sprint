@@ -60,8 +60,6 @@ file:
 This dependency allows you to reference the classes that come with the App
 Engine SDK, which includes Blobstore.
 
-Add this dependency to the `pom.xml` file in your portfolio directory.
-
 ## File Uploads
 
 To understand what Blobstore is doing for you, think about how you'd implement
@@ -102,7 +100,8 @@ data without worrying about the underlying file hosting.
 The Blobstore API works by adding an extra step in a request. Think about what
 happens when a user submits a form, without using Blobstore:
 
-![client-server request](blobstore-1.png)
+[![client-server request](https://github.com/google/software-product-sprint/blob/master/walkthroughs/week-3-libraries/blobstore/blobstore-1.png?raw=true)
+](https://github.com/google/software-product-sprint/blob/master/walkthroughs/week-3-libraries/blobstore/blobstore-1.png)
 
 Normally, the `action` of the form is a URL that maps to a servlet on the
 server. When the user submits the form, the servlet can get the values entered
@@ -115,7 +114,9 @@ Blobstore takes care of handling the file uploaded by the user, and then
 forwards the request to your servlet. Your servlet can then get the data entered
 by the user, including the URL of the file that Blobstore handled.
 
-![client-blobstore request](/blobstore-2.png)
+[![client-blobstore request](https://github.com/google/software-product-sprint/blob/master/walkthroughs/week-3-libraries/blobstore/blobstore-2.png?raw=true)
+](https://github.com/google/software-product-sprint/blob/master/walkthroughs/week-3-libraries/blobstore/blobstore-2.png)
+
 
 This extra step can be confusing, but it saves you all the work of parsing,
 storing, and hosting the file.
@@ -127,10 +128,15 @@ user to upload an image.
 
 ### HomeServlet
 
-The `HomeServlet` class defines a `doGet()` function, which is triggered when
-users navigate to the `/home` URL. Generally you probably don't want to build
-HTML this way because it's annoying to work with, but this demonstrates the
-overall approach. We'll see more realistic examples in following steps.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/blobstore/examples/hello-world/src/main/java/com/google/sps/servlets/HomeServlet.java">
+  HomeServlet.java
+</walkthrough-editor-open-file>
+file defines a `doGet()` function, which is triggered when users navigate to
+the `/home` URL. Generally you probably don't want to build HTML this way
+because it's annoying to work with, but this demonstrates the overall approach.
+We'll see more realistic examples in following steps.
 
 The `doGet()` function uses `BlobstoreService` to get a URL that points to
 Blobstore. Its value is something like this:
@@ -151,12 +157,17 @@ In other words, the request is forwarded to the `FormHandlerServlet` class.
 
 ### FormHandlerServlet
 
-The `FormHandlerServlet` class has a `doPost()` function that's triggered when
-Blobstore forwards the request to the `/my-form-handler` URL. The `doPost()`
-function gets the value entered in the text area, and it then gets the URL for
-the uploaded image. The `getUploadedFileUrl()` function might seem intimidating,
-but most of that is checking for corner cases. The core of the logic for getting
-the image URL is in the last 3 lines of code.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/blobstore/examples/hello-world/src/main/java/com/google/sps/servlets/FormHandlerServlet.java">
+  FormHandlerServlet.java
+</walkthrough-editor-open-file>
+file has a `doPost()` function that's triggered when Blobstore forwards the
+request to the `/my-form-handler` URL. The `doPost()` function gets the value
+entered in the text area, and it then gets the URL for the uploaded image. The
+`getUploadedFileUrl()` function might seem intimidating, but most of that is
+checking for corner cases. The core of the logic for getting the image URL is
+in the last 3 lines of code.
 
 You can then use that URL to create an `<img>` element. In a real project, you'd
 probably do something like store the image URL in an `ArrayList` or in
@@ -198,13 +209,23 @@ the Blobstore upload URL from the server.
 
 It works like this:
 
-1.  `BlobstoreUploadUrlServlet` maps to `/blobstore-upload-url`.
+1.  The servlet inside the
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-3-libraries/blobstore/examples/hello-world-fetch/src/main/java/com/google/sps/servlets/BlobstoreUploadUrlServlet.java">
+      BlobstoreUploadUrlServlet.java
+    </walkthrough-editor-open-file>
+    file maps to `/blobstore-upload-url`.
 2.  The `doGet()` function for that servlet calls the
     `blobstoreService.createUploadUrl()` function, and returns the result as the
     response to the request. Try running a dev server and navigating to
     `/blobstore-upload-url` to see this yourself!
-3.  On the client side, the `script.js` file uses the `fetch()` function to make
-    a `GET` request to `/blobstore-upload-url`.
+3.  On the client side, the
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-3-libraries/blobstore/examples/hello-world-fetch/src/main/webapp/script.js">
+      script.js
+    </walkthrough-editor-open-file>
+    file uses the `fetch()` function to make a `GET` request to
+    `/blobstore-upload-url`.
 4.  The response to that request will be the Blobstore upload URL, which is then
     used to set the `action` of the form from JavaScript.
 
@@ -214,7 +235,12 @@ Another approach you could take is to server-side render the form using JSP, tha
 way you can directly embed the URL in the form. The `hello-world-jsp` directory
 contains an example that takes this approach.
 
-The `index.jsp` file runs on the server. The Java code at the top calls the
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/blobstore/examples/hello-world-jsp/src/main/webapp/index.jsp">
+  index.jsp
+</walkthrough-editor-open-file>
+file runs on the server. The Java code at the top calls the
 `blobstoreService.createUploadUrl()` function, which it then embeds directly in
 the `action` attribute of the `<form>` element.
 
@@ -231,10 +257,16 @@ comments you implemented in week 2.
 Try to break this goal down into smaller steps, and then take each step on
 individually.
 
--   Add the App Engine dependency to your `pom.xml` file.
+-   Add the App Engine dependency to your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file>
+    file.
 -   Decide how you want to reference the Blobstore upload URL in your HTML:
     either by outputting the HTML directly from a servlet, or by using
-    `fetch()`, or by using JSP. Add a file upload input to your comments form.
+    `fetch()`, or by using JSP.
+-   Add a file upload input to your comments form.
     -   Test that this works by running a dev server and inspecting the page. You
         should see the Blobstore upload URL and file input in your HTML.
     -   When you get this step working, create a pull request and send it to
@@ -261,8 +293,13 @@ feature!
 When you're happy with your feature and you're ready to show it to the world,
 you can deploy it to your live server!
 
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+Your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update
