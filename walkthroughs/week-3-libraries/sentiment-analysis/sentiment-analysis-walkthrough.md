@@ -59,10 +59,10 @@ Make sure your project is selected, and click the `Enable` button.
 ## Credentials
 
 The Cloud Natural Language API requires your project's credentials to work. When
-you deploy to App Engine this will work ~magically~ automatically, but when
-running or deploying locally you have to set your credentials manually. Follow
-the steps [here](https://cloud.google.com/docs/authentication/getting-started)
-to set up your local credentials.
+you deploy to App Engine this will work automatically, but when running or
+deploying locally you have to set your credentials manually. Follow the steps
+[here](https://cloud.google.com/docs/authentication/getting-started) to set up
+your local credentials.
 
 **Important:** Before proceeding, make sure you have your
 `GOOGLE_APPLICATION_CREDENTIALS` environment variable set. Nothing will work
@@ -102,11 +102,16 @@ but it's probably easiest to work through an example.
 
 ## SentimentAnalysisServlet
 
-Read through `SentimentAnalysisServlet` and find this code:
+Read through
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/sentiment-analysis/examples/sentiment-analyzer/src/main/java/com/google/sps/servlets/SentimentAnalysisServlet.java">
+  SentimentAnalysisServlet.java
+</walkthrough-editor-open-file>
+and find this code:
 
 ```java
 Document doc =
-        Document.newBuilder().setContent(message).setType(Document.Type.PLAIN_TEXT).build();
+    Document.newBuilder().setContent(message).setType(Document.Type.PLAIN_TEXT).build();
 LanguageServiceClient languageService = LanguageServiceClient.create();
 Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
 float score = sentiment.getScore();
@@ -132,8 +137,18 @@ analysis to the comments you implemented in week 2.
 Try to break this goal down into smaller steps, and then take each step on
 individually.
 
--   Add the Cloud Natural Language dependency to your `pom.xml` file.
--   Calculate the sentiment score of the comment entered by the user.
+-   Add the Cloud Natural Language dependency to your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file>
+    file.
+-   Modify your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+      DataServlet.java
+    </walkthrough-editor-open-file>
+    to calculate the sentiment score of the comment entered by the user.
     -   Test that this works by printing it out to the console:
         `System.out.println()` is your friend!
     -   When you get this step working, create a pull request and send it to
@@ -159,8 +174,13 @@ analysis feature!
 When you're happy with your feature and you're ready to show it to the world,
 deploy it to your live server!
 
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+Your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update
