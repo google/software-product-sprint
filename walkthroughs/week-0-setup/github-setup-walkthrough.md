@@ -179,8 +179,8 @@ git push origin YOUR_BRANCH_NAME
 ```
 
 Your changes are now stored in a branch on your repo. Follow the instructions
-for creating a pull request on the SPS website to send your changes to your
-advisor for review.
+[here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+for creating a pull request to send your changes to your advisor for review.
 
 ## Congratulations!
 
