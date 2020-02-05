@@ -104,6 +104,9 @@ to include your name.
 
 ### Restarting Your Development Server
 
+**Tip:** Pressing `ctrl + c` in the console will interrupt any process running
+in the foreground, which willusually cause the program to abort.t
+
 Whenever you change your code, you need to restart your server to see your
 changes. Press `ctrl + c` in the console to shut down your server, and then run
 the devserver command again:
