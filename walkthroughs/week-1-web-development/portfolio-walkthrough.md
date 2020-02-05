@@ -127,7 +127,7 @@ cache-clearing refresh.
 
 ## Example
 
-The `examples/stanley` directory contains an example webpage. It contains
+The `walkthroughs/examples/stanley` directory contains an example webpage. It contains
 several files and directories:
 
 -   `pom.xml` is Maven's configuration file.
