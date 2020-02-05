@@ -43,16 +43,16 @@ the pre-trained models.
 
 Before you can use the Cloud Translation API, you have to enable it. Go here:
 
-https://console.cloud.google.com/apis/library/translate.googleapis.com
+<https://console.cloud.google.com/apis/library/translate.googleapis.com>
 
 Make sure your project is selected, and click the `Enable` button.
 
 ## Credentials
 
 The Cloud Translation API requires your Cloud project's credentials to work.
-When you deploy to App Engine this will work ~~magically~~ automatically, but
-when running or deploying in Google Cloud Shell you have to set your credentials
-manually. Follow the steps
+When you deploy to App Engine this will work automatically, but when running or
+deploying in Google Cloud Shell you have to set your credentials manually.
+Follow the steps
 [here](https://cloud.google.com/docs/authentication/getting-started) to set up
 your local credentials.
 
@@ -93,7 +93,12 @@ and the next few steps work through an example.
 
 ## TranslationServlet
 
-Read through `TranslationServlet` and find this code:
+Read through
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/translation/examples/minimal-google-translate/src/main/java/com/google/sps/servlets/TranslationServlet.java">
+  TranslationServlet.java
+</walkthrough-editor-open-file>
+and find this code:
 
 ```java
 String originalText = request.getParameter("text");
@@ -133,7 +138,11 @@ comments you implemented in week 2.
 Try to break this goal down into smaller steps, and then take each step on
 individually.
 
--   Add the Cloud Translate dependency to your `pom.xml` file.
+-   Add the Cloud Translate dependency to your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file> file.
 -   Add a language dropdown to your portfolio page. When the user changes the
     dropdown, resend the `GET` request for the comments JSON. Add the language
 	code to the request using a
@@ -143,8 +152,13 @@ individually.
         friend!
     -   When you get this step working, create a pull request and send it to
         your advisor for code review!
--   In your servlet, use the language code to translate each message before you
-    convert it to JSON.
+-   In your
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/java/com/google/sps/servlets/DataServlet.java">
+      DataServlet.java
+    </walkthrough-editor-open-file>
+    file, use the language code to translate each message before you convert it
+    to JSON.
     -   Test that this works by running a dev server and viewing the JSON in your
         browser.
     -   When you get this step working, create a pull request and send it to
@@ -158,8 +172,13 @@ users to translate comments!
 When you're happy with your feature and you're ready to show it to the world,
 deploy it to your live server!
 
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+Your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update
