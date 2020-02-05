@@ -153,14 +153,14 @@ doing.
 The code you looked at so far was purposely written out so each step was on its
 own line. But you can use
 [arrow functions](https://www.w3schools.com/js/js_arrow_function.asp) to shorten
-your code. The `getRandomQuoteUsingArrowFunctions()` function is an example of
+your code. The `getRandomQuoteCondensed()` function is an example of
 this approach. It uses arrow functions to do all of the work in 5 lines of code.
 
 You can use whichever syntax makes the most sense to you, but most tutorials you
 find on the internet will use the condensed arrow function syntax.
 
 Try changing the `onclick` attribute of the button to call the
-`getRandomQuoteUsingArrowFunctions()` function.
+`getRandomQuoteCondensed()` function.
 
 ## Async and Await
 
