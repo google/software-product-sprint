@@ -181,8 +181,8 @@ Your
     filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
   appengine-web.xml
 </walkthrough-editor-open-file>
-file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update
