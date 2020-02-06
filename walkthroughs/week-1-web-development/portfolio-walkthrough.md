@@ -105,7 +105,7 @@ to include your name.
 ### Restarting Your Development Server
 
 **Tip:** Pressing `ctrl + c` in the console will interrupt any process running
-in the foreground, which willusually cause the program to abort.t
+in the foreground, which will usually cause the program to abort.
 
 Whenever you change your code, you need to restart your server to see your
 changes. Press `ctrl + c` in the console to shut down your server, and then run
@@ -316,7 +316,7 @@ git add FILEPATH
 
 You can stage multiple files at once.
 
-To check the sttaged files, run:
+To check the staged files, run:
 
 ```
 git status
