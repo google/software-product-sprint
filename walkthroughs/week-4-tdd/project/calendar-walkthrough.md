@@ -1,11 +1,9 @@
 # Test Driven Development - Calendar
 
-**Prerequisite:** Read the intro walkthrough first!
+**Prerequisite:** If you're new to test-driven development, make sure you read
+the intro walkthrough first!
 
 ## Getting Started
-
-Last week, you wrote and deployed server code, allowing your client code to
-interact with your server.
 
 This week, you will be creating an
 [algorithm](https://en.wikipedia.org/wiki/Algorithm) to solve a hard problem -
@@ -17,7 +15,7 @@ your algorithm handles the different cases correctly.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme calendar-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-4-tdd/project/calendar-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -46,17 +44,28 @@ events. Each event has:
 -   a collection of attendees
 
 A time range will give you the start time, the end time, and the duration of
-the event. If you want to know more, open the `TimeRange` class.
+the event. If you want to know more, open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/project/src/main/java/com/google/sps/TimeRange.java">
+  TimeRange.java
+</walkthrough-editor-open-file>
+file.
 
 ## Objective
 
-Your objective is to implement `query()` in `FindMeetingQuery.java`.
+Your objective is to implement `query()` in the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/project/src/main/java/com/google/sps/FindMeetingQuery.java">
+  FindMeetingQuery.java
+</walkthrough-editor-open-file>
+file.
 
 Your implementation must pass every test in `FindMeetingQueryTests.java` before
 the feature will be considered complete. Keep in mind, if a test is failing, it
 means that your code needs to change, not the test.
 
-To run the tests, execute this command:
+To run the tests, `cd` into the `project` directory and then execute this
+command:
 
 ```bash
 mvn test
