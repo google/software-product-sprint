@@ -2,16 +2,16 @@
 
 ## Getting Started
 
-Last week, you wrote and deployed server code, allowing your client-code to
-interact with your server.
+So far, you've built a portfolio page using both server and client code.
 
-This week, you'll learn about test-driven development, a tool that will make it
-easier to write more complicated code safely.
+This week, you'll learn about test-driven development, which allows you to make
+changes to code more safely. You'll also practice writing code that uses data
+structures and algorithms.
 
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme tdd-intro-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-4-tdd/intro/tdd-intro-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -35,20 +35,30 @@ that the small pieces that make up your code (e.g. each function) work as
 expected. Each **unit test** is a small program that calls some code from your
 project then tests the actual output against the expected output.
 
-For example, open the `Greeter.java` file. This class creates greeting messages.
-How can we confirm that this code does what we expect?
+For example, open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/intro/src/main/java/com/google/sps/Greeter.java">
+  Greeter.java
+</walkthrough-editor-open-file>
+file. This class creates greeting messages. How can you confirm that this code
+does what you expect?
 
-Next, open the `GreeterTest.java` file. This class contains a unit test that
-confirms the behavior of the `Greeter` class.
+Next, open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/intro/src/test/java/com/google/sps/GreeterTest.java">
+  GreeterTest.java
+</walkthrough-editor-open-file>
+file. This class contains a unit test that confirms the behavior of the
+`Greeter` class.
 
-To run the test, execute this command:
+To run the test, `cd` into the `intro` directory and then execute this command:
 
 ```bash
 mvn test
 ```
 
 This command will compile all the code, and then run the tests in the
-`GreeterTest` class. You should see something like:
+`GreeterTest` class. When it finishes, you should see something like:
 
 ```none
 Results :
@@ -56,16 +66,23 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
 ```
 
-This means that there is one test ("Test run: 1") and that all tests passed
-("Failures: 0").
+This means that there is one test (`"Test run: 1"`) and that all tests passed
+(`"Failures: 0"`). In other words, this means that the code is working how it
+was expected to work.
 
 ## Test-driven Development
 
 [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
-is used by many teams at Google. In test-driven development, we use tests to
-define the correct behavior of code, and then we write code that pass the tests.
+is used by many teams at Google. Test-driven development uses tests to define
+the correct behavior for code, and then developers write code that passes the
+tests.
 
-Add this function to your `GreeterTest` class:
+For example, add this function to the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/intro/src/test/java/com/google/sps/GreeterTest.java">
+  GreeterTest.java
+</walkthrough-editor-open-file>
+file:
 
 ```java
 @Test
@@ -96,12 +113,17 @@ BUILD FAILURE
 ```
 
 This tells you that the `testGreetingWhitespace` test failed. The expected
-output was `"Hello Ada"` but the actual output was `"Hello Ada "`. This means
-something in the code is not working as expected.
+output was `"Hello Ada"` but the actual output was `"   Hello Ada   "`. This
+means something in the code is not working as expected.
 
 The problem is that the `Greeter` class is not removing the extra whitespace.
-Modify `Greeter` to trim the whitespace. After doing that, run the tests again.
-You should see them passing now.
+Modify the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-4-tdd/intro/src/main/java/com/google/sps/Greeter.java">
+  Greeter.java
+</walkthrough-editor-open-file>
+file to trim the whitespace. After doing that, run the tests again. You should
+see them passing now.
 
 Tests are useful for defining new desired behavior, and to confirm that new
 code doesn't break existing behavior.
@@ -110,12 +132,23 @@ code doesn't break existing behavior.
 that symbols like `@#$%` are removed from the input, and then modify the code so
 the tests pass.
 
-## Learn More
+## JUnit
+
+The code this week uses a testing library called **JUnit**. You can learn more
+about it [here](https://junit.org/junit4/) or by Googling "JUnit tutorials".
+
+If you want to learn how to test for something with JUnit, try including that
+in your search. For example, if you want to test that a method throws an
+exception, you might search for "JUnit confirm exception thrown".
+
+## Next Steps
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-The code this week uses a testing library called **JUnit**. You can learn more
-about it [here](https://junit.org/junit4/) or by Googling "JUnit tutorials". If
-you want to know how to test for something with JUnit, for example, checking if
-an exception was thrown, include that in your search (e.g. "JUnit confirm
-exception thrown").
+You've finished the introductory walkthrough!
+
+Start the project by running the project walkthrough:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-4-tdd/project/calendar-walkthrough.md
+```
