@@ -198,3 +198,9 @@ for what to do next:
 -   What happens when you have 1000 comments? Should they all show?
 -   Improve error handling and security. What if a user enters HTML content or
     JavaScript code?
+
+To start the next set of projects, run the libraries walkthrough:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/libraries-walkthrough.md
+```
