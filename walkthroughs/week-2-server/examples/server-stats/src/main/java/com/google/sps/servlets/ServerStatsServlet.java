@@ -48,20 +48,9 @@ public final class ServerStatsServlet extends HttpServlet {
    * Converts a ServerStats instance into a JSON string using manual String concatentation.
    */
   private String convertToJson(ServerStats serverStats) {
-    String json = "{";
-    json += "\"startTime\": ";
-    json += "\"" + serverStats.getStartTime() + "\"";
-    json += ", ";
-    json += "\"currentTime\": ";
-    json += "\"" + serverStats.getCurrentTime() + "\"";
-    json += ", ";
-    json += "\"maxMemory\": ";
-    json += serverStats.getMaxMemory();
-    json += ", ";
-    json += "\"usedMemory\": ";
-    json += serverStats.getUsedMemory();
-    json += "}";
-    return json;
+    return String.format("{\"startTime\": \"%s\", \"currentTime\": \"%s\", \"maxMemory\": %d, \"usedMemory\": %d}",
+            serverStats.getStartTime(), serverStats.getCurrentTime(),
+            serverStats.getMaxMemory(), serverStats.getUsedMemory());
   }
 
   /**
