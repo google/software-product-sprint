@@ -98,9 +98,10 @@ needs access to your repo.
 To give your advisor access to your repo, add them as a collaborator.
 
 1.  Navigate to your repo's page in GitHub.
-2.  Go to the `Settings` tab.
-3.  Select `Collaborators`.
-4.  Add your Project Advisor using their GitHub username or email address.
+1.  Go to the `Settings` tab.
+1.  Select `Collaborators`. (*Note*: If you don't see this, 
+    look for `Manage Access` -> `Invite a Collaborator` instead)
+1.  Add your Project Advisor using their GitHub username or email address.
 
 Your advisor can now help with code reviews.
 
