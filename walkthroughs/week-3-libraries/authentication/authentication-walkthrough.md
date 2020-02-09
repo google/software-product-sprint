@@ -181,7 +181,7 @@ ways to handle registration and login.
 [OAuth](https://developers.google.com/identity/protocols/OAuth2) and
 [OpenID](https://developers.google.com/identity/protocols/OpenIDConnect) both
 allow users to login to your site using their accounts from other sites. For
-example a user could use their Twitter account to identify themsevles on
+example a user could use their Twitter account to identify themselves on
 your site. This is pretty similar to what you saw above, but is not confined to
 Google accounts.
 

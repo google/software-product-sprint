@@ -225,7 +225,7 @@ teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthroug
 ### Learn More
 
 This tutorial covered the fundamentals of how to use Datastore, but Datastore
-also provides more advanced functionalities. See these resources for more info:
+also provides more advanced functionality. See these resources for more info:
 
 -   [Datastore documentation](https://cloud.google.com/datastore/docs/)
 -   [Entities documentation](https://cloud.google.com/datastore/docs/concepts/entities)
