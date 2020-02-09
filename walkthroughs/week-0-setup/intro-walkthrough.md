@@ -101,7 +101,7 @@ You'll use the `teachme` command to run walkthroughs each week.
 
 ## The `portfolio` Directory
 
-The `portfolio` directory contains a barebones web app that you'll use to create
+The `portfolio` directory contains a bare-bones web app that you'll use to create
 your own personal portfolio page! **This is your code** so please make it your
 own.
 
