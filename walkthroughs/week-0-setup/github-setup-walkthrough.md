@@ -85,8 +85,8 @@ To give your advisor access to your repo, add them as a collaborator.
 
 1.  Navigate to your repo's page in GitHub.
 1.  Go to the `Settings` tab.
-1.  Select `Manage Access` in the navigation menu.
-1.  Click `Invite a Collaborator`.
+1.  Select `Collaborators`. (*Note*: If you don't see this, 
+    look for `Manage Access` -> `Invite a Collaborator` instead)
 1.  Add your Project Advisor using their GitHub username or email address.
 
 Your advisor can now help with code reviews.
