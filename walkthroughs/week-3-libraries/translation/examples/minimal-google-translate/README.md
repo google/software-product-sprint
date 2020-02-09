@@ -10,5 +10,5 @@ environment variable is set and that you've enabled the
 and then execute this command:
 
 ```
-mvn appengine:devserver
+mvn package appengine:run
 ```

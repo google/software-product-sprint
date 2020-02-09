@@ -66,7 +66,7 @@ Confirm that this works by `cd`-ing into the `random-quotes` directory and
 running a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Run this command and then click the

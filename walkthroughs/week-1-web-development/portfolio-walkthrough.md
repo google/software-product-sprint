@@ -65,12 +65,13 @@ cd portfolio
 Then execute this command:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
-This command tells Maven to run an App Engine development server, which is
-useful for testing changes before deploying your site publicly. You'll run this
-command a lot over the next few weeks!
+This command tells Maven to package your application into a `.war` web archive
+and run an App Engine development server, which is useful for testing changes 
+before deploying your site publicly. You'll run this command a lot over the next
+few weeks!
 
 The first time you run this command, Maven will automatically download all of
 the libraries and files required to run a server, so it might take a few
@@ -112,7 +113,7 @@ changes. Press `ctrl + c` in the console to shut down your server, and then run
 the devserver command again:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 **Tip:** You can press the up arrow key to cycle through previous commands
@@ -147,7 +148,7 @@ Deploy the example webpage by `cd`-ing into the `stanley` directory and then
 running a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Then look through the files in the `stanley` project to see an example of HTML,
@@ -282,7 +283,7 @@ Remember, to run a dev server, you `cd` into a directory that contains a
 `pom.xml` file, and then you execute this command:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 When you see `Dev App Server is now running` in the console, click the
@@ -341,15 +342,15 @@ To deploy to a live server:
 -   Find the **Project ID** on that page.
 -   Open the
     <walkthrough-editor-open-file
-        filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
-      appengine-web.xml
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
     </walkthrough-editor-open-file>
     file.
 -   Change `YOUR_PROJECT_ID_HERE` to your project ID.
 -   Execute this command:
 
 ```bash
-mvn appengine:update
+mvn package appengine:deploy
 ```
 
 -   The first time you run this command, the console will give you a link. Open
