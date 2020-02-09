@@ -123,8 +123,12 @@ your servlet is correctly connected!
 
 ## Why Servlets?
 
-Most large projects use a framework like Spring, Grails, or Flask. So why are we
-using servlets?
+Most large projects use a framework like Spring, Grails, or Flask. These frameworks
+will implement a `Servlet` that processes and delegates requests using more advanced
+techniques, for example automatically converting requests and responses
+based on `@Annotations` and  supporting multiple content representations (think
+`json`, `pdf` and `html` output for the same data). 
+So why are we using servlets directly?
 
 First, learning the fundamentals is important for understanding the higher-level
 concepts used by a framework. It's hard to learn a framework before
