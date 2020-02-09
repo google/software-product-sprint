@@ -64,14 +64,17 @@ This file contains a few interesting lines:
 -   The `doGet()` function runs whenever a client sends a `GET` request to the
     servlet's URL. (Your browser sends a `GET` request whenever you visit a
     URL.)
--   `pageViews++;` increments the `pageViews` variable. Since the `doGet()`
-    function runs every time the `/page-views` URL is requested, this means the
-    `pageViews` variable tracks how many times the page has been viewed.
+-   `AtomicInteger pageViews` is using a thread-safe way of managing an integer
+    value since the webserver may be processing requests from multiple clients
+    at the same time.
+-   `pageViews.incrementAndGet()` increments the `pageViews` variable. Since the 
+    `doGet()` function runs every time the `/page-views` URL is requested, this 
+    means the `pageViews` variable tracks how many times the page has been viewed.
 -   `response.setContentType("text/html;");` specifies what type of content the
     client should expect.
 -   `response.getWriter().println("<h1>Page Views</h1>");` prints an `<h1>` tag
     to the response.
--   `response.getWriter().println("<p>This page has been viewed " + pageViews +
+-   `response.getWriter().println("<p>This page has been viewed " + views +
     " times.</p>");` prints the page view count to the response.
 
 To see this in action, `cd` into the `page-view-counter` directory and then run
