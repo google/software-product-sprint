@@ -28,9 +28,9 @@ public final class TextProcessorServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
-    String text = request.getParameter("text-input");
-    boolean upperCase = Boolean.valueOf(request.getParameter("upper-case"));
-    boolean sort = Boolean.valueOf(request.getParameter("sort"));
+    String text = getParameter(request, "text-input", "");
+    boolean upperCase = Boolean.parseBoolean(getParameter(request, "upper-case", "false"));
+    boolean sort = Boolean.parseBoolean(getParameter(request, "sort", "false"));
 
     // Convert the text to upper case.
     if (upperCase) {
@@ -48,5 +48,17 @@ public final class TextProcessorServlet extends HttpServlet {
     // Respond with the result.
     response.setContentType("text/html;");
     response.getWriter().println(Arrays.toString(words));
+  }
+
+  /**
+   * @return the request parameter, or the default value if the parameter
+   *         was not specified by the client
+   */
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
   }
 }
