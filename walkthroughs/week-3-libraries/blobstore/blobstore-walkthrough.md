@@ -53,7 +53,7 @@ file:
 <dependency>
   <groupId>com.google.appengine</groupId>
   <artifactId>appengine-api-1.0-sdk</artifactId>
-  <version>1.9.59</version>
+  <version>1.9.78</version>
 </dependency>
 ```
 
