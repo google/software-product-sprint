@@ -6,6 +6,6 @@
   <sessions-enabled>true</sessions-enabled>
   <runtime>java8</runtime>
   <static-files>
-    <include path="/**" expiration="0" />
+    <include path="/**" expiration="0s" />
   </static-files>
 </appengine-web-app>
