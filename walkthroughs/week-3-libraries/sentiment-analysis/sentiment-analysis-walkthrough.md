@@ -213,3 +213,9 @@ this is interesting to you, you can find more info here:
 
 If you have time left over and want to go further, consider adding a feature
 that allows users to filter out comments with a negative sentiment score!
+
+To return to the libraries walkthrough, run this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/libraries-walkthrough.md
+```

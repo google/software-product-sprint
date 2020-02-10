@@ -230,3 +230,9 @@ Congratulations! You should now have a working map feature! Make sure your
 submitted to your GitHub repo by the end of the week.
 
 When you're done, share your live URL in the chat!
+
+To return to the libraries walkthrough, run this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/libraries-walkthrough.md
+```

@@ -265,3 +265,9 @@ Congratulations! You should now have a working login feature! Make sure your
 submitted to your GitHub repo before the end of the week.
 
 When you're done, share your live URL in the chat!
+
+To return to the libraries walkthrough, run this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/libraries-walkthrough.md
+```
