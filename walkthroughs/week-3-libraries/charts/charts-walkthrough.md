@@ -117,7 +117,7 @@ to find interesting data to visualize.
 You'll probably need to "massage" the data by converting it into a format you
 can use. For example, the bigfoot sightings CSV was created from
 [this data](https://data.world/timothyrenner/bfro-sightings-data) by loading it
-int Google Sheets and converting it to a table of yearly sightings.
+into Google Sheets and converting it to a table of yearly sightings.
 
 ### Pull Request
 
