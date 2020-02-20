@@ -194,5 +194,5 @@ The next walkthrough will introduce the Google Cloud Shell environment. Run this
 command when you're ready:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-1-setup/intro-walkthrough.md
 ```
