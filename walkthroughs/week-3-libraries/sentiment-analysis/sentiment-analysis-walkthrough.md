@@ -49,7 +49,7 @@ the pre-trained models.
 
 ## Enable Cloud Natural Language API
 
-Before you can use the Cloud Translation API, you have to enable it for your
+Before you can use the Cloud Natural Language API, you have to enable it for your
 Cloud project. Go here:
 
 <https://console.developers.google.com/apis/library/language.googleapis.com>
