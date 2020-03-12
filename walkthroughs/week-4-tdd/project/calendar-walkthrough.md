@@ -73,6 +73,11 @@ mvn test
 
 When all the tests pass, you can be confident that your code works!
 
+**Tip**: You execute a single test method by passing the flag`-Dtest=FindMeetingQueryTest#testMethodName`. E.g. To run just the test method named `optionsForNoAttendees()` you would execute:
+```bash
+mvn test -Dtest=FindMeetingQueryTest#optionsForNoAttendees
+```
+
 ## Pull Request
 
 To get feedback on your code, create a pull request and send it to your advisor
