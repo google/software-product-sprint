@@ -12,10 +12,10 @@ Click the `Start` button to start the walkthrough!
 
 ## Getting Started
 
-[Git](https://git-scm.com/) is a distributed [version control](https://en.wikipedia.org/wiki/Version_control) 
+[Git](https://git-scm.com/) is a distributed [version control](https://en.wikipedia.org/wiki/Version_control)
 system, which lets you track changes to your files and collaborate with others.
 [GitHub](https://github.com/) is a Git repository host, which means that it's a
-website that allows you to store your repository and let others access it. 
+website that allows you to store your repository and let others access it.
 This is useful to release code as open source, or to use the advanced collaboration tools with a team.
 You're going to use GitHub to store your projects.
 
@@ -29,7 +29,7 @@ Make sure you use your own email address here, not your SPS account!
 
 ## Unlink Google's Repo
 
-When you ran the command `git clone https://github.com/google/software-product-sprint.git`, 
+When you ran the command `git clone https://github.com/google/software-product-sprint.git`,
 you downloaded the official repository to your Cloud Shell worksapce.
 
 Right now, this repository still points to Google's GitHub account instead of yours.
@@ -79,7 +79,7 @@ git push -u origin master
 ```
 
 This should prompt you for your username/password the first time that
-you're pushing to GitHub. If your GitHub account is set up with two-factor 
+you're pushing to GitHub. If your GitHub account is set up with two-factor
 authentication, you'll need to create an [API Key](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) and use that instead of a password.
 
 If you'd like Git to store the username/password for pushing to GitHub, change this setting:
@@ -99,7 +99,7 @@ To give your advisor access to your repo, add them as a collaborator.
 
 1.  Navigate to your repo's page in GitHub.
 1.  Go to the `Settings` tab.
-1.  Select `Collaborators`. (*Note*: If you don't see this, 
+1.  Select `Collaborators`. (*Note*: If you don't see this,
     look for `Manage Access` -> `Invite a Collaborator` instead)
 1.  Add your Project Advisor using their GitHub username or email address.
 
@@ -194,5 +194,5 @@ The next walkthrough will introduce the Google Cloud Shell environment. Run this
 command when you're ready:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-1-setup/intro-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md
 ```
