@@ -59,8 +59,11 @@ The next few steps walk through these files in more detail.
 
 ## Server Content
 
-The `RandomQuoteServlet` class responds with a random quote when the client
-requests the `/random-quote` URL.
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/random-quotes/src/main/java/com/google/sps/servlets/RandomQuoteServlet.java">
+  RandomQuoteServlet.java
+</walkthrough-editor-open-file>
+responds with a random quote when the client requests the `/random-quote` URL.
 
 Confirm that this works by `cd`-ing into the `random-quotes` directory and
 running a dev server:
