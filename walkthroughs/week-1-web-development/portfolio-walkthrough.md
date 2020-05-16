@@ -161,15 +161,43 @@ cache-clearing refresh.
 The `examples/stanley` directory contains an example webpage. It contains
 several files and directories:
 
--   `pom.xml` is Maven's configuration file.
--   `index.html` uses HTML tags to create a homepage that links to other pages.
--   `images.html` uses HTML tags to create an image gallery.
--   `random.html` loads JavaScript that shows a random image from the gallery.
--   `script.js` is JavaScript that defines a function that shows a random image.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file>
+    is Maven's configuration file.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/index.html">
+      index.html
+    </walkthrough-editor-open-file>
+    uses HTML tags to create a homepage that links to other pages.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/images.html">
+      images.html
+    </walkthrough-editor-open-file>
+    uses HTML tags to create an image gallery.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/random.html">
+      random.html
+    </walkthrough-editor-open-file>
+    loads JavaScript that shows a random image from the gallery.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/script.js">
+      script.js
+    </walkthrough-editor-open-file>
+    is JavaScript that defines a function that shows a random image.
 -   `images/` contains the images used in the above files.
--   `style.css` is a CSS file that defines the styling for the HTML content.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/style.css">
+      style.css
+    </walkthrough-editor-open-file>
+    is a CSS file that defines the styling for the HTML content.
 -   `/WEB-INF` contains files that visitors to the site can't navigate to.
--   `appengine-web.xml` is App Engine's configuration file.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/walkthroughs/week-1-web-development/examples/stanley/src/main/webapp/WEB-INF/appengine-web.xml">
+      appengine-web.xml
+    </walkthrough-editor-open-file>
+    is App Engine's configuration file.
 
 Deploy the example webpage by `cd`-ing into the `stanley` directory and then
 running a dev server:
