@@ -86,6 +86,13 @@ public class FormHandlerServlet extends HttpServlet {
     // Use ImagesService to get a URL that points to the uploaded file.
     ImagesService imagesService = ImagesServiceFactory.getImagesService();
     ServingUrlOptions options = ServingUrlOptions.Builder.withBlobKey(blobKey);
-    return imagesService.getServingUrl(options);
+    String url = imagesService.getServingUrl(options);
+
+    // GCS's localhost preview is not actually on localhost,
+    // so make the URL relative to the current domain.
+    if(url.startsWith("http://localhost:8080/")){
+      url = url.replace("http://localhost:8080/", "/");
+    }
+    return url;
   }
 }
