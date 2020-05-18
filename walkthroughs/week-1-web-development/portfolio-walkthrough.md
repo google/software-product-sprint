@@ -93,7 +93,7 @@ cd portfolio
 Then execute this command:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 This command tells Maven to run an App Engine development server, which is
@@ -137,10 +137,10 @@ in the foreground, which will usually cause the program to abort.
 
 Whenever you change your code, you need to restart your server to see your
 changes. Press `ctrl + c` in the console to shut down your server, and then run
-the devserver command again:
+this command again:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 **Tip:** You can press the up arrow key to cycle through previous commands
@@ -203,7 +203,7 @@ Deploy the example webpage by `cd`-ing into the `stanley` directory and then
 running a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Then look through the files in the `stanley` project to see an example of HTML,
@@ -338,7 +338,7 @@ Remember, to run a dev server, you `cd` into a directory that contains a
 `pom.xml` file, and then you execute this command:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 When you see `Dev App Server is now running` in the console, click the
@@ -401,14 +401,11 @@ To deploy to a live server:
       pom.xml
     </walkthrough-editor-open-file>
     file.
--   Uncomment <configuration>...</configuration> and change `YOUR_PROJECT_ID_HERE` to your project ID.
--   Enable Cloud Build on your project by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=<YOUR_PROJECT_ID_HERE>
-    - Will require enabling billing. See doc for Intern Dev Environment Setup https://docs.google.com/document/d/1_zKf_Vpb1lxnWLDhQ6IGcA6W95UBufr06SmmoJZY7iE/edit#heading=h.wzgtvu2xiuh3. You will be unable to deploy applications after November 30, 2019 without adding a billing instrument to your project. Please add one at https://console.cloud.google.com/billing/linkedaccount?<YOUR_PROJECT_ID_HERE>
-
+-   Change `YOUR_PROJECT_ID_HERE` to your project ID.
 -   Execute this command:
 
 ```bash
-mvn appengine:deploy
+mvn package appengine:deploy
 ```
 
 -   The first time you run this command, the console will give you a link. Open
