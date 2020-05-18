@@ -104,7 +104,7 @@ your algorithm.
 To run the web application, run a server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Then open the web preview to view a webpage that shows a user interface that

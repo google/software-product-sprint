@@ -10,8 +10,8 @@ environment variable is set and that you've enabled the
 [Vision API](https://console.cloud.google.com/apis/library/vision.googleapis.com),
 and then execute this command:
 
-```
-mvn appengine:devserver
+```bash
+mvn package appengine:run
 ```
 
 Then open a web browser to `http://localhost:8080/index.jsp`.

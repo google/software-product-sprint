@@ -156,14 +156,14 @@ world, you can deploy it to your live server!
 
 Last week, you should have added your project ID to your
 <walkthrough-editor-open-file
-    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
-  appengine-web.xml
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
 </walkthrough-editor-open-file>
 file. If so, you can deploy to your live server by executing this command from
 the `portfolio` directory:
 
 ```bash
-mvn appengine:update
+mvn package appengine:deploy
 ```
 
 -   The first time you run this command, the console will give you a link. Open

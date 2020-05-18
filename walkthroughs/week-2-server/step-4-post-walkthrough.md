@@ -73,7 +73,7 @@ To see this example in action, `cd` into the `text-processor` directory and
 then run a development server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Try submitting different values in the form and see how they're handled on the

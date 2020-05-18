@@ -65,7 +65,7 @@ public class FormHandlerServlet extends HttpServlet {
     Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
     List<BlobKey> blobKeys = blobs.get("image");
 
-    // User submitted form without selecting a file, so we can't get a URL. (devserver)
+    // User submitted form without selecting a file, so we can't get a URL. (dev server)
     if (blobKeys == null || blobKeys.isEmpty()) {
       return null;
     }

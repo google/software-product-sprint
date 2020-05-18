@@ -78,7 +78,7 @@ To see this in action, `cd` into the `page-view-counter` directory and then run
 a development server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 Run this command and then click the
