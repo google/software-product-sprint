@@ -44,7 +44,7 @@ tools designed for parsing and understanding **unstructured text**, also called
 The Cloud Natural Language APIs use machine learning models that have already
 been trained, so you can skip straight to the fun stuff. It's also possible to
 train your own models (you can learn more about that
-[here](https://cloud.google.com/automl/)), but this guide is going to stick with
+[here](https://cloud.google.com/automl/), but this guide is going to stick with
 the pre-trained models.
 
 ## Enable Cloud Natural Language API
