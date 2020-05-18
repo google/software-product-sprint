@@ -27,10 +27,26 @@
 
   <build>
     <plugins>
+      <!-- Old plugin that is deprecated for deployment but can be used for local testing. 
+      Enables usage of `mvn appengine:devserver` for local testing, which is in many of the walkthroughs. 
+      Cannot deploy with `mvn appengine:update` because it's deprecated. -->
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>1.9.71</version>
+      </plugin>
+      <!-- New plugin necessary to deploy because old plugin is deprecated. 
+      Can use `mvn appengine:run` for local testing. 
+      Can use `mvn appengine:deploy` for deploying. -->
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>2.2.0</version>
+        <!-- TODO: uncomment configuration block and provide project ID. -->
+        <!-- <configuration>
+            <deploy.projectId>YOUR_PROJECT_ID_HERE</deploy.projectId>
+            <deploy.version>1</deploy.version>
+        </configuration> -->
       </plugin>
     </plugins>
   </build>
