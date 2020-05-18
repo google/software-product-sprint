@@ -397,15 +397,18 @@ To deploy to a live server:
 -   Find the **Project ID** on that page.
 -   Open the
     <walkthrough-editor-open-file
-        filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
-      appengine-web.xml
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
     </walkthrough-editor-open-file>
     file.
--   Change `YOUR_PROJECT_ID_HERE` to your project ID.
+-   Uncomment <configuration>...</configuration> and change `YOUR_PROJECT_ID_HERE` to your project ID.
+-   Enable Cloud Build on your project by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=<YOUR_PROJECT_ID_HERE>
+    - Will require enabling billing. See doc for Intern Dev Environment Setup https://docs.google.com/document/d/1_zKf_Vpb1lxnWLDhQ6IGcA6W95UBufr06SmmoJZY7iE/edit#heading=h.wzgtvu2xiuh3. You will be unable to deploy applications after November 30, 2019 without adding a billing instrument to your project. Please add one at https://console.cloud.google.com/billing/linkedaccount?<YOUR_PROJECT_ID_HERE>
+
 -   Execute this command:
 
 ```bash
-mvn appengine:update
+mvn appengine:deploy
 ```
 
 -   The first time you run this command, the console will give you a link. Open
