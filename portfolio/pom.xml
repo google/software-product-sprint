@@ -35,7 +35,7 @@
         <version>2.2.0</version>
         <configuration>
           <!-- TODO: set project ID. -->
-          <deploy.projectId>kevin-sps-spring20</deploy.projectId>
+          <deploy.projectId>YOUR_PROJECT_ID_HERE</deploy.projectId>
           <deploy.version>1</deploy.version>
         </configuration>
       </plugin>
