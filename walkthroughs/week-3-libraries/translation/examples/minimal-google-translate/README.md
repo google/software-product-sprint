@@ -9,6 +9,6 @@ environment variable is set and that you've enabled the
 [Translation API](https://console.cloud.google.com/apis/library/translate.googleapis.com),
 and then execute this command:
 
-```
-mvn appengine:devserver
+```bash
+mvn package appengine:run
 ```

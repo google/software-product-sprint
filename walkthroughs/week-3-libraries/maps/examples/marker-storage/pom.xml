@@ -46,9 +46,13 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.google.appengine</groupId>
+        <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>1.9.71</version>
+        <version>2.2.0</version>
+        <configuration>
+          <deploy.projectId>YOUR_PROJECT_ID_HERE</deploy.projectId>
+          <deploy.version>1</deploy.version>
+        </configuration>
       </plugin>
     </plugins>
   </build>

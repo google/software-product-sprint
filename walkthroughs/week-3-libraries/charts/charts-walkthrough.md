@@ -39,7 +39,7 @@ The `examples` directory contains a `hello-world` project. You can `cd` into
 the `hello-world` directory and run a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 You should see a webpage that shows a pie chart.
@@ -91,7 +91,7 @@ sightings from a CSV file and uses it to create a chart. You can `cd` into the
 `bigfoot-sightings` directory and then run a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 When you view your dev server in your browser, you should see a line chart that
@@ -136,7 +136,7 @@ You can `cd` into the
 `favorite-colors` directory and then run a dev server:
 
 ```bash
-mvn appengine:devserver
+mvn package appengine:run
 ```
 
 When you view your dev server in your browser, you should see a webapp that
@@ -173,14 +173,14 @@ deploy it to your live server!
 
 Your
 <walkthrough-editor-open-file
-    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
-  appengine-web.xml
+    filePath="software-product-sprint/portfolio/pom.xml">
+  pom.xml
 </walkthrough-editor-open-file>
 file should already contain your project ID. If so, you can deploy to your live
 server by executing this command:
 
 ```bash
-mvn appengine:update
+mvn package appengine:deploy
 ```
 
 After the command successfully completes, you can navigate to

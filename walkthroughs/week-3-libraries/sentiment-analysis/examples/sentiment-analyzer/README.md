@@ -10,8 +10,8 @@ environment variable is set and that you've enabled the
 [Natural Language API](https://console.developers.google.com/apis/library/language.googleapis.com),
 and then execute this command:
 
-```
-mvn appengine:devserver
+```bash
+mvn package appengine:run
 ```
 
 Then navigate to `http://localhost:8080`.
