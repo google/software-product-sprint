@@ -8,7 +8,7 @@ runs on a server.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-2-server/servlets-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-1-servlets-walkthrough.md
 ```
 
 Click the **Start** button to begin!

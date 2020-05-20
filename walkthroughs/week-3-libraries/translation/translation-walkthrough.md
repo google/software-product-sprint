@@ -36,7 +36,7 @@ allows us to programmatically translate text.
 The Cloud Translation APIs use machine learning models that have already been
 trained, so you can skip straight to the fun stuff. It's also possible to train
 your own models (you can learn more about that
-[here](https://cloud.google.com/automl/)), but this guide is going to stick with
+[here](https://cloud.google.com/automl/), but this guide is going to stick with
 the pre-trained models.
 
 ## Enable Cloud Translation API
@@ -88,7 +88,7 @@ file.
 ```
 
 You can read the documentation for the Java library
-[here](http://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/com/google/cloud/translate/package-summary.html),
+[here](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/translate/package-summary.html),
 and the next few steps work through an example.
 
 ## TranslationServlet
