@@ -394,7 +394,7 @@ To deploy to a live server:
 -   Navigate to
     [https://console.cloud.google.com/home/dashboard](https://console.cloud.google.com/home/dashboard).
 -   Make sure your project is selected in the dropdown at the top.
--   Find the **Project ID** on that page.
+-   Find the **Project ID** on that page. (It should be something like lknope-sps-seasonYY)
 -   Open the
     <walkthrough-editor-open-file
         filePath="software-product-sprint/portfolio/pom.xml">
