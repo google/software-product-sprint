@@ -53,17 +53,29 @@ You'll learn more about these files in the following steps.
 
 ## Java 8
 
-Before you continue, set your default Java version to Java 8 by running this
-command:
+Before you continue, set your default Java version to Java 8.
+
+To do that, first open your `.bashrc` file by running this command:
 
 ```bash
+edit ~/.bashrc
+```
+
+This file sets up your console configuration. Copy this line into the end of
+that file: 
+
+```
 sudo update-java-alternatives -s java-1.8.0-openjdk-amd64 && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ```
 
+Save and close the `.bashrc` file, and then execute it using this command:
+
+```bash
+source ~/.bashrc
+```
+
 You can ignore any error messages about not being able to find alternatives for
-various plugins. Your Java version setting will persist unless you restart your
-Cloud shell instance. To permanently switch to Java 8, add the command above to
-your `.bashrc` file.
+various plugins.
 
 ### Why Java 8?
 
@@ -71,13 +83,14 @@ Google Cloud recently announced support for Java 11, but Java 11 is not
 backwards compatible with every library in these walkthroughs. To make sure
 everything will work as expected, please use Java 8.
 
-To make sure you're using the correct version of Java, run this command:
+To make sure you're using the correct version of Java, run these commands:
 
 ```bash
+echo $JAVA_HOME
 java -version
 ```
 
-If this command prints a version like `1.8.0_xxx`, then you're good to go!
+If these commands print a version like `1.8.0_xxx`, then you're good to go!
 
 ## Run a Development Server
 
