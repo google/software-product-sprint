@@ -1,7 +1,8 @@
 # Google Software Product Sprint
 
 This repo contains the projects you'll work on throughout SPS.
-
+hello, world
+This repo contain's Andrew's portfolio and SPS projects
 To get started:
 
 - Login to [Google Cloud Shell](https://ssh.cloud.google.com/cloudshell/editor)
