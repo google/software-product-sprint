@@ -26,3 +26,15 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+function addRandomFact() {
+    const facts = 
+        ['The earth is 7919.5 miles in diameter',
+        'The cosine function is the same as the sine function offset by pi/2 radians',
+        'I have been to 4 continents, and hope to see 6'
+        ];
+         // Pick a random greeting.
+  const fact = facts[Math.floor(Math.random() * facts.length)];
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = fact;
+
+}
