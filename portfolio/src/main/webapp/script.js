@@ -13,28 +13,45 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a slideshow to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+let slideIndex = 0;
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+// Next/previous controls
+function plusSlides(n) {
+  if(slideIndex <= 0 && n == -1)
+    slideIndex = document.getElementsByClassName("mySlides").length - 1;
+  else
+    slideIndex += n;
+  showSlides();
 }
-function addRandomFact() {
-    const facts = 
-        ['The earth is 7919.5 miles in diameter',
-        'The cosine function is the same as the sine function offset by pi/2 radians',
-        'I have been to 4 continents, and hope to see 6'
-        ];
-         // Pick a random greeting.
-  const fact = facts[Math.floor(Math.random() * facts.length)];
-  const factContainer = document.getElementById('fact-container');
-  factContainer.innerText = fact;
 
+// Thumbnail image controls
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides();
+}
+
+function showSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  for(slide of slides)
+    slide.style.display = 'none';
+
+  slideIndex = slideIndex%slides.length; 
+  
+  for(dot of dots)
+    dot.className = dot.className.replace(" active","");
+
+  slides[slideIndex].style.display = "block";  
+  dots[slideIndex].className += " active";
+}
+
+function showSlidesAuto()
+{
+    slideIndex++;
+    console.log(slideIndex);
+    showSlides();
 }
