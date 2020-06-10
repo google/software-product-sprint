@@ -29,8 +29,8 @@ function plusSlides(n) {
 
 // Thumbnail image controls
 function currentSlide(n) {
-  slideIndex = n;
-  showSlides();
+    slideIndex = n
+    showSlides();
 }
 
 function showSlides() {
@@ -51,7 +51,7 @@ function showSlides() {
 
 function showSlidesAuto()
 {
-    slideIndex++;
+    slideIndex+=1;
     console.log(slideIndex);
     showSlides();
 }
