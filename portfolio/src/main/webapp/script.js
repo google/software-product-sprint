@@ -18,10 +18,14 @@
 
 let slideIndex = 0;
 
+let sizeStateBig = false;
+
 // Next/previous controls
 function plusSlides(n) {
+  const slides = document.getElementsByClassName("mySlides");
+
   if(slideIndex <= 0 && n == -1)
-    slideIndex = document.getElementsByClassName("mySlides").length - 1;
+    slideIndex = slides.length - 1;
   else
     slideIndex += n;
   showSlides();
@@ -40,18 +44,52 @@ function showSlides() {
   for(slide of slides)
     slide.style.display = 'none';
 
-  slideIndex = slideIndex%slides.length; 
+  slideIndex = slideIndex % slides.length; 
   
   for(dot of dots)
     dot.className = dot.className.replace(" active","");
-
+  
   slides[slideIndex].style.display = "block";  
   dots[slideIndex].className += " active";
 }
 
 function showSlidesAuto()
 {
-    slideIndex+=1;
-    console.log(slideIndex);
+    slideIndex++;
     showSlides();
 }
+//change width css attribute
+function resizePhoto(photo,size)
+{
+    photo.style.width = size;
+}
+function changeSizeState(photo)
+{
+    sizeStateBig = !sizeStateBig;
+    if(sizeStateBig)
+        resizePhoto(photo,"75vw");
+    else
+        resizePhoto(photo,"60vw");
+}
+async function getData(path) {
+  // The fetch() function returns response object, and is asynchronous.
+  const response = await fetch(path);
+  //the text() function gets the text from the response asynchronously
+  const data = await response.text();
+  // When the request is complete return text from response
+  return data;
+}
+async function includeHTML(fileName)
+{
+    const element = document.getElementById(`include-${fileName}`);
+    if(element)
+    {
+        const header = await getData(`/${fileName}.html`);
+        element.innerHTML = header+'\n'+element.innerHTML;
+    }
+}
+
+document.addEventListener('DOMContentLoaded',() => {
+    includeHTML('navigation');
+    includeHTML('contact');
+})
