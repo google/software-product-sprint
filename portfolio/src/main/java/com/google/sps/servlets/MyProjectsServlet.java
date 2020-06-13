@@ -19,30 +19,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.google.gson.Gson;
-import java.time.LocalDateTime;
-import com.andrewrs.sps.data.ListRecord;
-import java.util.ArrayList;
+import com.andrewrs.sps.FileReader;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/data")
-public class DataServlet extends HttpServlet {
-    private ArrayList<ListRecord> records;
-  public void init()
-  {
-    records = new ArrayList<ListRecord>();    
-    records.add(new ListRecord(LocalDateTime.now(),"Hello, World 1!"));
+@WebServlet("/myProjects")
+public class MyProjectsServlet extends HttpServlet {
 
-    records.add(new ListRecord(LocalDateTime.now().plusDays(2),"Hello, World 2!"));
-
-    records.add(new ListRecord(LocalDateTime.now().plusDays(-2),"Hello, World 3!"));
-  }
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/json;");
-
-    Gson gson = new Gson();
-    //
-    response.getWriter().println(gson.toJson(records));
+    response.setContentType("text/html;");
+    FileReader file = new FileReader("projects.html");
+    if(file.getData().length() > 0)
+    {
+        file = new FileReader("projects.html");
+    }
+    response.getWriter().println(file.getData());
   }
 }

@@ -79,17 +79,29 @@ async function getData(path) {
   // When the request is complete return text from response
   return data;
 }
-async function includeHTML(fileName)
+async function include(path,extension)
 {
-    const element = document.getElementById(`include-${fileName}`);
+    const element = document.getElementById(`include-${path}`);
     if(element)
     {
-        const header = await getData(`/${fileName}.html`);
+        const header = await getData(`/${path}${extension}`);
         element.innerHTML = header+'\n'+element.innerHTML;
     }
+}
+async function includeHTML(fileName)
+{
+    include(fileName,".html");
+}
+async function includeDynamicHTML(fileName)
+{
+    include(fileName,"");
 }
 
 document.addEventListener('DOMContentLoaded',() => {
     includeHTML('navigation');
     includeHTML('contact');
+    includeDynamicHTML('data');
+    getData('/data').then((data) => {
+        console.log(data);
+    });
 })
