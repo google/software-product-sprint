@@ -31,18 +31,34 @@ public class DataServlet extends HttpServlet {
   public void init()
   {
     records = new ArrayList<ListRecord>();    
-    records.add(new ListRecord(LocalDateTime.now(),"Hello, World 1!"));
-
-    records.add(new ListRecord(LocalDateTime.now().plusDays(2),"Hello, World 2!"));
-
-    records.add(new ListRecord(LocalDateTime.now().plusDays(-2),"Hello, World 3!"));
   }
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException 
+  {
     response.setContentType("text/json;");
 
     Gson gson = new Gson();
     //
     response.getWriter().println(gson.toJson(records));
+  }
+    @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException 
+  {
+    String text = getParameter(request, "message", "");
+    String messages[] = text.split(",");
+    for(String message: messages)
+    {
+      records.add(new ListRecord(LocalDateTime.now(),message));
+    }
+    response.sendRedirect("/todo.html");
+  }
+
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) 
+  {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
   }
 }
