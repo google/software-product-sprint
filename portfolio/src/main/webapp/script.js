@@ -71,11 +71,19 @@ function changeSizeState(photo)
     else
         resizePhoto(photo,"60vw");
 }
-async function getData(path) {
+async function getDataText(path) {
   // The fetch() function returns response object, and is asynchronous.
   const response = await fetch(path);
   //the text() function gets the text from the response asynchronously
   const data = await response.text();
+  // When the request is complete return text from response
+  return data;
+}
+async function getDataJson(path) {
+  // The fetch() function returns response object, and is asynchronous.
+  const response = await fetch(path);
+  //the text() function gets the text from the response asynchronously
+  const data = await response.json();
   // When the request is complete return text from response
   return data;
 }
@@ -84,7 +92,7 @@ async function include(path,extension)
     const element = document.getElementById(`include-${path}`);
     if(element)
     {
-        const header = await getData(`/${path}${extension}`);
+        const header = await getDataText(`/${path}${extension}`);
         element.innerHTML = header+'\n'+element.innerHTML;
     }
 }
@@ -96,12 +104,31 @@ async function includeDynamicHTML(fileName)
 {
     include(fileName,"");
 }
-
+function jsListToHtml(list)
+{
+    let html = "<ul>";
+    for(ele of list)
+    {
+      html += `<li>${ele.message}</li>`;
+    }
+    html += "</ul>";
+    return html
+}
+async function updateDataInclude()
+{
+    const path = 'data';
+    const element = document.getElementById(`include-${path}`);
+    if(element)
+    {
+        const data = await getDataJson(`/${path}`);
+        element.innerHTML = jsListToHtml(data)+'\n'+element.innerHTML;
+    }
+}
 document.addEventListener('DOMContentLoaded',() => {
     includeHTML('navigation');
     includeHTML('contact');
-    includeDynamicHTML('data');
-    getData('/data').then((data) => {
+    updateDataInclude();
+    getDataText('/data').then((data) => {
         console.log(data);
     });
 })
