@@ -37,19 +37,30 @@ import com.andrewrs.sps.data.ListRecord;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    private ArrayList<ListRecord> records;
-  public void init(){}
+  private DatastoreService datastore;
+  public void init()
+  {
+    datastore = DatastoreServiceFactory.getDatastoreService();
+  }
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException 
   {
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    records = new ArrayList<ListRecord>(); 
+    ArrayList<ListRecord> records = new ArrayList<ListRecord>(); 
     response.setContentType("text/json;");
     Query query = new Query("message_log").addSort("timeStamp", SortDirection.DESCENDING);
     PreparedQuery results = datastore.prepare(query);
     for (Entity entity : results.asIterable()) 
     {
-        records.add(new ListRecord((long)entity.getProperty("timeStamp"),(String)entity.getProperty("message") ));
+        long time = -1;
+        try{
+            time = Long.parseLong((String)entity.getProperty("timeStamp") );
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+          records.add(new ListRecord(
+            time,
+                (String)entity.getProperty("message") ));
     }
 
     Gson gson = new Gson();
@@ -65,8 +76,8 @@ public class DataServlet extends HttpServlet {
     for(String message: messages)
     {
       Entity entity = new Entity("message_log");
-      entity.setProperty("timeStamp",System.currentTimeMillis());
-      entity.setProperty("message",message);
+      entity.setProperty("timeStamp", System.currentTimeMillis());
+      entity.setProperty("message", escapeQuotesInParameter(message));
       datastore.put(entity);
     }
     response.sendRedirect("/todo.html");
@@ -79,5 +90,22 @@ public class DataServlet extends HttpServlet {
       return defaultValue;
     }
     return value;
+  }
+  private String escapeQuotesInParameter(String param)
+  {
+      StringBuilder data = new StringBuilder();
+      int lastIndex = 0;
+      for(int i = 0;i < param.length();i++)
+      {
+          if(param.charAt(lastIndex) == '\\' || param.charAt(i) != '\'' || param.charAt(i) != '\"')
+            data.append(param.charAt(i));
+          else
+          {
+              data.append('\\');
+              data.append(param.charAt(i));
+          }
+          lastIndex = i;
+      }
+      return data.toString();
   }
 }

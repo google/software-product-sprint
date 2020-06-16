@@ -1,2 +1,2 @@
   showSlides();
-  setInterval(showSlidesAuto, 10000); // Change image every 10 seconds
+  setInterval(showSlidesAuto, 10 * 1000); // Change image every x milliseconds

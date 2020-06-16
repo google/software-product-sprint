@@ -15,15 +15,16 @@
 /**
  * Adds a slideshow to the page.
  */
-
+//slideIndex is the variable to hold the index of the slide currently on display
 let slideIndex = 0;
-
-let sizeStateBig = false;
+//if ShaowLargeImages is true then the images in the Gallery will have their width set to 75vw
+//if it is false then the gallery images will have a width of 60vw
+let showLargeImages = false;
 
 // Next/previous controls
 function plusSlides(n) {
   const slides = document.getElementsByClassName("mySlides");
-
+  //wrap slides back around to max if it would be decremented to -1
   if(slideIndex <= 0 && n == -1)
     slideIndex = slides.length - 1;
   else
@@ -36,23 +37,33 @@ function currentSlide(n) {
     slideIndex = n
     showSlides();
 }
-
+//function that hides any slides that aren't at the slideIndex in the list of mySlides,
+//and shows the selected slide with the correct size according to the showLargeImages variable
 function showSlides() {
   const slides = document.getElementsByClassName("mySlides");
   const dots = document.getElementsByClassName("dot");
 
+  //hide any unselected slides
   for(slide of slides)
     slide.style.display = 'none';
 
-  slideIndex = slideIndex % slides.length; 
-  
+  //ensure slide index is not greater than the max index
+  slideIndex = slideIndex % slides.length;
+
+  //resize photo according to the showLargeImages global variable
+  resizePhotoAuto(slides[slideIndex].getElementsByTagName('img')[0]);
+
+  //de-highlight all dots
   for(dot of dots)
     dot.className = dot.className.replace(" active","");
+
+  //Make current slide show with block formatting
+  slides[slideIndex].style.display = "block";
   
-  slides[slideIndex].style.display = "block";  
+  //highlight dot that represents selected image on screen
   dots[slideIndex].className += " active";
 }
-
+//function to be run in setTimeout to make slide show auto increment
 function showSlidesAuto()
 {
     slideIndex++;
@@ -63,13 +74,19 @@ function resizePhoto(photo,size)
 {
     photo.style.width = size;
 }
-function changeSizeState(photo)
+//Change witdh attribute of an object according to showLargeImages variable
+function resizePhotoAuto(photo)
 {
-    sizeStateBig = !sizeStateBig;
-    if(sizeStateBig)
-        resizePhoto(photo,"75vw");
-    else
-        resizePhoto(photo,"60vw");
+  if(showLargeImages)
+    resizePhoto(photo,"75vw");
+  else
+    resizePhoto(photo,"60vw");
+}
+//changes state of showLargeImages variable then 
+//resize currently displayed image according to new state
+function changeSizeState(photo){
+  showLargeImages = !showLargeImages; 
+  resizePhotoAuto(photo);
 }
 async function getDataText(path) {
   // The fetch() function returns response object, and is asynchronous.
@@ -87,8 +104,7 @@ async function getDataJson(path) {
   // When the request is complete return text from response
   return data;
 }
-async function include(path,extension)
-{
+async function include(path,extension){
     const element = document.getElementById(`include-${path}`);
     if(element)
     {
@@ -96,26 +112,22 @@ async function include(path,extension)
         element.innerHTML = header+'\n'+element.innerHTML;
     }
 }
-async function includeHTML(fileName)
-{
+async function includeHTML(fileName){
     include(fileName,".html");
 }
-async function includeDynamicHTML(fileName)
-{
+async function includeDynamicHTML(fileName){
     include(fileName,"");
 }
-function jsListToHtml(list)
-{
+function jsListToHtml(list){
     let html = "<ul>";
-    for(ele of list)
+    for(element of list)
     {
-      html += `<li>${ele.message}</li>`;
+      html += `<li>${element.message}</li>`;
     }
     html += "</ul>";
     return html
 }
-async function updateDataInclude()
-{
+async function updateDataInclude(){
     const path = 'data';
     const element = document.getElementById(`include-${path}`);
     if(element)
@@ -125,10 +137,6 @@ async function updateDataInclude()
     }
 }
 document.addEventListener('DOMContentLoaded',() => {
-    includeHTML('navigation');
-    includeHTML('contact');
-    updateDataInclude();
-    getDataText('/data').then((data) => {
-        console.log(data);
-    });
+    includeHTML('partials/navigation');
+    includeHTML('partials/contact');
 })
