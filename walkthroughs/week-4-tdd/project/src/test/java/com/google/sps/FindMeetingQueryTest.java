@@ -173,7 +173,33 @@ public final class FindMeetingQueryTest {
 
     Assert.assertEquals(expected, actual);
   }
+ @Test
+  public void nestedEventsSmallOneFirst() {
+    // Have an event for each person, but have the first event be contained in the second event. 
+    // This rules out using the method .contains for event A in event B.
+    //                    |--B--|
+    // Events  :       |----A----|
+    //                   
+    // Day     : |---------------------|
+    // Options : |--1--|         |--2--|
 
+    Collection<Event> events = Arrays.asList(
+      new Event("Event 2", TimeRange.fromStartDuration(TIME_0900AM, DURATION_30_MINUTES),
+            Arrays.asList(PERSON_B)),
+        new Event("Event 1", TimeRange.fromStartDuration(TIME_0830AM, DURATION_90_MINUTES),
+            Arrays.asList(PERSON_A))
+        );
+
+    MeetingRequest request =
+        new MeetingRequest(Arrays.asList(PERSON_A, PERSON_B), DURATION_30_MINUTES);
+
+    Collection<TimeRange> actual = query.query(events, request);
+    Collection<TimeRange> expected =
+        Arrays.asList(TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
+            TimeRange.fromStartEnd(TIME_1000AM, TimeRange.END_OF_DAY, true));
+
+    Assert.assertEquals(expected, actual);
+  }
   @Test
   public void doubleBookedPeople() {
     // Have one person, but have them registered to attend two events at the same time.
