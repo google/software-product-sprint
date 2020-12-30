@@ -1,0 +1,157 @@
+# Intro to Servlets
+
+## Getting Started
+
+This walkthrough introduces **servlets**, which let you write Java code that
+runs on a server.
+
+You can return to this walkthrough anytime by running this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-1-servlets-walkthrough.md
+```
+
+Click the **Start** button to begin!
+
+## Clients and Servers
+
+You'll hear these words a lot, so let's start by defining them.
+
+A [client](https://en.wikipedia.org/wiki/Client_\(computing\)) is whatever
+you're using to interact with the internet. It's the web browser you're using to
+read this page. The web browser on your computer is one client, the web browser
+on your phone is another client. There are other types of clients (like watching
+Netflix or listening to Spotify), but we'll focus on web browsers for now.
+
+One important property of a client is that they run **locally**, on your
+computer (or phone, or whatever device you're using). When we talk about
+"client-side", or something that happens "in the client", we mean it happens on
+your device.
+
+A [server](https://en.wikipedia.org/wiki/Server_\(computing\)) is a computer
+that **serves** content based on a request. The server is the computer that your
+browser is talking to when your browser asks for a particular URL.
+
+This project uses Google Cloud, so the server computer happens to be in a Google
+[data center](https://www.google.com/about/datacenters/).
+
+Servers can serve static files like you created last week, but they can also
+execute code to decide what content to send back to the client. The rest of this
+walkthrough introduces that type of server-side code.
+
+## Servlets
+
+A servlet is a Java class with functions that run when a client requests a
+particular URL. These functions run automatically, similar to how the `main()`
+function runs when you execute a core Java program.
+
+To see an example, explore the `examples/page-view-counter` directory.
+
+Specifically, open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-2-server/examples/page-view-counter/src/main/java/com/google/sps/servlets/PageViewServlet.java">
+  PageViewServlet.java
+</walkthrough-editor-open-file>
+file. This is a servlet class that handles the `/page-views` URL and responds
+with HTML that contains a count of how many times the page has been loaded.
+
+This file contains a few interesting lines:
+
+-   `@WebServlet("/page-views")` is an
+    [annotation](https://en.wikipedia.org/wiki/Java_annotation) that tells our
+    server which URL this servlet maps to. When a client requests the
+    `/page-views` URL, this servlet is triggered.
+-   The `doGet()` function runs whenever a client sends a `GET` request to the
+    servlet's URL. (Your browser sends a `GET` request whenever you visit a
+    URL.)
+-   `pageViews++;` increments the `pageViews` variable. Since the `doGet()`
+    function runs every time the `/page-views` URL is requested, this means the
+    `pageViews` variable tracks how many times the page has been viewed.
+-   `response.setContentType("text/html;");` specifies what type of content the
+    client should expect.
+-   `response.getWriter().println("<h1>Page Views</h1>");` prints an `<h1>` tag
+    to the response.
+-   `response.getWriter().println("<p>This page has been viewed " + pageViews +
+    " times.</p>");` prints the page view count to the response.
+
+To see this in action, `cd` into the `page-view-counter` directory and then run
+a development server:
+
+```bash
+mvn package exec:java
+```
+
+Run this command and then click the
+<walkthrough-web-preview-icon></walkthrough-web-preview-icon> icon and then
+select **Preview on port 8080** to open a tab that displays the `index.html`
+file. Then navigate to `/page-views` to see the content that's coming from the
+`PageViewServlet.java` file.
+
+**Remember:** The code in a servlet's `doGet()` function runs every time a
+client requests its URL. That means you can write Java code that generates
+different content for each request! You can use `if` statements, `for` loops,
+objects, functions, etc. Servlets are Java, so any code that works in Java will
+work in a servlet!
+
+### URLs
+
+The example servlet maps to the `/page-views` URL. You can change the annotation
+so it maps to a different URL, like `/content` or `/mypage.html`.
+
+## Your Turn
+
+Your goal is to add a servlet to your portfolio that writes a hard-coded string
+as the response when a user requests its URL. You'll roughly want to follow
+these steps:
+
+1. Create a new servlet class in a package under the `java` directory inside
+   your `portfolio` directory.
+2. Use the `@WebServlet` annotation to map your servlet to a URL.
+3. In your servlet's `doGet()` function, write a hard-coded string to the
+   response. Something like `"hello world"` is fine for now!
+
+To test that this is working, `cd` into the `portfolio` directory and run your
+portfolio's dev server. Then click the
+<walkthrough-web-preview-icon></walkthrough-web-preview-icon> icon and navigate
+to your servlet's URL to see the content generated by your servlet.
+
+In the next steps you'll modify this code to return a list of random strings,
+but working iteratively in small steps like this is a good habit to get into!
+Working one step at a time makes it much easier to spot errors than if you try
+to do everything all at once. It also makes your code reviews easier!
+
+## Why Servlets?
+
+Most large projects use a framework like Spring, Grails, or Flask. So why are we
+using servlets?
+
+First, learning the fundamentals is important for understanding the higher-level
+concepts used by a framework. It's hard to learn a framework before
+understanding how requests work.
+
+Second, using a framework involves a lot of setup and configuration. Code is
+hard enough to debug, even without fighting with framework config files!
+
+Third, most of the Google Cloud tutorials use servlets. So anything you find in
+a Google Cloud tutorial should "just work" with the code you write during SPS.
+
+All of that said, if using a framework is interesting to you, consider exploring
+that during the open project!
+
+## Pull Request
+
+<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+
+Congratulations! What you have so far might seem like a small change, but that's
+a good thing! Working in small steps like this makes it easier to understand how
+everything works, improves debugging, and simplifies code reviews.
+
+In other words, it's a good idea to send pull requests early and often! Before
+continuing, create a pull request from what you have so far and send that to
+your advisor for a code review.
+
+Then go back to the project 1 walkthrough to continue:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-2-server/project-1-walkthrough.md
+```

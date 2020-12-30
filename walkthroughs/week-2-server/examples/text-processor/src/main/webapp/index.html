@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Text Processor</title>
+  </head>
+  <body>
+    <h1>Text Processor</h1>
+
+    <form action="/text" method="POST">
+
+      <p>Enter a comma-separated list of words:</p>
+      <textarea name="text-input">one, two, three</textarea>
+      <br/><br/>
+
+      <p>Choose some options:</p>
+      <label>
+        <input type="checkbox" name="upper-case" value="true">
+        Upper-case
+      </label>
+      <br/>
+      <label>
+        <input type="checkbox" name="sort" value="true">
+        Alphabetize
+      </label>
+      <br/><br/>
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>

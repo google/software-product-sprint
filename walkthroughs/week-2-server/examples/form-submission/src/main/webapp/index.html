@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Intro to Post Requests</title>
+  </head>
+  <body>
+    <h1>Intro to Post Requests</h1>
+
+    <p>This is a form that sends a POST request to the server:</p>
+    <form action="/form-handler" method="POST">
+
+      <input type="text" name="name-input" placeholder="Your Name"/>
+      <br/><br/>
+
+      <select name="color-input">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
+      <br/><br/>
+
+      <textarea name="description-input" placeholder="Your Description"></textarea>
+      <br/><br/>
+
+      <input type="submit"/>
+    </form>
+  </body>
+</html>

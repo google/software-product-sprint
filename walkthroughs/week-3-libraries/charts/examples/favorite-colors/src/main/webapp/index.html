@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favorite Colors</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Favorite Colors</h1>
+    <div id="chart-container"></div>
+    <h2>Vote</h2>
+    <form action="/color-data" method="POST">
+      <select name="color">
+        <option value="Red">Red</option>
+        <option value="Orange">Orange</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+        <option value="Violet">Violet</option>
+      </select>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
