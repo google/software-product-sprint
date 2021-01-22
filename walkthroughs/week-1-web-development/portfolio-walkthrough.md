@@ -67,7 +67,7 @@ available to your web browser, you need to run a server that hosts the files.
 To run a development server, first navigate to the `portfolio` directory:
 
 ```bash
-cd portfolio
+cd ~/software-product-sprint/portfolio
 ```
 
 Then execute this command:
@@ -180,8 +180,9 @@ several files and directories:
     </walkthrough-editor-open-file>
     is the main Java class that that runs a web server.
 
-Deploy the example webpage by `cd`-ing into the `stanley` directory and then
-running a dev server:
+Deploy the example webpage by `cd`-ing into the
+`~/software-product-sprint/walkthroughs/week-1-web-development/examples/stanley`
+directory and then running a dev server:
 
 ```bash
 mvn package exec:java
@@ -432,3 +433,4 @@ When you're ready, start the next walkthrough by running this command:
 ```bash
 teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
 ```
+
