@@ -372,6 +372,25 @@ To commit changes, run:
 git commit -m "YOUR COMMIT MESSAGE"
 ```
 
+## App Engine
+
+You're about to deploy your code to your live site, but first you need to
+create an App Engine Application so Google Cloud can run your server.
+
+-   Navigate to
+    [https://console.cloud.google.com/appengine](https://console.cloud.google.com/appengine).
+-   Make sure your project is selected in the dropdown at the top.
+-   Click the `Create Application` button.
+-   On the next screen, click `Create app`. The default region is fine.
+-   On the next screen, select `Java` as a language and `Standard` as an
+    environment.
+-   When you see `Your App Engine app has successfully been created`, you're
+    done!
+
+Now when you navigate to
+[https://console.cloud.google.com/appengine](https://console.cloud.google.com/appengine),
+you should see `Your App Engine application has been created`.
+
 ## Live Server
 
 When you're happy with your portfolio page and you're ready to show it to the
@@ -395,6 +414,10 @@ To deploy to a live server:
 ```bash
 mvn package appengine:deploy
 ```
+
+If you see an error that says `The current Google Cloud project does
+not contain an App Engine application`, then make sure you created
+an App Engine application in the previous step!
 
 After the command successfully completes, you can now navigate to
 `YOUR_PROJECT_ID.appspot.com` to see your portfolio.
