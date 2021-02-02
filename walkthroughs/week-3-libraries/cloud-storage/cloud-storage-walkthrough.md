@@ -8,7 +8,7 @@ images.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-3-libraries/cloud-storage/blobstore-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/cloud-storage/cloud-storage-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -35,6 +35,23 @@ That approach will work for data that can be represented as text like strings or
 numbers. But if you want to store **binary data** like files, you can use a
 Google Cloud API called [Cloud Storage](https://cloud.google.com/storage). For
 example, you can use Cloud Storage to let users upload images or videos.
+
+## Permissions
+
+Before you get started, you need to enable some permissions so that other
+people can see the files you upload to Cloud Storage.
+
+-   Navigate to https://console.cloud.google.com/storage/browser
+-   Click the bucket named `YOUR_PROJECT_ID.appspot.com`
+-   Click the `Permissions` tab
+-   Click the `Add` button
+-   In the `New members` text field, type `allUsers`
+-   In the `Role` dropdown, select `Cloud Storage > Storage Object Viewer`
+-   Click `Save`
+-   In the dialog that pops up, click `Allow Public Access`
+
+Now people can see the files you uploaded. Make sure you only enable this for
+buckets you're planning on using for public files!
 
 ## Example
 
@@ -98,6 +115,8 @@ The `doPost()` function gets the value entered in the text area, and it then
 uploads the image to Cloud Storage and gets its URL, which it outputs as HTML
 in the response.
 
+Notice that this file also uses your project ID. Don't forget to change this!
+
 ## Listing Files
 
 The
@@ -108,6 +127,8 @@ The
 file has a `doGet()` function that's triggered when the user visits the
 `/list-images` URL. The `doGet()` function gets the URL of every image uploaded
 to your Cloud Storage bucket, and then uses them to build an HTML page.
+
+Notice that this file also uses your project ID. Don't forget to change this!
 
 You could also return the URLs as JSON and build the HTML using JavaScript.
 
