@@ -161,9 +161,8 @@ ideas!
 
 ## Pull Requests
 
-Your advisor will be reviewing your code to provide feedback and support. Follow
-the directions on the SPS site to create a pull request from your code so your
-advisor can review it.
+Your advisor will be reviewing your code to provide feedback and support.
+Create a pull request from your code so your advisor can review it.
 
 You don't have to wait until you're finished to send your code for review. In
 fact, it's better if you send multiple small pull requests instead of one big
