@@ -391,6 +391,19 @@ Now when you navigate to
 [https://console.cloud.google.com/appengine](https://console.cloud.google.com/appengine),
 you should see `Your App Engine application has been created`.
 
+## Service Account Permissions
+
+Google Cloud uses service accounts to do certain things. To use App Engine,
+you need to enable App Engine for your service account. 
+
+-   Navigate to
+    [https://console.cloud.google.com/cloud-build/settings/service-account](https://console.cloud.google.com/cloud-build/settings/service-account).
+-   Make sure your project is selected in the dropdown at the top.
+-   Change the `App Engine` service to `Enabled`.
+-   If a dialog opens, click the `Skip` button to close it.
+
+The setting saves automatically, so you can close that tab before continuing.
+
 ## Live Server
 
 When you're happy with your portfolio page and you're ready to show it to the
