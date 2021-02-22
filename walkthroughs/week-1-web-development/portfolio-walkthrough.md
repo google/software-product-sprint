@@ -461,12 +461,12 @@ If you have extra time left over, consider adding a page that describes your
 experiences with SPS so far, or writing JavaScript that makes your page
 interactive, or using CSS to make your page more beautiful.
 
-Next week, you'll learn about server-side code and add a comment feature to your
-portfolio.
+Next week, you'll learn about server-side code and add a "contact me" feature to
+your portfolio.
 
 When you're ready, start the next walkthrough by running this command:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/project-1-walkthrough.md
 ```
 
