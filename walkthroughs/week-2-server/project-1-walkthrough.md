@@ -127,7 +127,7 @@ you might imagine that you're working on a team, where one person or team is
 responsible for the server code, and another person or team is responsible for
 the JavaScript code. They'd use the same concepts you just learned!
 
-You'll also see examples that use more comlex server code next week!
+You'll also see examples that use more complex server code next week!
 
 ## Live Server
 
