@@ -100,15 +100,11 @@ so it maps to a different URL, like `/content` or `/mypage.html`.
 
 ## Your Turn
 
-Your goal is to add a servlet to your portfolio that writes a hard-coded string
-as the response when a user requests its URL. You'll roughly want to follow
-these steps:
+Your goal is to modify the servlet in your portfolio to write a different
+hard-coded string as the response when a user requests its URL.
 
-1. Create a new servlet class in a package under the `java` directory inside
-   your `portfolio` directory.
-2. Use the `@WebServlet` annotation to map your servlet to a URL.
-3. In your servlet's `doGet()` function, write a hard-coded string to the
-   response. Something like `"hello world"` is fine for now!
+Right now the servlet writes `"Hello world!"` as the response. Try changing that
+to `"Hello [your name]!"`.
 
 To test that this is working, `cd` into the `portfolio` directory and run your
 portfolio's dev server. Then click the
