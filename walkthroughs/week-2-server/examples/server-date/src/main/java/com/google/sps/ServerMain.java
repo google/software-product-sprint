@@ -4,6 +4,7 @@ import java.net.URL;
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.eclipse.jetty.webapp.WebInfConfiguration;
@@ -37,7 +38,8 @@ public class ServerMain {
         ".*/target/classes/|.*\\.jar");
 
     // Handle static resources, e.g. html files.
-    webAppContext.addServlet(DefaultServlet.class, "/");
+    ServletHolder defaultServletHolder = webAppContext.addServlet(DefaultServlet.class, "/");
+    defaultServletHolder.setInitParameter("cacheControl", "no-store, max-age=0");
 
     // Start the server! 🚀
     server.start();
