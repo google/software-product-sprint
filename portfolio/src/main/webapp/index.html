@@ -1,19 +1,169 @@
 <!DOCTYPE html>
 <html>
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>MarcoBg Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <header>
+      <div class = "container">
+        <div class = "firstBox">
+          <h1>Marco Bosquez</h1>
+          <p>
+            Student at Tecnológico de Monterrey, Campus Ciudad de México. Bachelor of Science in Computer Engineering Currently in my 2nd year.
+          </p>
+        </div>
+        <div class = "secondBox">
+            <img id = profilePicture src="img/Marco_Bosquez_Picture.jpg" height:"350" width="350"  alt="Marco Bosquez Picture" class = "pic">
+        </div>
+      </div>
+    </header>
+
+    <div class = "mainContent">
+      <div class = "languages">
+        <h2>BACKGROUND</h2>
+        <hr></hr>
+        <div class = languageContent>
+          <p>Hi!! My name is Marco and I'm a student at Tecnológico de Monterrey and I'm currently in Mexico City.</p>
+          <p>Ever since I was a kid I enjoyed videogames and this led me to want to learn how to create my own games.</p>
+          <p>After taking extracurricular courses to create 2D games using unity, I realized how powerful and vast this field could be so I started taking online courses 
+              for programming in C# and Python on my own time. This helped me decide to enroll in Computer Science.</p>
+          <p>My goal is to be able to create elaborate creative experiences using technology!</p>
+        </div>
+      </div>
+
+      <div class = "portfolio">
+        <h2>PORTFOLIO</h2>
+        <hr2></hr2>
+
+        <div class = projects>
+          <div class = prj1>
+            <h3>Portal Videogame</h3>
+            <a>A Unity-based fps videogame with rockets and portals. Rocket Travellers is a 3D unity test game where your character can go through portals, navigate the platform and shoot rockets at enemies.</a>
+
+            <h4>Features: </h4>
+
+            <ul style="list-style-type:disc">
+              <li>Player Controllers with Movement and Jumping Physics.</li>
+              <li>Rocket Launchers and Rocket Jumping Mechanics.</li>
+              <li>Player and Enemmy health bars.</li>
+              <li>Collisions.</li>
+              <li>Portals.</li>
+            </ul>
+            <a href="hola.html">
+              <p2>Click the image to open the Github Project:</p2>
+            </a>
+          </div>
+          <div class = gamePicture>
+            <img src = "img/game2.PNG" height:"45%" width="45%" class = "pic1">
+            <img src = "img/game1.PNG" height:"45%" width="45%" class = "pic2">
+            <a href="https://github.com/MarcoBosglez/Rocket-Travellers">
+              <img src = "img/game3.PNG" height:"45%" width="45%" class = "pic3">
+            </a>
+          </div>
+        </div>
+
+        <div class = projects>
+          <div class = prj1>
+            <h3>Flight Reservation Application</h3>
+            <a>A C++ application that simulates a flight reservation system. "ViajandoAndo" is a flight reservation application that simulates a flight reservation system.
+
+            <h4>Features: </h4>
+
+            <ul style="list-style-type:disc">
+              <li>Flight reservation system.</li>
+              <li>User management system.</li>
+              <li>Data persistance.</li>
+              <li>File Streaming.</li>
+              <li>User Input.</li>
+              <li>User Interaction.</li>
+            </ul>
+            <a href="https://github.com/MarcoBosglez/ViajandoAndo">
+              <p2>Click the image to open the Github Project:</p2>
+            </a>
+          </div>
+          <div class = gamePicture>
+            <img src = "img/flightsystem1.PNG" height:"45%" width="45%" class = "pic1">
+            <img src = "img/flightsystem2.PNG" height:"45%" width="45%" class = "pic2">
+            <a href="https://github.com/MarcoBosglez/ViajandoAndo">
+              <img src = "img/viajando3.PNG" height:"45%" width="45%" class = "pic3">
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class = "hobbies">
+        <h2>HOBBIES</h2>
+        <hr2></hr2>
+        <div class = hobbiesContent>
+          <div class="grid-container">
+            <div class="grid-item"><img src = "img/hobbies (2).jpg" height:"65%" width="65%"></img></div>
+            <div class="grid-item"><img src = "img/hobbies (3).jpg" height:"85%" width="85%"></img></div>
+            <div class="grid-item"><img src = "img/hobbies (1).jpg" height:"75%" width="75%"></img></div>
+            <div class="grid-item">Drawing & Painting</div>
+            <div class="grid-item">Play Videogames</div>
+            <div class="grid-item">Working Out</div>  
+          </div>
+
+        </div>
+      </div>
+
+      <div class = "media">
+        <h2>FAVORITE MEDIA</h2>
+        <hr2></hr2>
+        <div class = mediaContent>
+          <table id="mediaTable">
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Author</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>Music</td>
+              <td><a href="https://genius.com/Daisy-daydreaming-lyrics">Daydreaming</a></td></td>
+              <td>Daisy</td>
+              <td>Aug 15, 2018</td>
+            </tr>
+            <tr>
+              <td>Videogames</td>
+              <td>
+                <a href="https://playvalorant.com/en-gb/">Valorant</a></td>
+              <td>Riot Games</td>
+              <td>Jun 2, 2020</td>
+            </tr>
+            <tr>
+              <td>Movies and Series</td>
+              <td>
+                <a href="https://en.wikipedia.org/wiki/The_Great_Dictator">The Great Dictator</a></td>
+              <td>Charles Chaplin</td>
+              <td>Oct 15, 1940</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="social-wrapper">
+        <ul>
+          <li>
+            <a href="https://github.com/MarcoBosglez" target="_blank">
+              <img src="img/github.png" alt="Github Logo" class="github-icon"></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/marco-bosquez-5580271a1/" target="_blank">
+              <img src="img/linkedin.png" alt="Linkedin Logo" class="linkedin-icon"></a>
+          </li>
+        </ul> 
+      </div>
+    </footer>
+
   </body>
 </html>

@@ -1,9 +1,445 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body
+{
+  margin:0;
+  padding:0;
+  background: linear-gradient(75deg,#2980b9,#8e44ad);
+  background-size:cover;
+  font-family: 'Roboto', sans-serif;
 }
+header .container
+{
+  width: 100%;
+  height: 300px;
+  background: #39308d;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+header .container:hover{background: #000000;}
+header .container .firstBox
+{
+  width: 74%;
+  height: 100%;
+  float: left;
+  color: #fff;
+  text-align: center;
+  margin-top: 75px;
+}
+header .container .firstBox h1
+{
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+header .container .firstBox p
+{
+  margin: 10px 0 0;
+  padding: 5;
+  font-size: 15px;
+}
+header .container .secondBox
+{
+  height: 150%;
+  width: 26%;
+  float: right;
+}
+header .container .secondBox .pic
+{
+  box-shadow: 5px 10px #39308d;
+  float: center;
+}
+mainContent
+{
+  display: block;
+  box-sizing: border-box;
+}
+languages
+{
+  display: block;
+  box-sizing: border-box;
+}
+portfolio
+{
+  display: block;
+  box-sizing: border-box;
+}
+h2
+{
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+hr {
+  background-color: rgba(208,207,207,1.00);
+  height: 1px;
+  display: block;
+  unicode-bidi: isolate;
+  margin-inline-start: 500px;
+  margin-inline-end: 990px;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+hr2 {
+  background-color: rgba(208,207,207,1.00);
+  height: 1px;
+  display: block;
+  unicode-bidi: isolate;
+  margin-inline-start: 520px;
+  margin-inline-end: 520px;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+.languageContent
+{
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  margin-top: 1.5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+p
+{
+  font-weight: normal;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+div.languageContainer
+{
+  width: 70%;
+  background-color: rgb(51, 53, 54);
+  box-shadow: 5px 10px #39308d;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 26%;
+  margin-bottom: 0%;
+  transition: .5s;
+}
+  div.languageContainer:hover
+  {
+    background-color: rgb(0, 0, 0);
+  }
+.cpp {
+    width: 75%;
+    background-color: rgb(39, 87, 219);
+    transition: .5s;
+}
+.cpp:hover {
+    background-color: rgb(30, 64, 158);
+}
+.cs {
+    width: 70%;
+    background-color: rgb(149, 30, 173);
+    transition: .5s;
+}
+.cs:hover {background-color: rgb(112, 24, 129);}
+.python {
+    width: 65%;
+    background-color: rgb(248, 200, 68);
+    transition: .5s;
+}
+.python:hover {background-color: rgb(201, 161, 54);}
+.html {
+    width: 30%;
+    background-color: rgb(231, 111, 55);
+    transition: .5s;
+}
+.html:hover {background-color: rgb(189, 93, 48);}
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    color: white;
+}
+#div1
+{
+  height:300px;
+  width:300px;
+  background-color:#39308d;
+  margin-left: 75%;
+  margin-top: 5%;
+}
+.projects
+{
+  height: 920px;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  /*background: #39308d;*/
+  transition: .5s;
+}
+.projects:hover{background: #000000;}
+div.prj1
+{
+  width: 47%;
+  height: 50%;
+  margin-top: 1.5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  float: left;
+  color: white;
+}
+h3{font-size: 40px;}
+a{font-size: 20px; color: rgb(81, 157, 255);}
+h4{font-size: 25px; color: white;}
+ul{font-size: 25px; color: white;}
+p2{font-size: 25px;}
+.pic1
+{
+  float: right;
+  margin-top: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 1.5%;
+  background: white;
+}
+.pic2
+{
+  float: right;
+  margin-top: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 1.5%;
+  background: white;
+}
+.pic3
+{
+  float: left;
+  margin-top: 5.5%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-bottom: 2.5%;
+  background: white;
+}
+.hobbiesContent
+{
+  margin-top: 3.5%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-bottom: 3.5%;
+  color: white;
+  /*background: #39308d;*/
+}
+.hobbiesContent .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  transition: .5s;
+}
+.hobbiesContent .grid-container:hover {background: black;}
+.hobbiesContent .grid-container .grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+#mediaTable {
+  font-size: 30px;
+  margin-top: 3.5%;
+  margin-right: 5.5%;
+  margin-left: 10.5%;
+  margin-bottom: 3.5%;
+  border-collapse: collapse;
+  width: 75%;
+  color: white;
+  background: #39308d2c;
+  text-align: center;
+}
+#mediaTable td, #mediaTable th { padding: 8px; }
+#mediaTable tr:nth-child(even){background-color: #3bb1df2c;}
+#mediaTable tr:hover {background-color: black;}
+#mediaTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #39308d;
+  color: white;
+}
+.site-footer {
+  background-color: #39308d;
+	text-align: center;
+	margin: 10px 0;
+	padding: 10px 0;
+}
+#social-wrapper {text-align: center;}
+.social-wrapper {text-align: center;}
+.social-wrapper ul li { display: inline; margin: 0 5px;}
+.linkedin-icon,
+.github-icon
+{
+	margin-top: .625em;
+	width: 40px;
+	height: 40px;
+	opacity: .6;
+	filter: alpha(opacity=60);
+  border-radius: 25px;
+  transition: .5s;
+}
+.linkedin-icon:hover,
+.github-icon:hover { opacity: 1.0; filter: alpha(opacity=100); background: rgba(0, 0, 0, 0.432); }
 
-#greeting-container {
-  margin-top: 20px;
+@media only screen and (max-width: 991px)
+{
+  header .container
+  {
+    height: 100%;
+    background-position: center;
+  }
+  header .container .firstBox
+  {
+    width: 100%;
+    height: auto;
+    float: center;
+    padding: 10px;
+    margin-top: 0%;
+  }
+  header .container .firstBox h1
+  {
+    font-size: 30px;
+  }
+  header .container .firstBox p
+  {
+    font-size: 12px;
+  }
+  header .container .secondBox
+  {
+    width: 100%;
+    height: auto;
+    float: none;
+    padding: 10px;
+    background-position: center;
+  }
+  header .container .secondBox .pic
+  {
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    width: 200px;
+    height: 200px;
+  }
+  div.mainContent div.languages div.languageContent
+  {
+    width: 90%;
+    height: auto;
+  }
+  hr 
+  {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+  hr2
+  {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+  div.languageContainer
+  {
+    width: 95%;
+  }
+  .languageContent
+  {
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 100;
+    color: white;
+    margin-top: 2.5%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+  div.prj1
+  {
+    width: 90%;
+    height: 50%;
+    margin-top: 1.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 1.5%;
+    float: left;
+    color: white;
+  }
+  .pic1
+  {
+    margin-top: 8.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 1.5%;
+    background: white;
+  }
+  .pic2
+  {
+    margin-top: 8.5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1.5%;
+    background: white;
+  }
+  .pic3
+  {
+    margin-top: 2.5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 2.5%;
+    background: white;
+  }
+  a{font-size: 20px; color: rgb(81, 157, 255);}
+  h4{font-size: 18px; color: white;}
+  ul{font-size: 18px; color: white;}
+}
+@media only screen and (max-width: 420px)
+{
+  .pic1
+  {
+    margin-top: 52.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 1.5%;
+    background: white;
+  }
+  .pic2
+  {
+    margin-top: 52.5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1.5%;
+    background: white;
+  }
+  .pic3
+  {
+    margin-top: 2.5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 2.5%;
+    background: white;
+  }
+  .hobbiesContent .grid-container .grid-item {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+  #mediaTable 
+  {
+    font-size: 18px;
+    margin-top: 3.5%;
+    margin-right: 3.5%;
+    margin-left: 0%;
+    margin-bottom: 3.5%;
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+    background: #39308d2c;
+    text-align: center;
+  }
 }
