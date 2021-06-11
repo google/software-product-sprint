@@ -33,5 +33,6 @@ public class PageViewServlet extends HttpServlet {
     response.setContentType("text/html;");
     response.getWriter().println("<h1>Page Views</h1>");
     response.getWriter().println("<p>This page has been viewed " + pageViews + " times.</p>");
+    response.getWriter().println("<h1>Hello Marco!</h1>");
   }
 }
