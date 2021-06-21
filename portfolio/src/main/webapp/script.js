@@ -34,3 +34,11 @@ async function showServerTime() {
   const dateContainer = document.getElementById('date-container');
   dateContainer.innerText = textFromResponse;
 }
+
+async function showAboutMe() {
+  const responseFromServer = await fetch('/myself');
+  const textFromResponse = await responseFromServer.text();
+
+  const dateContainer = document.getElementById('myself-container');
+  dateContainer.innerText = textFromResponse;
+}
