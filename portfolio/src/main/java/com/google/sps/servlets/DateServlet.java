@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
+/** Handles requests sent to the /date URL. Try running a server and navigating to /date! */
 @WebServlet("/date")
 public class DateServlet extends HttpServlet {
 
@@ -15,5 +15,7 @@ public class DateServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
     response.getWriter().println("The server's current date is " + new Date());
+    
+   
   }
 }
