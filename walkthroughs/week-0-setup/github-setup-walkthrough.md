@@ -145,6 +145,24 @@ and then your name:
 git config --global user.name "Your Name"
 ```
 
+## Setup Git Hooks
+
+[Git hooks](https://githooks.com/) are scripts that run before or after a Git
+events such as: `commit`. Hooks are used to increase productivity, like
+automatically formatting code before commiting it. Setup pre-commit hooks:
+
+```bash
+bash setup-pre-commit.bash
+```
+
+This will install the hooks listed in `.pre-submit-config.yaml`, which by
+default contains a single check to prevent you from accidentally committing
+private keys; don't worry, this doesn't come up until Week 3! You can add
+whatever hooks you'd like by updating the `.pre-submit-config.yaml` file and
+rerunning the setup script. The framework we use,
+[Pre-commit ](https://pre-commit.com/index.html), has more documentation on how
+to do this.
+
 ## Modify README
 
 To test that everything is connected, modify your
