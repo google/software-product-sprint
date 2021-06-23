@@ -1,0 +1,9 @@
+# Configures pre-commit hooks for the git repository. 
+#
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for other hooks you can add.
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: detect-private-key 
