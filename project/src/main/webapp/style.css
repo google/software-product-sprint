@@ -1,11 +1,23 @@
-/*** Main Page ***/
+/*** General ***/
+body {
+    margin: 0px;
+}
+
 .app-header {
     font-family: fantasy;
     text-align: center;
+    margin: 50px;
 }
 
+.blank-section {
+    background-color: gray;
+    height: 300px;
+}
+
+/*** Landing Page ***/
 /** Workout Section **/
 .workout-header {
+    margin: 50px;
     text-align: center;
     font-family: fantasy;
 }
@@ -49,8 +61,114 @@
     transform: translateY(4px);
 }
 
-/*** Side Navigation Menu ***/
+.workout-submit {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.workout-submit label {
+    font-family: fantasy;
+    margin: 5px 10px 5px 0;
+}
+
+.workout-submit input {
+    font-family: fantasy;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/** Duration Section **/
+.duration-header {
+    margin: 50px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.duration-selection {
+    display: flex;
+    justify-content: center;
+}
+
+.duration-form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.duration-form label {
+    font-family: fantasy;
+    margin: 5px 10px 5px 0;
+}
+
+.duration-form input {
+    font-family: fantasy;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.final-submission {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.final-submission button {
+    font-family: fantasy;
+    font-size: large;
+    padding: 30px 40px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: white;
+}
+
+.final-submission button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+/*** Playlist Page ***/
+.playlist-header {
+    margin: 50px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.recommend-playlist {
+    display: flex;
+    justify-content: center;
+}
+
+.play-playlist {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.play-playlist button {
+    font-family: fantasy;
+    font-size: large;
+    padding: 30px 40px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: white;
+}
+
+.play-playlist button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+/*** Side Navigation Menu ***/
 /** Side Menu Toggle **/
 .side-toggle{
     background-color: lightgray;
@@ -106,7 +224,6 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 .main {
     transition: margin-left .5s;
-    padding: 20px;
 }
 
 /** Dark Mode Toggle **/
