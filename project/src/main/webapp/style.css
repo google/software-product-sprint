@@ -14,19 +14,24 @@ body {
     height: 300px;
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
 /*** Landing Page ***/
-/** Workout Section **/
+/** Workout Header **/
 .workout-header {
     margin: 50px;
     text-align: center;
     font-family: fantasy;
 }
 
+/** Workout Selection **/
 .workout-selection {
     display: flex;
     justify-content: center;
 }
 
+/** Workout Options **/
+/* Style the container of workout selections*/
 .workout-options {
     width: 1500px;
     height: 500px;
@@ -36,6 +41,7 @@ body {
     background-position: bottom;
 }
 
+/* This makes the container a horizontal list */
 .workout-options {
     overflow-x: auto;
     overflow-y: hidden;
@@ -44,7 +50,9 @@ body {
     align-items: center;
 }
 
+/* Style the workout icon buttons in the container*/
 .workout-options button{
+    background-color: white;
     border-color: black;
     border-radius: 25px;
     padding: 50px;
@@ -61,6 +69,8 @@ body {
     transform: translateY(4px);
 }
 
+/** Workout Submission **/
+/* Style the workout submission form line*/
 .workout-submit {
     margin: 50px;
     display: flex;
@@ -70,70 +80,36 @@ body {
 
 .workout-submit label {
     font-family: fantasy;
+    font-size: large;
     margin: 5px 10px 5px 0;
 }
 
 .workout-submit input {
     font-family: fantasy;
-    vertical-align: middle;
-    margin: 5px 10px 5px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-/** Duration Section **/
-.duration-header {
-    margin: 50px;
-    text-align: center;
-    font-family: fantasy;
-}
-
-.duration-selection {
-    display: flex;
-    justify-content: center;
-}
-
-.duration-form {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-}
-
-.duration-form label {
-    font-family: fantasy;
-    margin: 5px 10px 5px 0;
-}
-
-.duration-form input {
-    font-family: fantasy;
-    vertical-align: middle;
-    margin: 5px 10px 5px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.final-submission {
-    margin: 100px;
-    display: flex;
-    justify-content: center;
-}
-
-.final-submission button {
-    font-family: fantasy;
     font-size: large;
-    padding: 30px 40px;
-    background-color: dodgerblue;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 25px;
-    color: white;
 }
 
-.final-submission button:hover {
-    background-color: royalblue;
+.workout-submit button {
+    background-color: lightgray;
+    padding: 0px;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.workout-submit button:hover {
+    background-color: gray;
     cursor: pointer;
 }
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Playlist Page ***/
 .playlist-header {
@@ -153,20 +129,27 @@ body {
     justify-content: center;
 }
 
-.play-playlist button {
-    font-family: fantasy;
-    font-size: large;
-    padding: 30px 40px;
-    background-color: dodgerblue;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    color: white;
+.play-playlist button{
+    background-color: lightgray;
+    border-radius: 50%;
+    border: none;
+    height: 70px;
+    width: 70px;
+    padding: 0px;
+    padding-top: 3px;
+    margin: 10px;
 }
 
 .play-playlist button:hover {
-    background-color: royalblue;
+    background-color: gray;
     cursor: pointer;
 }
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+/*** Playing Page ***/
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Side Navigation Menu ***/
 /** Side Menu Toggle **/
@@ -236,7 +219,9 @@ body {
 
 .dark-toggle {
     background-color: gray;
-    border-radius: 10px;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
     border: none;
     cursor: pointer;
 }
