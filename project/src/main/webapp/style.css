@@ -1,0 +1,251 @@
+/*** General ***/
+body {
+    margin: 0px;
+}
+
+.app-header {
+    font-family: fantasy;
+    text-align: center;
+    margin: 50px;
+}
+
+.blank-section {
+    background-color: gray;
+    height: 300px;
+}
+
+/*** Landing Page ***/
+/** Workout Section **/
+.workout-header {
+    margin: 50px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.workout-selection {
+    display: flex;
+    justify-content: center;
+}
+
+.workout-options {
+    width: 1500px;
+    height: 500px;
+    padding: 50px;
+    border-radius: 25px;
+    background-image: url(https://images.unsplash.com/photo-1557564437-0995702f88fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+    background-position: bottom;
+}
+
+.workout-options {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.workout-options button{
+    border-color: black;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 50px;
+    cursor: pointer;
+}
+
+.workout-options button:hover {
+    background-color: lightgray;
+}
+
+.workout-options button:active {
+    background-color: white;
+    transform: translateY(4px);
+}
+
+.workout-submit {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workout-submit label {
+    font-family: fantasy;
+    margin: 5px 10px 5px 0;
+}
+
+.workout-submit input {
+    font-family: fantasy;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/** Duration Section **/
+.duration-header {
+    margin: 50px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.duration-selection {
+    display: flex;
+    justify-content: center;
+}
+
+.duration-form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.duration-form label {
+    font-family: fantasy;
+    margin: 5px 10px 5px 0;
+}
+
+.duration-form input {
+    font-family: fantasy;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.final-submission {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.final-submission button {
+    font-family: fantasy;
+    font-size: large;
+    padding: 30px 40px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: white;
+}
+
+.final-submission button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+/*** Playlist Page ***/
+.playlist-header {
+    margin: 50px;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.recommend-playlist {
+    display: flex;
+    justify-content: center;
+}
+
+.play-playlist {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.play-playlist button {
+    font-family: fantasy;
+    font-size: large;
+    padding: 30px 40px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: white;
+}
+
+.play-playlist button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+/*** Side Navigation Menu ***/
+/** Side Menu Toggle **/
+.side-toggle{
+    background-color: lightgray;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.side-toggle:hover {
+    background-color: gray;
+}
+
+/** Menu **/
+.side-menu {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: gray;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/** Links **/
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 30px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.side-menu a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+.main {
+    transition: margin-left .5s;
+}
+
+/** Dark Mode Toggle **/
+.dark-mode-toggle{
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    border: none;
+}
+
+.dark-toggle {
+    background-color: gray;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dark-toggle:hover {
+    background-color: dimgray;
+}
+
+.dark-mode{
+    background-color: black;
+    color: white;
+}
