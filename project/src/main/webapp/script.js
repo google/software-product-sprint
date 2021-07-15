@@ -15,18 +15,51 @@
 /*** Side Navigation Menu ***/
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-  document.getElementById("side-menu").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("side-menu").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
-  document.getElementById("side-menu").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("side-menu").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }
 
 /*** Dark Mode Toggle ***/
 function darkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
+    var element = document.body;
+    element.classList.toggle("dark-mode");
 }
+
+const _getToken = async () => {
+    const clientId = '65b8fa1fad84447391094d21e2907ffa';
+    const clientSecret = '68540d65fa6a48ea8fc69d6096284459';
+    
+    
+    const result = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+
+        },
+        body: 'grant_type=client_credentials'
+    });
+    
+    const data = await result.json();
+    return data.access_token;
+}
+//playlist
+
+fetch('https://api.spotify.com/v1/playlist/3cEYpjA9oz9GiPac4AsH4n', {
+    method: 'GET', headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + _getToken(),
+    }
+})
+    .then((response) => {
+        console.log(response.json().then(
+            (data) => { console.log(data) }
+        ));
+    });
