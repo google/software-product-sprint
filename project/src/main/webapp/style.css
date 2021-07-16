@@ -3,12 +3,17 @@ body {
     margin: 0;
 }
 
+@font-face{
+  font-family: Robot-Regular;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
 .app-font {
-    font-family: fantasy;
+    font-family: Robot-Regular;
 }
 
 .app-font input {
-    font-family: fantasy;
+    font-family: Robot-Regular;
 }
 
 .center-header {
