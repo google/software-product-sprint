@@ -10,34 +10,33 @@
 
 <body>
     <div id="side-navigation-menu" class="app-font">
-        <button id="side-toggle" class="app-button" onclick="openNav()"><img
+        <button id="open-menu-button" class="app-button" onclick="openMenu()"><img
                 src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
         <div id="side-menu">
-            <a href="javascript:void(0)" id="close-menu" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()">&times;</a>
             <a href="index.html">Home</a>
-            <br>
             <a href="playlist.html">Playlist</a>
-            <br>
             <a href="index.html">Favorites</a>
 
-            <button id="dark-mode" class="app-button" onclick="darkMode()"><img
+            <button id="dark-mode-toggle" class="app-button" onclick="darkMode()"><img
                     src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
         </div>
     </div>
 
     <div id="main" class="app-font">
-        <div id="app-header" class="center-header">
-            <h1>HeartBeat</h1>
-        </div>
+        <h1 id="app-header" class="center-header">
+            HeartBeat
+        </h1>
 
         <div id="playlist-section">
-            <div id="playlist-header" class="center-header">
-                <h1>Recommended Playlist</h1>
-            </div>
+            <h1 id="playlist-header" class="center-header">
+                Recommended Playlist
+            </h1>
         </div>
 
         <div id="playlist-navigation" class="center-content">
-            <button id="playlist-play" class="app-button media-button" onclick="document.location='playing.html'"><img
+            <button id="playlist-play-button" class="app-button media-button"
+                onclick="document.location='playing.html'"><img
                     src="https://img.icons8.com/ios-glyphs/62/000000/circled-play.png" /></button>
         </div>
     </div>
