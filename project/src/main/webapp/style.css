@@ -3,36 +3,49 @@ body {
     margin: 0px;
 }
 
-.app-header {
+.app-font {
     font-family: fantasy;
+}
+
+.app-font input {
+    font-family: fantasy;
+}
+
+.center-header {
     text-align: center;
     margin: 50px;
 }
 
-.blank-section {
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.app-button {
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+}
+
+.app-button:hover {
     background-color: gray;
-    height: 300px;
+}
+
+.media-button {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    padding: 0px;
+    padding-top: 3px;
+    margin: 10px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Landing Page ***/
-/** Workout Header **/
-.workout-header {
-    margin: 50px;
-    text-align: center;
-    font-family: fantasy;
-}
-
 /** Workout Selection **/
-.workout-selection {
-    display: flex;
-    justify-content: center;
-}
-
-/** Workout Options **/
 /* Style the container of workout selections*/
-.workout-options {
+#workout-selection {
     width: 1500px;
     height: 500px;
     padding: 50px;
@@ -42,7 +55,7 @@ body {
 }
 
 /* This makes the container a horizontal list */
-.workout-options {
+#workout-selection {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -51,7 +64,7 @@ body {
 }
 
 /* Style the workout icon buttons in the container*/
-.workout-options button{
+#workout-selection button{
     background-color: white;
     border-color: black;
     border-radius: 25px;
@@ -60,32 +73,28 @@ body {
     cursor: pointer;
 }
 
-.workout-options button:hover {
+#workout-selection button:hover {
     background-color: lightgray;
 }
 
-.workout-options button:active {
+#workout-selection button:active {
     background-color: white;
     transform: translateY(4px);
 }
 
 /** Workout Submission **/
 /* Style the workout submission form line*/
-.workout-submit {
+#workout-submission {
     margin: 50px;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.workout-submit label {
-    font-family: fantasy;
+#workout-submission label {
     font-size: large;
     margin: 5px 10px 5px 0;
 }
 
-.workout-submit input {
-    font-family: fantasy;
+#workout-submission input {
     font-size: large;
     vertical-align: middle;
     margin: 5px 10px 5px 0;
@@ -94,8 +103,7 @@ body {
     border: 1px solid #ddd;
 }
 
-.workout-submit button {
-    background-color: lightgray;
+#workout-submit{
     padding: 0px;
     border: none;
     border-radius: 50%;
@@ -104,45 +112,11 @@ body {
     height: 60px;
 }
 
-.workout-submit button:hover {
-    background-color: gray;
-    cursor: pointer;
-}
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Playlist Page ***/
-.playlist-header {
-    margin: 50px;
-    text-align: center;
-    font-family: fantasy;
-}
-
-.recommend-playlist {
-    display: flex;
-    justify-content: center;
-}
-
-.play-playlist {
+#playlist-navigation {
     margin: 100px;
-    display: flex;
-    justify-content: center;
-}
-
-.play-playlist button{
-    background-color: lightgray;
-    border-radius: 50%;
-    border: none;
-    height: 70px;
-    width: 70px;
-    padding: 0px;
-    padding-top: 3px;
-    margin: 10px;
-}
-
-.play-playlist button:hover {
-    background-color: gray;
-    cursor: pointer;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -153,37 +127,31 @@ body {
 
 /*** Side Navigation Menu ***/
 /** Side Menu Toggle **/
-.side-toggle{
-    background-color: lightgray;
+#side-toggle{
+    position: fixed;
+    top: 0px;
     border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.side-toggle:hover {
-    background-color: gray;
 }
 
 /** Menu **/
-.side-menu {
+#side-menu {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: gray;
+    background-color: lightgray;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /** Links **/
-.side-menu a {
+#side-menu a {
     padding: 8px 8px 8px 32px;
     margin-bottom: 50px;
     text-decoration: none;
-    font-family: fantasy;
     font-size: 30px;
     color: black;
     display: block;
@@ -191,12 +159,12 @@ body {
 }
 
 /* When you mouse over the navigation links, change their color */
-.side-menu a:hover {
+#side-menu a:hover {
     color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-.side-menu .closebtn {
+#side-menu #close-menu {
     position: absolute;
     top: 0;
     right: 25px;
@@ -205,29 +173,24 @@ body {
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-.main {
+#main {
     transition: margin-left .5s;
 }
 
 /** Dark Mode Toggle **/
-.dark-mode-toggle{
-    position: absolute;
-    right: 100px;
-    bottom: 100px;
-    border: none;
-}
-
-.dark-toggle {
-    background-color: gray;
-    border-radius: 50%;
+#dark-mode {
+    
     height: 55px;
     width: 55px;
     border: none;
-    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
 }
 
-.dark-toggle:hover {
-    background-color: dimgray;
+#dark-mode:hover {
+    background-color: gray;
 }
 
 .dark-mode{
