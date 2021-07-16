@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Workout</title>
+    <title>HeartBeat</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="side-nav-menu">
-		<button class="side-toggle" onclick="openNav()"><img src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png"/></button>
-		<div class="side-menu" id="side-menu">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.html">Home</a>
-          <br>
-          <a href="playlist.html">Playlist</a>
-          <br>
-          <a href="index.html">Favorites</a>
+</head>
 
-		  <div class="dark-mode-toggle">
-		  	<button class="dark-toggle" onclick="darkMode()"><img src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png"/></button>
-		  </div>
-		</div>
+<body>
+    <div id="side-navigation-menu" class="app-font">
+        <button id="side-toggle" class="app-button" onclick="openNav()"><img
+                src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
+        <div id="side-menu">
+            <a href="javascript:void(0)" id="close-menu" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <br>
+            <a href="playlist.html">Playlist</a>
+            <br>
+            <a href="index.html">Favorites</a>
+
+            <button id="dark-mode" class="app-button" onclick="darkMode()"><img
+                    src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
+        </div>
     </div>
-    
-    <div class="main" id="main">
-        <div class="app-header">
-            <h1>App Name Here</h1>
+
+    <div id="main" class="app-font">
+        <div id="app-header" class="center-header">
+            <h1>HeartBeat</h1>
         </div>
 
-        <div class="blank-section"></div>
-
-        <div class="playlist-section">
-            <div class="playlist-header">
-                <h1>Workout Playlist</h1>
-            </div>
-
-            <div class="recommend-playlist">
-                <div class="playlist-options">
-                    
-                </div>
+        <div id="playlist-section">
+            <div id="playlist-header" class="center-header">
+                <h1>Recommended Playlist</h1>
             </div>
         </div>
 
-        <div class="play-playlist">
-            <button type="submit">Play</button>
+        <div id="playlist-navigation" class="center-content">
+            <button id="playlist-play" class="app-button media-button" onclick="document.location='playing.html'"><img
+                    src="https://img.icons8.com/ios-glyphs/62/000000/circled-play.png" /></button>
         </div>
     </div>
-  </body>
+</body>
+
 </html>

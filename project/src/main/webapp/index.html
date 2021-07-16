@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Workout</title>
+    <title>HeartBeat</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="side-nav-menu">
-		<button class="side-toggle" onclick="openNav()"><img src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png"/></button>
-		<div class="side-menu" id="side-menu">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.html">Home</a>
-          <br>
-          <a href="playlist.html">Playlist</a>
-          <br>
-          <a href="index.html">Favorites</a>
+</head>
 
-		  <div class="dark-mode-toggle">
-		  	<button class="dark-toggle" onclick="darkMode()"><img src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png"/></button>
-		  </div>
-		</div>
+<body>
+    <div id="side-navigation-menu" class="app-font">
+        <button id="side-toggle" class="app-button" onclick="openNav()"><img
+                src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
+        <div id="side-menu">
+            <a href="javascript:void(0)" id="close-menu" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <br>
+            <a href="playlist.html">Playlist</a>
+            <br>
+            <a href="index.html">Favorites</a>
+
+            <button id="dark-mode" class="app-button" onclick="darkMode()"><img
+                    src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
+        </div>
     </div>
-    
-    <div class="main" id="main">
-        <div class="app-header">
-            <h1>App Name Here</h1>
+
+    <div id="main" class="app-font">
+        <div id="app-header" class="center-header">
+            <h1>HeartBeat</h1>
         </div>
 
-        <div class="blank-section"></div>
-
-        <div class="workout-section">
-            <div class="workout-header">
+        <div id="workout-section">
+            <div id="workout-selection-header" class="center-header">
                 <h1>Workout Selection</h1>
             </div>
 
-            <div class="workout-selection">
-                <div class="workout-options">
-                    <button><img src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png"/></button>
-                    <button><img src="https://img.icons8.com/ios-filled/50/000000/treadmill.png"/></button>
-                    <button><img src="https://img.icons8.com/ios-filled/50/000000/deadlift.png"/></button>
-                    <button><img src="https://img.icons8.com/ios-glyphs/50/000000/sit-ups.png"/></button>
-                    <button><img src="https://img.icons8.com/ios-filled/50/000000/pilates.png"/></button>
-                    <button>Workout 4</button>
-                    <button>Workout 4</button>
-                    <button>Workout 4</button>
-                    <button>Workout 4</button>
+            <div id="workout-selection-section" class="center-content">
+                <div id="workout-selection">
+                    <button name="aerobics"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png" /></button>
+                    <button name="treadmill"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/treadmill.png" /></button>
+                    <button name="deadlift"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/deadlift.png" /></button>
+                    <button name="sit-ups"><img
+                            src="https://img.icons8.com/ios-glyphs/50/000000/sit-ups.png" /></button>
+                    <button name="pilates"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/pilates.png" /></button>
+                    <button><img src="https://img.icons8.com/ios-filled/50/000000/exercise.png" /></button>
+                    <button><img src="https://img.icons8.com/ios-filled/50/000000/jump-rope.png" /></button>
+                    <button><img src="https://img.icons8.com/ios-filled/50/000000/curls-with-dumbbells.png" /></button>
+                    <button><img src="https://img.icons8.com/ios-filled/50/000000/spinning.png" /></button>
                 </div>
             </div>
 
-            <div class="workout-submission">
-                <div class="workout-header">
+            <div id="workout-submission-section">
+                <div id="workout-submission-header" class="center-header">
                     <h2>Select a workout above or enter one below:</h2>
                 </div>
-                
-                <form class="workout-submit">
+
+                <form id="workout-submission" class="center-content">
+                    <div></div>
                     <label for="workout">Selected Workout</label>
                     <input type="workout" id="workout" name="workout">
-                </form>
-            </div>
-        </div>
-
-        <div class="blank-section"></div>
-
-        <div class="duration-section">
-            <div class="duration-header">
-                <h1>Duration Selection</h1>
-            </div>
-
-            <div class="duration-selection">
-                <form class="duration-form">
                     <label for="hours">Hours</label>
                     <input type="hours" id="hours" name="hours">
                     <label for="mins">Minutes</label>
                     <input type="mins" id="mins" name="mins">
+                    <button id="workout-submit" class="app-button" type="submit"><img
+                            src="https://img.icons8.com/fluent-systems-filled/40/000000/enter-2.png" /></button>
                 </form>
             </div>
         </div>
-
-        <div class="final-submission">
-            <button type="submit">Submit</button>
-        </div>
     </div>
-  </body>
+</body>
+
 </html>
