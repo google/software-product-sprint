@@ -12,21 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*** Landing Page ***/
+/* Enter workout into the selected workout line by pressing on button */
+function clickWorkout(x) {
+    document.getElementById("workout-select").value = x;
+}
+
+/*** Playlist Page ***/
+
+
 /*** Side Navigation Menu ***/
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("side-menu").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+function openMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("side-menu").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+function closeMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }
 
-/*** Dark Mode Toggle ***/
+/* Activate the dark-mode class in the style sheet on the body */
 function darkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
+    const x = document.body;
+    x.classList.toggle("dark-mode");
 }
+
+
