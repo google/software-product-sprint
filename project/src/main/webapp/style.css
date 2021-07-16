@@ -1,6 +1,6 @@
 /*** General ***/
 body {
-    margin: 0px;
+    margin: 0;
 }
 
 .app-font {
@@ -13,7 +13,8 @@ body {
 
 .center-header {
     text-align: center;
-    margin: 50px;
+    padding: 100px;
+    margin: 0;
 }
 
 .center-content {
@@ -31,20 +32,11 @@ body {
     background-color: gray;
 }
 
-.media-button {
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    padding: 0px;
-    padding-top: 3px;
-    margin: 10px;
-}
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Landing Page ***/
 /** Workout Selection **/
-/* Style the container of workout selections*/
+/* Style the workout selection container*/
 #workout-selection {
     width: 1500px;
     height: 500px;
@@ -54,7 +46,7 @@ body {
     background-position: bottom;
 }
 
-/* This makes the container a horizontal list */
+/* Sets the container as a horizontal list */
 #workout-selection {
     overflow-x: auto;
     overflow-y: hidden;
@@ -63,7 +55,7 @@ body {
     align-items: center;
 }
 
-/* Style the workout icon buttons in the container*/
+/* Style the buttons in the workout selection container*/
 #workout-selection button{
     background-color: white;
     border-color: black;
@@ -83,12 +75,13 @@ body {
 }
 
 /** Workout Submission **/
-/* Style the workout submission form line*/
+/* Style the workout submission container */
 #workout-submission {
-    margin: 50px;
     align-items: center;
+    padding: 0px 100px 100px 100px;
 }
 
+/* Style the contents of the workout submission form */
 #workout-submission label {
     font-size: large;
     margin: 5px 10px 5px 0;
@@ -103,9 +96,8 @@ body {
     border: 1px solid #ddd;
 }
 
-#workout-submit{
-    padding: 0px;
-    border: none;
+#workout-submit-button {
+    padding: 0;
     border-radius: 50%;
     margin-left: 10px;
     width: 60px;
@@ -115,8 +107,14 @@ body {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Playlist Page ***/
-#playlist-navigation {
-    margin: 100px;
+/* Style the playlist media buttons */
+.media-button {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    padding: 0px;
+    padding-top: 3px;
+    margin: 10px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -126,14 +124,14 @@ body {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /*** Side Navigation Menu ***/
-/** Side Menu Toggle **/
-#side-toggle{
-    position: fixed;
-    top: 0px;
+/** Open Menu Button **/
+#open-menu-button {
+    position: fixed; /* Stay in place */
+    top: 0px; /* Stay at the top */
     border-radius: 5px;
 }
 
-/** Menu **/
+/** Side Menu **/
 #side-menu {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -143,28 +141,12 @@ body {
     left: 0;
     background-color: lightgray;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 50px; /* Place content 50px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/** Links **/
-#side-menu a {
-    padding: 8px 8px 8px 32px;
-    margin-bottom: 50px;
-    text-decoration: none;
-    font-size: 30px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-#side-menu a:hover {
-    color: #f1f1f1;
-}
-
 /* Position and style the close button (top right corner) */
-#side-menu #close-menu {
+#side-menu #close-menu-button {
     position: absolute;
     top: 0;
     right: 25px;
@@ -177,22 +159,33 @@ body {
     transition: margin-left .5s;
 }
 
+/** Navigation Links **/
+#side-menu a {
+    padding: 8px 8px 8px 32px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+#side-menu a:hover {
+    color: #f1f1f1;
+}
+
 /** Dark Mode Toggle **/
-#dark-mode {
-    
+#dark-mode-toggle {
     height: 55px;
     width: 55px;
-    border: none;
     border-radius: 50%;
     position: absolute;
     right: 100px;
     bottom: 100px;
 }
 
-#dark-mode:hover {
-    background-color: gray;
-}
-
+/* Sets the background to black and text to white */
 .dark-mode{
     background-color: black;
     color: white;
