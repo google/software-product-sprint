@@ -1,19 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>HeartBeat</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+</head>
+
+<body>
+    <div id="side-navigation-menu" class="app-font">
+        <button id="open-menu-button" class="app-button" onclick="openMenu()"><img
+                src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
+        <div id="side-menu">
+            <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="playlist.html">Playlist</a>
+            <a href="index.html">Favorites</a>
+
+            <button id="dark-mode-toggle" class="app-button" onclick="darkMode()"><img
+                    src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
+        </div>
     </div>
-  </body>
+
+    <div id="main" class="app-font">
+        <h1 id="app-header" class="center-header">
+            HeartBeat
+        </h1>
+
+        <div id="workout-section">
+            <h1 id="workout-selection-header" class="center-header">
+                Workout Selection
+            </h1>
+
+            <div id="workout-selection-section" class="center-content">
+                <div id="workout-selection">
+                    <button value="Aerobics" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png" /></button>
+                    <button value="Bench Press" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/bench-press.png" /></button>
+                    <button value="Curls" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/curls-with-dumbbells.png" /></button>
+                    <button value="Jogging" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/running.png" /></button>
+                    <button value="Pilates" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/pilates.png" /></button>
+                    <button value="Pull-Ups" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/pullups.png" /></button>
+                    <button value="Push-Ups" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/pushups.png" /></button>
+                    <button value="Sit-Ups" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-glyphs/50/000000/sit-ups.png" /></button>
+                    <button value="Squats" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/squats.png" /></button>
+                    <button value="Treadmill" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/treadmill.png" /></button>
+                    <button value="Walking" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/walking.png" /></button>
+                    <button value="Weightlift" onclick="clickWorkout(this.value)"><img
+                            src="https://img.icons8.com/ios-filled/50/000000/deadlift.png" /></button>
+                </div>
+            </div>
+
+            <div id="workout-submission-section">
+                <h2 id="workout-submission-header" class="center-header">
+                    Select a workout above or enter one below:
+                </h2>
+
+                <form id="workout-submission" class="center-content">
+                    <label for="workout-select">Selected Workout</label>
+                    <input type="text" id="workout-select" list="workouts">
+                    <datalist id="workouts">
+                        <option value="Aerobics">
+                        <option value="Bench Press">
+                        <option value="Curls">
+                        <option value="Jogging">
+                        <option value="Pilates">
+                        <option value="Pull-Ups">
+                        <option value="Push-Ups">
+                        <option value="Sit-Ups">
+                        <option value="Squats">
+                        <option value="Treadmill">
+                        <option value="Walking">
+                        <option value="Weightlift">
+                    </datalist>
+
+                    <label for="hours-select">Hours</label>
+                    <input type="number" id="hours-select" min="0">
+
+                    <label for="mins-select">Minutes</label>
+                    <input type="number" id="mins-select" min="0">
+
+                    <button id="workout-submit-button" class="app-button" type="submit"><img
+                            src="https://img.icons8.com/fluent-systems-filled/40/000000/enter-2.png" /></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

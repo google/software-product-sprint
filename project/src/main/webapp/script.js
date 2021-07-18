@@ -12,17 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+/*** Landing Page ***/
+/* Enter workout into the selected workout line by pressing on button */
+function clickWorkout(x) {
+    document.getElementById("workout-select").value = x;
 }
+
+/*** Playlist Page ***/
+
+
+/*** Side Navigation Menu ***/
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+/* Activate the dark-mode class in the style sheet on the body */
+function darkMode() {
+    const x = document.body;
+    x.classList.toggle("dark-mode");
+}
+
+
