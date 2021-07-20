@@ -57,22 +57,30 @@ const _getToken = async () => {
     const data = await result.json();
     return data.access_token;
 }
-
+function fetchId() {
 var bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '128': '28p4zE67Svf2S1OIZlp0rh', '150': '37i9dQZF1DX0hWmn8d5pRe' };
-var wortoutNameToBpm = { '90': 'yoga', '128': 'abs', '150': 'running' };
-//workout based on user input?
-// var workoutType = window.prompt("Enter your workout Type: ");
-// alert("workout: " + workoutType);
-const accessToken = 'BQBE8LgaXhAp-aTLdd4cpLuTV85YBhqXVtXqFfg5HB69mIBfSXSBNEqdwjmLnhuiQHc07KbjbhV8tzQXaOEAEJGwdjVRoVyLUu-m8qbzX3d3iuyW-wE0dcoCIRBOqBFghev4cDFqjThqwv4R6A-rMNJ3';
-fetch('https://api.spotify.com/v1/playlists/37i9dQZF1DX0hWmn8d5pRe', {
-    method: 'GET', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + accessToken
-    }
-})
+var workoutNameToBpm = { 'yoga': '90', 'abs': '128', 'Jogging': '150' };
+const workoutElement = document.getElementById('workout-select');
+const workoutName = workoutElement.value;
+const bpm = workoutNameToBpm[workoutName];
+const playlistId = bpmToPlaylistId[bpm];
+//const playlistElement = document.getElementById('playlist');
+//playlistElement.innerText = response.name + response.url;
+
+const accessToken = 'BQDDPQbWkQ16NvNhG4pOvjQvsWAQL_Y6PSsj2E1KviXRQqStPW8Lh37fbL7qLelKCO6Tg5eeIRQGcavZVSfNz-oYYzLob4sULCfpoXYt38HHuWruOfgEcZTgdx__2_6yoM02rNeZhimI1c-fjNN3zg6q';
+
+
+    fetch('https://api.spotify.com/v1/playlists/' + playlistId, {
+        method: 'GET', headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    })
+
     .then((response) => {
         console.log(response.json().then(
             (data) => { console.log(data) }
         ));
     });
+}
