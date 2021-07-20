@@ -58,8 +58,8 @@ const _getToken = async () => {
     return data.access_token;
 }
 function fetchId() {
-var bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '128': '28p4zE67Svf2S1OIZlp0rh', '150': '37i9dQZF1DX0hWmn8d5pRe' };
-var workoutNameToBpm = { 'yoga': '90', 'abs': '128', 'Jogging': '150' };
+var bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '120' : '0StaxvjifcoNPeIM8stp4p', '128': '28p4zE67Svf2S1OIZlp0rh', '135' : '26ZtghULwqbNzZK3yi3Txx', '150': '37i9dQZF1DX0hWmn8d5pRe' };
+var workoutNameToBpm = { 'Pilates': '90', 'Jogging': '120','Sit-Ups': '128', 'Aerobics' : '135', 'Treadmill': '150',  };
 const workoutElement = document.getElementById('workout-select');
 const workoutName = workoutElement.value;
 const bpm = workoutNameToBpm[workoutName];
