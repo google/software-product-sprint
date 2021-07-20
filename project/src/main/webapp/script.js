@@ -12,31 +12,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*** Landing Page ***/
+/* Enter workout into the selected workout line by pressing on button */
+function clickWorkout(x) {
+    document.getElementById("workout-select").value = x;
+}
+
+/*** Playlist Page ***/
+
+
 /*** Side Navigation Menu ***/
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
+
+function openMenu() {
     document.getElementById("side-menu").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
+
+function closeMenu() {
     document.getElementById("side-menu").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
 
-/*** Dark Mode Toggle ***/
+/* Activate the dark-mode class in the style sheet on the body */
 function darkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
+    var x = document.body;
+    x.classList.toggle("dark-mode");
 }
 
 const _getToken = async () => {
-    //OLD ID's
-    const clientId = '65b8fa1fad84447391094d21e2907ffa';
-    const clientSecret = '68540d65fa6a48ea8fc69d6096284459';
-    
-    
+
     const result = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
@@ -46,13 +53,13 @@ const _getToken = async () => {
         },
         body: 'grant_type=client_credentials'
     });
-    
+
     const data = await result.json();
     return data.access_token;
 }
 
-var bpmToPlaylistId ={'90': '5fQuCLAEcNtHbFTdyiEJDd', '128': '28p4zE67Svf2S1OIZlp0rh', '150': '37i9dQZF1DX0hWmn8d5pRe'};
-var wortoutNameToBpm = {'90': 'yoga', '128' : 'abs', '150':'running'};
+var bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '128': '28p4zE67Svf2S1OIZlp0rh', '150': '37i9dQZF1DX0hWmn8d5pRe' };
+var wortoutNameToBpm = { '90': 'yoga', '128': 'abs', '150': 'running' };
 //workout based on user input?
 // var workoutType = window.prompt("Enter your workout Type: ");
 // alert("workout: " + workoutType);
