@@ -64,10 +64,10 @@ const workoutElement = document.getElementById('workout-select');
 const workoutName = workoutElement.value;
 const bpm = workoutNameToBpm[workoutName];
 const playlistId = bpmToPlaylistId[bpm];
-//const playlistElement = document.getElementById('playlist');
-//playlistElement.innerText = response.name + response.url;
+// const playlistElement = document.getElementById('playlist');
+// playlistElement.innerText = response.name + response.url;
 
-const accessToken = 'BQDDPQbWkQ16NvNhG4pOvjQvsWAQL_Y6PSsj2E1KviXRQqStPW8Lh37fbL7qLelKCO6Tg5eeIRQGcavZVSfNz-oYYzLob4sULCfpoXYt38HHuWruOfgEcZTgdx__2_6yoM02rNeZhimI1c-fjNN3zg6q';
+const accessToken = '';
 
 
     fetch('https://api.spotify.com/v1/playlists/' + playlistId, {
