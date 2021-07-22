@@ -57,30 +57,36 @@ const _getToken = async () => {
     const data = await result.json();
     return data.access_token;
 }
-function fetchId() {
-var bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '120' : '0StaxvjifcoNPeIM8stp4p', '128': '28p4zE67Svf2S1OIZlp0rh', '135' : '26ZtghULwqbNzZK3yi3Txx', '150': '37i9dQZF1DX0hWmn8d5pRe' };
-var workoutNameToBpm = { 'Pilates': '90', 'Jogging': '120','Sit-Ups': '128', 'Aerobics' : '135', 'Treadmill': '150',  };
-const workoutElement = document.getElementById('workout-select');
-const workoutName = workoutElement.value;
-const bpm = workoutNameToBpm[workoutName];
-const playlistId = bpmToPlaylistId[bpm];
-// const playlistElement = document.getElementById('playlist');
-// playlistElement.innerText = response.name + response.url;
+async function fetchId() {
+    const bpmToPlaylistId = { '90': '5fQuCLAEcNtHbFTdyiEJDd', '120': '0StaxvjifcoNPeIM8stp4p', '128': '28p4zE67Svf2S1OIZlp0rh', '135': '26ZtghULwqbNzZK3yi3Txx', '150': '37i9dQZF1DX0hWmn8d5pRe' };
+    const workoutNameToBpm = { 'Pilates': '90', 'Jogging': '120', 'Sit-Ups': '128', 'Aerobics': '135', 'Treadmill': '150', };
+    const workoutElement = document.getElementById('workout-select');
+    const workoutName = workoutElement.value;
+    const bpm = workoutNameToBpm[workoutName];
+    const playlistId = bpmToPlaylistId[bpm];
 
-const accessToken = '';
+    const accessToken = 'BQDQwEUw8DT9n_6BVwTaRKcscN7MgXGejmVDqmzhXPoM2pQbnwvzmgrAoqvlrpxtwD3c2b4PjcIn_6wruxG17S2Ptaa8b1T0kMPMFy8oK2vCbknb8UVeva7_q8_nd3C7KTzhF7UnQpTNBAE-iPRCKNZ0';
 
 
-    fetch('https://api.spotify.com/v1/playlists/' + playlistId, {
+    const response = await fetch('https://api.spotify.com/v1/playlists/' + playlistId, {
         method: 'GET', headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + accessToken
         }
-    })
-
-    .then((response) => {
-        console.log(response.json().then(
-            (data) => { console.log(data) }
-        ));
     });
+
+
+
+    const responseJson = await response.json();
+    console.log(responseJson);
+    const playlistTitleElement = document.getElementById('playlist-title');
+    playlistTitleElement.innerText = responseJson.name;
+    const playlistLinkElement = document.getElementById('playlist-link');
+    playlistLinkElement.href = responseJson.external_urls.spotify;
+    const playlistThumbnailElement = document.getElementById('playlist-thumbnail');
+    playlistThumbnailElement.src = responseJson.images[0].url;
+
+
+
 }

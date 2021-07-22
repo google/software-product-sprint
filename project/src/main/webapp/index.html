@@ -91,9 +91,18 @@
                     <label for="mins-select">Minutes</label>
                     <input type="number" id="mins-select" min="0">
 
-                    <button id="workout-submit-button" class="app-button" type="submit"><img
-                            src="https://img.icons8.com/fluent-systems-filled/40/000000/enter-2.png" /></button>
+    
                 </form>
+
+                <button id="workout-submit-button" class="app-button" onclick="fetchId()"><img
+                            src="https://img.icons8.com/fluent-systems-filled/40/000000/enter-2.png" /></button>
+
+                    <div id="playlist-container">
+                    
+                    <a id="playlist-link"><h1 id="playlist-title"></h1></a>
+                    <img id="playlist-thumbnail"></img>
+                    </div>
+
             </div>
         </div>
     </div>
