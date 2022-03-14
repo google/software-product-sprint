@@ -53,47 +53,6 @@ The `todo-list` directory contains an example project that uses Datastore to
 store tasks posted by the user. The next few steps will walk you through this
 example project.
 
-### Running Datastore Locally
-
-By default, Datastore will try to connect to the database for your live site.
-This is probably not what you want if you're testing your code locally. Instead,
-you should run a local version of Datastore and tell your local code to connect
-to that instead.
-
-First, `cd` into the `todo-list` directory, and then start by running this
-command:
-
-```bash
-gcloud beta emulators datastore start
-```
-
-In the output of that command, Find the line that looks like this:
-
-```
-Storage: /tmp/tmp.YOUR_PATH_HERE/emulators/datastore/WEB-INF/appengine-generated/local_db.bin
-```
-
-The `YOUR_PATH_HERE` part will be a random string of characters.
-
-Copy the `/tmp/tmp.YOUR_PATH_HERE/emulators/datastore` path, not including the
-`WEB-INF` part or anything after it.
-
-In a **new console**, run this command, pasting in the path you copied from the
-first console:
-
-```bash
-$(gcloud beta emulators datastore env-init --data-dir=/tmp/tmp.YOUR_PATH_HERE/emulators/datastore)
-```
-
-Then in that second console window, run your local server:
-
-```bash
-mvn package exec:java
-```
-
-**Note:** If you get a stack trace about authentication, you likely need to run
-the above commands again!
-
 ## Maven Dependency
 
 To use Datastore, first add the Datastore dependency to your
@@ -118,7 +77,7 @@ Datastore library.
 
 Open the
 <walkthrough-editor-open-file
-    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/datastore/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
   NewTaskServlet.java
 </walkthrough-editor-open-file>
 file in the `todo-list` directory to see how it uses Datastore to save a task.
@@ -145,7 +104,7 @@ A key has a **kind**, which is similar to a class name.
 
 Look at the `doPost()` function in the
 <walkthrough-editor-open-file
-    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/datastore/examples/todo-list/src/main/java/com/google/sps/servlets/NewTaskServlet.java">
   NewTaskServlet.java
 </walkthrough-editor-open-file>
 file to see how it creates an key by giving it a *kind* of `Task`:
@@ -213,7 +172,7 @@ requests it.
 
 The `todo-list` example contains a
 <walkthrough-editor-open-file
-    filePath="software-product-sprint/walkthroughs/week-2-server/examples/todo-list/src/main/java/com/google/sps/servlets/ListTasksServlet.java">
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/datastore/examples/todo-list/src/main/java/com/google/sps/servlets/ListTasksServlet.java">
   ListTasksServlet.java
 </walkthrough-editor-open-file>
 file that loads entities from Datastore.
@@ -246,10 +205,6 @@ Next, add some code to your servlet class that loads the "contact me" data from
 Datastore. You can use Gson to format the data as JSON, and then you can use
 JavaScript to fetch that JSON, and parse it to build the HTML of a page that
 lists all of the messages you've received.
-
-Test that your code works by running a local dev server, adding a few messages,
-and then restarting your server. Your messages should remain when you refresh
-the page, and even when you restart your server!
 
 ### Sanitizing User Input
 

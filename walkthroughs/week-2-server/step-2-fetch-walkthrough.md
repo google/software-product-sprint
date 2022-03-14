@@ -56,22 +56,6 @@ The project contains a few interesting files:
     </walkthrough-editor-open-file>
     is JavaScript that fetches content from the server and adds it to the DOM.
 
-Run this example by `cd`-ing into the `server-date` directory and running a dev
-server:
-
-```bash
-mvn package exec:java
-```
-
-Run this command and then click the
-<walkthrough-web-preview-icon></walkthrough-web-preview-icon> icon. Then select
-**Preview on port 8080** to open a tab that displays the `index.html` file. You
-should see a page that shows a button. Click the button to see the current
-server date.
-
-Navigate to `/date` to see the content that's coming from the `DateServlet.java`
-file.
-
 The next few steps walk through how this works in more detail.
 
 ## Server Content
@@ -223,7 +207,7 @@ with a hardcoded string when a client requests its URL.
 Next, add some HTML and JavaScript to your `portfolio` directory to fetch this
 hard-coded string and display it in the page.
 
-1. Create a new `script.js` file and write a function that calls `fetch()` and
+1. In the `script.js` file, write a function that calls `fetch()` and
    adds the response to the webpage.
 2. Modify your portfolio's `index.html` page (or whatever your HTML file is
    named) to load your `script.js` file and call the function you wrote. Don't
@@ -245,11 +229,11 @@ the `fetch()` function.
 Congratulations! You now have the power to write JavaScript code that fetches
 data from your server.
 
-After running a dev server to confirm that everything works, create a pull
+After deploying to confirm that everything works, create a pull
 request from what you have so far, and send that to your advisor for review!
 
-Then go back to the project 1 walkthrough to continue:
+Then continue with step 3:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-2-server/project-1-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-3-json-walkthrough.md
 ```

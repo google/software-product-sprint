@@ -45,7 +45,7 @@ people can see the files you upload to Cloud Storage.
 -   Click the bucket named `YOUR_PROJECT_ID.appspot.com`
 -   Click the `Permissions` tab
 -   Click the `Add` button
--   In the `New members` text field, type `allUsers`
+-   In the `New principals` text field, type `allUsers`
 -   In the `Role` dropdown, select `Cloud Storage > Storage Object Viewer`
 -   Click `Save`
 -   In the dialog that pops up, click `Allow Public Access`
@@ -188,8 +188,7 @@ individually. At a high level, you might approach it this way:
       pom.xml
     </walkthrough-editor-open-file>
     file.
--   Add a file upload input to your HTML. Test that this works by running a dev
-    server.
+-   Add a file upload input to your HTML.
 -   Add a servlet that handles file upload requests.
     -   Test that this works by making sure you see the uploaded file in your
         [Cloud Storage browser](https://console.cloud.google.com/storage/browser).

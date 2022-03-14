@@ -125,10 +125,6 @@ in a `Sentiment` instance.
 The code then gets the **score** of the sentiment, which is a value between `-1`
 and `1`, representing how negative or positive the text is.
 
-Run a dev server and enter different values for the `text` variable to understand
-how the sentiment analysis works. What is the highest and lowest value you can
-generate?
-
 ## Your Turn
 
 Your goal is to use the concepts you just learned about to add a sentiment

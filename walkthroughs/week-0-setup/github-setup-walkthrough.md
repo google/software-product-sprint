@@ -67,7 +67,10 @@ At this point you should have an empty repo.
 
 ## Link Your Repo
 
-In your GitHub repo page, find your repo's URL. It should start with `https://`
+In your GitHub repo page, find your repo's URL. You can do this by clicking on
+the green "Code" button, then clicking on "HTTPS" (not "GitHub CLI").
+
+It should start with `https://`
 and end in `.git`, like
 `https://github.com/your-username/your-repo-name.git`. Copy that URL.
 

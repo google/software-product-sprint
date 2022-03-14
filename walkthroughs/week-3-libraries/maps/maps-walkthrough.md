@@ -97,25 +97,17 @@ to learn how to add a Google Map to your page.
 [Here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-sync)
 is another example.
 
-The `examples` directory contains a `hello-world` project. Modify its
-<walkthrough-editor-open-file
-    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/index.html">
-  index.html
-</walkthrough-editor-open-file>
-file to include your API key where it currently contains `YOUR_API_KEY`. Then
-`cd` into the `hello-world` directory and run a dev server:
-
-```bash
-mvn package exec:java
-```
-
-You should see a webpage that shows a Google Map.
+The `examples` directory contains a `hello-world` project.
 
 Read through the
 <walkthrough-editor-open-file
     filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/index.html">
   index.html
-</walkthrough-editor-open-file>
+</walkthrough-editor-open-file>,
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/style.css">
+  style.css
+</walkthrough-editor-open-file>,
 and
 <walkthrough-editor-open-file
     filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/script.js">

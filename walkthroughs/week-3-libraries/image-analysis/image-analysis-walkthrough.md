@@ -48,18 +48,6 @@ Before you can use the Cloud Vision API, you have to enable it. Go here:
 
 Make sure your project is selected, and click the `Enable` button.
 
-## Credentials
-
-The Cloud Vision API requires your Cloud project's credentials to work. When you
-deploy to App Engine this will work automatically, but when deploying to a dev
-server you have to set your credentials manually. Follow the steps
-[here](https://cloud.google.com/docs/authentication/getting-started) to set up
-your local credentials.
-
-**Important:** Before proceeding, make sure you have your
-`GOOGLE_APPLICATION_CREDENTIALS` environment variable set. Nothing will work
-without this.
-
 ## Maven Dependency
 
 The Cloud Vision API is available as a web service, or as a library that can be
@@ -125,11 +113,6 @@ This `for` loop iterates over the image labels and outputs them as HTML.
 The `getImageLabels()` function contains all of the logic for sending a request
 to the Cloud Vision API and processing the response to get the labels for an
 uploaded image.
-
-To run this example, first make sure your `GOOGLE_APPLICATION_CREDENTIALS`
-environment variable is set and that you've enabled the
-[Vision API](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com),
-and then run a dev server.
 
 ## Associating Data
 

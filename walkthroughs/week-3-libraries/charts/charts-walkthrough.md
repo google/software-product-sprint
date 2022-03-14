@@ -35,15 +35,6 @@ Read through
 [the documentation](https://developers.google.com/chart/interactive/docs) to
 understand how the Google Charts library works.
 
-The `examples` directory contains a `hello-world` project. You can `cd` into
-the `hello-world` directory and run a dev server:
-
-```bash
-mvn package exec:java
-```
-
-You should see a webpage that shows a pie chart.
-
 Read through the
 <walkthrough-editor-open-file
     filePath="software-product-sprint/walkthroughs/week-3-libraries/charts/examples/hello-world/src/main/webapp/index.html">
@@ -87,15 +78,7 @@ for the data you want to display, that's okay! But you can also use server
 code to load more complex data, for example from a CSV file.
 
 The `bigfoot-sightings` directory contains an example that loads yearly bigfoot
-sightings from a CSV file and uses it to create a chart. You can `cd` into the
-`bigfoot-sightings` directory and then run a dev server:
-
-```bash
-mvn package exec:java
-```
-
-When you view your dev server in your browser, you should see a line chart that
-shows bigfoot sightings over time.
+sightings from a CSV file and uses it to create a chart.
 
 The
 <walkthrough-editor-open-file
@@ -131,16 +114,6 @@ create a visualization from user-submitted data.
 
 The `favorite-colors` directory contains an example that allows users to vote
 for their favorite color. The votes are then visualized in a Google Chart.
-
-You can `cd` into the
-`favorite-colors` directory and then run a dev server:
-
-```bash
-mvn package exec:java
-```
-
-When you view your dev server in your browser, you should see a webapp that
-shows a chart of color votes.
 
 The
 <walkthrough-editor-open-file

@@ -3,6 +3,13 @@
 This walkthrough introduces the Google Cloud Shell environment, which you'll be
 using throughout SPS.
 
+If you haven't done the GitHub setup walkthrough yet, do that one first by
+executing this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md
+```
+
 You can return to this walkthrough anytime by executing this command:
 
 ```bash

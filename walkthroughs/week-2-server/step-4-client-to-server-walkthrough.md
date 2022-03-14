@@ -1,4 +1,4 @@
-# Project 2: Server Programming - Contact Me
+# Client to server communication
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ the server.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-2-server/project-2-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/step-4-client-to-server-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -64,8 +64,8 @@ an example:
 </form>
 ```
 
-Add this inside the `<body>` section of your portfolio's HTML and run a dev
-server. You should see a form that contains a text area and a submit button.
+Add this inside the `<body>` section of your portfolio's HTML.
+When you deploy, you should see a form that contains a text area and a submit button.
 
 Fow now, clicking the submit button will refresh the page. You'll change that
 soon!
@@ -148,7 +148,7 @@ When the user clicks the `Submit` button, the form sends a `POST` request to the
 URL specified in the form's `action` attribute. The server looks for a servlet
 that maps to that URL, and then runs its `doPost()` function.
 
-Run your dev server again. Now when you submit your form, your servlet's
+Deploy. Now when you submit your form, your servlet's
 `doPost()` function should run.
 
 ## Viewing Logs
@@ -156,10 +156,7 @@ Run your dev server again. Now when you submit your form, your servlet's
 The example servlet above uses the `System.out.println()` function to print the
 user's value to the server logs.
 
-When you run a dev server, these logs are printed directly to the console that
-you ran your server from.
-
-Logs for your live server are shown in
+Logs for your server are shown in
 [Google Cloud's Logs Explorer](https://console.cloud.google.com/logs).
 
 Make sure your project is selected, and click the `Logs Explorer` tab in the
@@ -191,16 +188,6 @@ file to see the servlet that handles the request from the form.
 
 The user can enter data, and when they click the submit button, the browser
 sends a `POST` request to the URL specified in the form's `action` attribute.
-
-To see this example in action, `cd` into the `text-processor` directory and
-then run a development server:
-
-```bash
-mvn package exec:java
-```
-
-Try submitting different values in the form and see how they're handled on the
-server.
 
 ## Redirects
 
@@ -247,8 +234,7 @@ between your HTML and your server, as well as the Logs Explorer!
 Congratulations!
 
 At this point your portfolio should contain a form that lets users message you!
-Run a dev server to confirm that everything works, and then run a live server
-and confirm that you can see the logs in the Logs Explorer. When everything
+Deploy and confirm that you can see the logs in the Logs Explorer. When everything
 works, create a pull request and send that to your advisor for a code review!
 
 When you submit your code, you're done with this week's projects!
