@@ -47,19 +47,6 @@ Before you can use the Cloud Translation API, you have to enable it. Go here:
 
 Make sure your project is selected, and click the `Enable` button.
 
-## Credentials
-
-The Cloud Translation API requires your Cloud project's credentials to work.
-When you deploy to App Engine this will work automatically, but when running or
-deploying in Google Cloud Shell you have to set your credentials manually.
-Follow the steps
-[here](https://cloud.google.com/docs/authentication/getting-started) to set up
-your local credentials.
-
-**Important:** Before proceeding, make sure you have your
-`GOOGLE_APPLICATION_CREDENTIALS` environment variable set. Nothing will work
-without this.
-
 ## Minimal Google Translate
 
 The `examples/minimal-google-translate` directory contains an example project

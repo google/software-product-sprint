@@ -114,7 +114,8 @@ PageViewServlet) to write a different
 hard-coded string as the response when a user requests its URL.
 
 Right now the servlet writes `"Hello world!"` as the response. Try changing that
-to `"Hello [your name]!"`.
+to `"Hello [your name]!"`.  (Be sure to deploy your changes and access the
+appropriate URL to make sure it works!)
 
 In the next steps you'll modify this code to return a list of random strings,
 but working iteratively in small steps like this is a good habit to get into!

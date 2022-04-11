@@ -56,18 +56,6 @@ Cloud project. Go here:
 
 Make sure your project is selected, and click the `Enable` button.
 
-## Credentials
-
-The Cloud Natural Language API requires your project's credentials to work. When
-you deploy to App Engine this will work automatically, but when running or
-deploying locally you have to set your credentials manually. Follow the steps
-[here](https://cloud.google.com/docs/authentication/getting-started) to set up
-your local credentials.
-
-**Important:** Before proceeding, make sure you have your
-`GOOGLE_APPLICATION_CREDENTIALS` environment variable set. Nothing will work
-without this.
-
 ## Sentiment Analysis
 
 The `examples/sentiment-analyzer` directory contains an example project that
