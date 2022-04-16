@@ -5,6 +5,6 @@
 # If you'd like to customize your pre-submit checks, see the yaml config.
 
 echo 'export PATH=$PATH:~/.local/bin' >>~/.bashrc
-. ~/.bashrc
+export PATH=$PATH:~/.local/bin
 pip3 install pre-commit
 pre-commit install
