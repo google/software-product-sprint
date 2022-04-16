@@ -67,11 +67,8 @@ At this point you should have an empty repo.
 
 ## Link Your Repo
 
-In your GitHub repo page, find your repo's URL. You can do this by clicking on
-the green "Code" button, then clicking on "HTTPS" (not "GitHub CLI").
-
-It should start with `https://`
-and end in `.git`, like
+On your new empty repo's page, in the "Quick setup" box, you will find a URL
+for your repository; it should start with `https://` and end in `.git`, like
 `https://github.com/your-username/your-repo-name.git`. Copy that URL.
 
 To link this local copy to your GitHub project, execute this command:
@@ -80,24 +77,31 @@ To link this local copy to your GitHub project, execute this command:
 git remote add origin YOUR_URL_HERE
 ```
 
+## Push Your Repo
+
+We will tell the Git CLI to remember your credentials, because you will need to
+use a special password for it.  Run
+
+```bash
+git config credential.helper store
+```
+
+to enable that setting.
+
+
 Then to store this directory in your repo, run this command:
 
 ```bash
 git push -u origin main
 ```
 
-This should prompt you for your username/password the first time that you're
-pushing to GitHub. If your GitHub account is set up with two-factor
-authentication, you'll need to create an
-[API Key](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
-and use that instead of a password.
-
-If you'd like Git to store the username/password for pushing to GitHub, change
-this setting:
-
-```bash
-git config credential.helper store
-```
+At this point, you will be asked for a username/password. You will use your
+Github username, but Github will not accept your normal password.  You must use
+a "Personal access token" instead.  To generate one, go to the [Personal access
+tokens](https://github.com/settings/tokens) page and click "Generate new
+token".  (Be sure to save it someplace safe; if you forget it, you won't be
+able to see it again, ane must enter a new one.)  Enter your token as the
+password, and the command will complete successfully.
 
 You should now see this code in your repo on GitHub!
 
@@ -130,7 +134,6 @@ your repo to require pull requests.
 6.  Select `Require pull request reviews before merging` and `Include
     administrators`.
 7.  Click `Create`.
-8.  Click `Save changes`.
 
 ## Tell git Who You Are
 
