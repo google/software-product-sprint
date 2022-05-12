@@ -24,11 +24,7 @@ server.
     select it. (You might need to click on "ALL" instead of "RECENT" in order
     to see it.)
 -   Click the `Create Application` button.
--   On the next screen, click `Create app`. The default region is fine.
--   On the next screen, select `Java` as a language and `Standard` as an
-    environment.
--   When you see `Your App Engine app has successfully been created`, you're
-    done!
+-   On the next screen, click `Create app` or `Next`. The default region is fine.
 
 Now when you navigate to
 [https://console.cloud.google.com/appengine](https://console.cloud.google.com/appengine),
@@ -42,7 +38,7 @@ you need to enable App Engine for your service account.
 -   Navigate to
     [https://console.cloud.google.com/cloud-build/settings/service-account](https://console.cloud.google.com/cloud-build/settings/service-account).
 -   Make sure your project is selected in the dropdown at the top.
--   If you are prompted to enable the Cloud Build API, do so.
+-   If you are prompted to enable the Cloud Build API, do so then return to the [original page](https://console.cloud.google.com/cloud-build/settings/service-account)
 -   Change the `App Engine` service to `Enabled`.
 -   If a dialog opens, click the `Skip` button to close it.
 
