@@ -76,7 +76,8 @@ If you see an error that says `The current Google Cloud project does
 not contain an App Engine application`, then make sure you created
 an App Engine application in the previous step!
 
-If you see an error that tells you to run `gcloud auth login`, rerun `mvn
+If you see an error that tells you to run `gcloud auth login`, refresh
+the page, then rerun `mvn
 package appengine:deploy` and see if it works. At the time of writing, there
 seems to be a bug in which authentication details don't always apply.
 
