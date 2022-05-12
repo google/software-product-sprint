@@ -155,7 +155,8 @@ git config --global user.name "Your Name"
 
 [Git hooks](https://githooks.com/) are scripts that run before or after a Git
 events such as: `commit`. Hooks are used to increase productivity, like
-automatically formatting code before commiting it. Setup pre-commit hooks:
+automatically formatting code before commiting it. Setup pre-commit hooks by
+running the command from within the `software-product-sprint` directory:
 
 ```bash
 bash setup-pre-commit.bash
