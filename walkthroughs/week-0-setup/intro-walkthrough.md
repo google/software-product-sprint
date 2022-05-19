@@ -43,11 +43,12 @@ directories and view and edit files.
 The editor displays the directory structure in its left-hand panel. You'll learn
 more about these files throughout SPS, but for now try clicking around to
 explore. Try opening the
-<walkthrough-editor-open-file
-    filePath="software-product-sprint/walkthroughs/week-0-setup/intro-walkthrough.md">
+<walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="intro-walkthrough.md">
   intro-walkthrough.md
-</walkthrough-editor-open-file>
-file to view the source for this walkthrough!
+</walkthrough-editor-spotlight>
+file by double clicking it to view the source for this walkthrough! It'll open two tabs,
+the tab with the line numbers along the left-hand side is the source, the other is a preview
+view of the same content.
 
 You'll be using the Cloud Shell editor quite a bit in the coming weeks, so take
 some time to familiarize yourself now. You can read more about Cloud Shell
