@@ -173,8 +173,11 @@ to do this.
 ## Modify README
 
 To test that everything is connected, modify your
-<walkthrough-editor-open-file filePath="software-product-sprint/README.md">README.md</walkthrough-editor-open-file>
-file.
+<walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="README.md">README.md</walkthrough-editor-spotlight>
+file by double clicking on it. If you can't see line numbers to the left of the text, you're seeing the preview tab rather
+than the editing tab. If there's a second tab available, try clicking it. If only a single tab is visible, try double
+clicking the <walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="README.md">README.md</walkthrough-editor-spotlight> file again.
+
 
 This file contains the content that shows in your repo's GitHub page.
 Change it to say "This repo contains [your name]'s portfolio and
