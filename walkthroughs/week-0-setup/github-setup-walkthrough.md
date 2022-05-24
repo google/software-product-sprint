@@ -71,6 +71,8 @@ On your new empty repo's page, in the "Quick setup" box, you will find a URL
 for your repository; it should start with `https://` and end in `.git`, like
 `https://github.com/your-username/your-repo-name.git`. Copy that URL.
 
+Note: To view the URL, you may need to click on the `HTTPS` button.
+
 To link this local copy to your GitHub project, execute this command:
 
 ```bash
@@ -98,10 +100,12 @@ git push -u origin main
 At this point, you will be asked for a username/password. You will use your
 Github username, but Github will not accept your normal password.  You must use
 a "Personal access token" instead.  To generate one, go to the [Personal access
-tokens](https://github.com/settings/tokens) page and click "Generate new
-token".  (Be sure to save it someplace safe; if you forget it, you won't be
-able to see it again, ane must enter a new one.)  Enter your token as the
-password, and the command will complete successfully.
+tokens](https://github.com/settings/tokens) page.
+
+Set the token's expiration to 60 days and check the scope for `public_repo`. Click 
+"Generate new token" to view the token. (Be sure to save it someplace safe; if you
+forget it, you won't be able to see it again, ane must enter a new one.)  Enter your 
+token as the password, and the command will complete successfully.
 
 You should now see this code in your repo on GitHub!
 
@@ -126,14 +130,13 @@ When you write code, you're going to use **pull requests** to do code reviews.To
 prevent accidentally modifying the code without going through a code review, set
 your repo to require pull requests.
 
-1.  Go to your GitHub repo page.
-2.  Click the `Settings` tab.
-3.  Select `Branches`.
-4.  Click the `Add rule` button.
-5.  Type `main` into the `Branch name pattern` text box.
-6.  Select `Require pull request reviews before merging` and `Include
-    administrators`.
-7.  Click `Create`.
+1.  Navigate to your repo's page in GitHub.
+1.  Go to the `Settings` tab.
+1.  Select `Branches`.
+1.  Click the `Add rule` button.
+1.  Type `main` into the `Branch name pattern` text box.
+1.  Select `Require a pull request before merging` and `Require approvals`.
+1.  Click `Create`.
 
 ## Tell git Who You Are
 
@@ -173,11 +176,11 @@ to do this.
 ## Modify README
 
 To test that everything is connected, modify your
+
 <walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="README.md">README.md</walkthrough-editor-spotlight>
 file by double clicking on it. If you can't see line numbers to the left of the text, you're seeing the preview tab rather
 than the editing tab. If there's a second tab available, try clicking it. If only a single tab is visible, try double
 clicking the <walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="README.md">README.md</walkthrough-editor-spotlight> file again.
-
 
 This file contains the content that shows in your repo's GitHub page.
 Change it to say "This repo contains [your name]'s portfolio and
