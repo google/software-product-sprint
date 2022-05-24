@@ -153,6 +153,11 @@ Modify your servlet file to take the data entered by users in your "contact me"
 form and store it as an entity in Datastore. Get this working before
 you worry about loading the data.
 
+The first time you deploy your application, you may encounter an error like this when
+submitting the form:
+`com.google.cloud.datastore.DatastoreException: Cloud Datastore API has not been used ...`.
+If you do, follow the link in the error message and enable the Cloud Datastore API.
+
 ### Admin Page
 
 Datastore includes an admin page that gives you access to its data. This is very
@@ -225,6 +230,11 @@ JavaScript content from it. Now it's safe to show in the content of an HTML
 page.
 
 You should also consider hiding personal data like email addresses.
+
+If you use of jSoup, you'll need to added it as a dependency in your 
+<walkthrough-editor-open-file filePath="software-product-sprint/portfolio/pom.xml">pom.xml
+</walkthrough-editor-open-file> file. You can find an example 
+<walkthrough-editor-open-file filePath="software-product-sprint/walkthroughs/week-3-libraries/datastore/examples/todo-list/pom.xml">here</walkthrough-editor-open-file>.
 
 ## Pull Requests
 

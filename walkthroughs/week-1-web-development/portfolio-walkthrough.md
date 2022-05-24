@@ -57,7 +57,7 @@ First, make these changes to your code. (You only need to do this once.)
 -   Open the
     <walkthrough-editor-open-file
         filePath="software-product-sprint/portfolio/pom.xml">
-      pom.xml
+      software-product-sprint/portfolio/pom.xml
     </walkthrough-editor-open-file>
     file.
 -   Change `YOUR_PROJECT_ID_HERE` to your project ID.
@@ -156,7 +156,8 @@ to include your name.
 
 ## Example
 
-The `examples/stanley` directory contains an example webpage. It contains
+The `examples/stanley` directory (inside the `software-product-sprint/walkthrough/week-1-web-development` directory) 
+contains an example webpage. It contains
 several files and directories:
 
 -   <walkthrough-editor-open-file
@@ -363,6 +364,9 @@ To commit changes, run:
 ```
 git commit -m "YOUR COMMIT MESSAGE"
 ```
+
+You'll be using git to manage all your work during SPS. You can learn more about
+how we'll use git in SPS [here](https://sites.google.com/sps-program.com/students/technical-resources/using-git).
 
 ## Pull Requests
 
