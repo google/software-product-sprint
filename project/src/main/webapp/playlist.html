@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HeartBeat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="side-navigation-menu" class="app-font">
+        <button id="open-menu-button" class="app-button" onclick="openMenu()"><img
+                src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
+        <div id="side-menu">
+            <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="playlist.html">Playlist</a>
+            <a href="index.html">Favorites</a>
+
+            <button id="dark-mode-toggle" class="app-button" onclick="darkMode()"><img
+                    src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
+        </div>
+    </div>
+
+    <div id="main" class="app-font">
+        <h1 id="app-header" class="center-header">
+            HeartBeat
+        </h1>
+
+        <div id="playlist-section">
+            <h1 id="playlist-header" class="center-header">
+                Recommended Playlist
+            </h1>
+        </div>
+
+        <div id="playlist-navigation" class="center-content">
+            <button id="playlist-play-button" class="app-button media-button"
+                onclick="document.location='playing.html'"><img
+                    src="https://img.icons8.com/ios-glyphs/62/000000/circled-play.png" /></button>
+        </div>
+    </div>
+</body>
+
+</html>
