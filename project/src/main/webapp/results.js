@@ -16,6 +16,7 @@
  * Adds a random greeting to the page.
  */
 
+ /*Changes maxHeight, padding, and border of the explanation to achieve collapsing effect*/
 function collapsibleEffect(collapsible) {
     explanation = collapsible.nextElementSibling;
     if (explanation.style.maxHeight) {
@@ -30,6 +31,8 @@ function collapsibleEffect(collapsible) {
     }
 
 }
+
+/*adds collapsing event to each button*/
 function addCollapsibleEffect() {
 
     let itemCollapsibles = document.getElementsByClassName("item-collapsible");
@@ -43,4 +46,5 @@ function addCollapsibleEffect() {
     }
 }
 
+/*Add collapsing effect event to every button as soon as it loads*/
 window.onload = addCollapsibleEffect;
