@@ -14,7 +14,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/get-majors")
 public class GetMajorsServlet extends HttpServlet {
 
