@@ -14,14 +14,12 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
-@WebServlet("/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet("/get-majors")
+public class GetMajorsServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello world!</h1>");
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> majorsQuery = Query.newEntityQueryBuilder()
@@ -29,10 +27,13 @@ public class HelloWorldServlet extends HttpServlet {
                             .setOrderBy(OrderBy.asc("Name"))
                             .build();
     QueryResults<Entity> majorsResult = datastore.run(majorsQuery);
+    response.getWriter().print("<option selected>Select your current major</option>");
     while(majorsResult.hasNext()){
         String name = majorsResult.next().getString("Name");
-        if(name.compareTo("General") != 0)
-            response.getWriter().println(name);
+        if(name.compareTo("General") != 0){
+            String optionTag = "<option value=\"" + name + "\">" + name + "</option>";
+            response.getWriter().print(optionTag);
+        }
     }
   }
 }
