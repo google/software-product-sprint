@@ -51,7 +51,9 @@ async function loadItems(){
     const responseFromServer = await fetch('/get-items')
     const jsonResponse = await responseFromServer.json()
     const generalTitle = document.getElementById("general-title")
+    const majorTitle = document.getElementById("major-title")
     generalTitle.innerText = "General College Essentials"
+    majorTitle.innerText = "Course-Specific Essentials: " + jsonResponse.major
     
     //For testing purposes
     const testItem = document.getElementById("test-item")
