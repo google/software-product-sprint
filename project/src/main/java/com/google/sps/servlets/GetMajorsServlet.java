@@ -21,6 +21,7 @@ public class GetMajorsServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
 
+    //We get the majors from the Datastore and return them as tags for index.js to put in the form at index.html
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> majorsQuery = Query.newEntityQueryBuilder()
                             .setKind("Major")

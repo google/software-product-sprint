@@ -15,6 +15,7 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
+//Santiago is using this to make some general testing with the Datastore stuff
 @WebServlet("/hello")
 public class HelloWorldServlet extends HttpServlet {
 

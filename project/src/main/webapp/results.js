@@ -46,5 +46,20 @@ function addCollapsibleEffect() {
     }
 }
 
+//TODO: Maybe this shouldn't be an async function?
+async function loadItems(){
+    const responseFromServer = await fetch('/get-items')
+    const jsonResponse = await responseFromServer.json()
+    const generalTitle = document.getElementById("general-title")
+    generalTitle.innerText = "General College Essentials"
+    
+    //For testing purposes
+    const testItem = document.getElementById("test-item")
+    testItem.innerText = jsonResponse.generalItemNames[0]
+}
+
 /*Add collapsing effect event to every button as soon as it loads*/
 window.onload = addCollapsibleEffect;
+
+//So it loads the info from the pertinent major when the page loads
+document.addEventListener('DOMContentLoaded', loadItems, false);

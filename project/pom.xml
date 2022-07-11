@@ -58,6 +58,13 @@
         <artifactId>google-cloud-datastore</artifactId>
   </dependency>
 
+    <!-- Json Manipulation -->
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20180130</version>
+    </dependency>
+
   </dependencies>
 
   <build>
