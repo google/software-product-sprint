@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
+
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
@@ -26,31 +32,31 @@ public class FormHandlerServlet extends HttpServlet {
     String interests = request.getParameter("interests");
     long timestamp = System.currentTimeMillis();
 
-    System.out.println("You submitted: address" + address);
-    System.out.println("You submitted: address2" + address2);
-    System.out.println("You submitted: city" + city);
-    System.out.println("You submitted: state" + state);
-    System.out.println("You submitted: country" + country);
-    System.out.println("You submitted: zip" + zip);
-    System.out.println("You submitted: major" + major);
-    System.out.println("You submitted: allergies" + allergies);
-    System.out.println("You submitted: interests" + interests);
-    // Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    // KeyFactory keyFactory = datastore.newKeyFactory().setKind("form");
-    // FullEntity formEntity =
-    //     Entity.newBuilder(keyFactory.newKey())
-    //         .set("address", address)
-    //         .set("address2", address2)
-    //         .set("city", city)
-    //         .set("state", state)
-    //         .set("country", country)
-    //         .set("zip", zip)
-    //         .set("major", major)
-    //         .set("allergies", allergies)
-    //         .set("interests", interests)
-    //         .set("timestamp", timestamp)
-    //         .build();
-    // datastore.put(formEntity);
+    System.out.println("You submitted: address: " + address);
+    System.out.println("You submitted: address2: " + address2);
+    System.out.println("You submitted: city: " + city);
+    System.out.println("You submitted: state: " + state);
+    System.out.println("You submitted: country: " + country);
+    System.out.println("You submitted: zip: " + zip);
+    System.out.println("You submitted: major: " + major);
+    System.out.println("You submitted: allergies: " + allergies);
+    System.out.println("You submitted: interests: " + interests);
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Form");
+    FullEntity formEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("address", address)
+            .set("address2", address2)
+            .set("city", city)
+            .set("state", state)
+            .set("country", country)
+            .set("zip", zip)
+            .set("major", major)
+            .set("allergies", allergies)
+            .set("interests", interests)
+            .set("timestamp", timestamp)
+            .build();
+    datastore.put(formEntity);
 
     //We store the info obtained in cookies, so that GetItemsServlet can load the right items:
     response.addCookie(new Cookie("major", major));
