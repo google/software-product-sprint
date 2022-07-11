@@ -59,7 +59,7 @@ public class FormHandlerServlet extends HttpServlet {
     datastore.put(formEntity);
 
     //We store the info obtained in cookies, so that GetItemsServlet can load the right items:
-    response.addCookie(new Cookie("major", major));
+    response.addCookie(new Cookie("major", major.replace(" ", "-")));
     response.sendRedirect("/results.html");
 
 

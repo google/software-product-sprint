@@ -37,7 +37,7 @@ public class GetItemsServlet extends HttpServlet {
     if(cookies != null){
         for(Cookie cookie : cookies){
             if(cookie.getName().equals("major")){
-                major = cookie.getValue();
+                major = cookie.getValue().replace("-", " ");
             }
         }
     }

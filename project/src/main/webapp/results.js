@@ -56,6 +56,7 @@ async function loadItems(){
     //For testing purposes
     const testItem = document.getElementById("test-item")
     testItem.innerText = jsonResponse.generalItemNames[0]
+    testItem.innerText = JSON.stringify(jsonResponse)
 }
 
 /*Add collapsing effect event to every button as soon as it loads*/
