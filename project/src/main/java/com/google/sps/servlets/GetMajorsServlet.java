@@ -27,7 +27,7 @@ public class GetMajorsServlet extends HttpServlet {
                             .setOrderBy(OrderBy.asc("Name"))
                             .build();
     QueryResults<Entity> majorsResult = datastore.run(majorsQuery);
-    response.getWriter().print("<option selected>Select your current major</option>");
+    response.getWriter().print("<option selected value=\"\">Select your current major</option>");
     while(majorsResult.hasNext()){
         String name = majorsResult.next().getString("Name");
         if(name.compareTo("General") != 0){
