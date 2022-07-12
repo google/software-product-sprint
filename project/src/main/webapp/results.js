@@ -25,8 +25,8 @@ function collapsibleEffect(collapsible) {
         explanation.style.border = null;
     }
     else {
-        explanation.style.maxHeight = explanation.scrollHeight + "px";
         explanation.style.padding = "1rem";
+        explanation.style.maxHeight = "calc(" + explanation.scrollHeight + "px + 2rem)";
         explanation.style.border = "1px solid black";
     }
 
