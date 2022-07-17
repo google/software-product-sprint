@@ -52,8 +52,8 @@ public class GetItemsServlet extends HttpServlet {
     jsonResponse.put("major", major);
 
     //We put the Item arrays inside the JSON
-    jsonResponse.put("generalItemNames", getItemArray("General", datastore));
-    jsonResponse.put("majorItemNames", getItemArray(major, datastore));
+    jsonResponse.put("generalItems", getItemArray("General", datastore));
+    jsonResponse.put("majorItems", getItemArray(major, datastore));
 
     //We put the JSON inside the response
     response.getWriter().print(jsonResponse.toString());
@@ -79,7 +79,11 @@ public class GetItemsServlet extends HttpServlet {
 
     //We get the properties we want from the major items:
     while(!items.empty()){
-        responseArray.put(items.pop().getString("Name"));
+        JSONObject itemWithProperties = new JSONObject();
+        Entity entity = items.pop();
+        itemWithProperties.put("name", entity.getString("Name"));
+        itemWithProperties.put("explanation", entity.getString("Explanation"));
+        responseArray.put(itemWithProperties);
     }
 
     return responseArray;

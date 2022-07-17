@@ -8,9 +8,10 @@
         display: flex;
     }
 
-    .general.item-list, .course.item-list {
+    #general-item-list, #course-item-list {
         margin-left: 1rem;
         margin-right: 1rem;
+        width: 50%
     }
 }
 
@@ -36,7 +37,6 @@ p {
     padding: 1rem;
     background-color: #F4F2F2;
     transition: color linear;
-    
 }
 
 .item-collapsible:hover {

@@ -48,6 +48,7 @@ function addCollapsibleEffect() {
 
 //TODO: Maybe this shouldn't be an async function?
 async function loadItems(){
+    //Get the JSON
     const responseFromServer = await fetch('/get-items')
     const jsonResponse = await responseFromServer.json()
     const generalTitle = document.getElementById("general-title")
@@ -55,14 +56,33 @@ async function loadItems(){
     generalTitle.innerText = "General College Essentials"
     majorTitle.innerText = "Course-Specific Essentials: " + jsonResponse.major
     
-    //For testing purposes
-    const testItem = document.getElementById("test-item")
-    testItem.innerText = jsonResponse.generalItemNames[0]
-    testItem.innerText = JSON.stringify(jsonResponse)
+    //Fill with the items:
+    const itemTemplate = await fetch('/item_template.html')
+    const templateText = await itemTemplate.text()
+    //General items:
+    const generalItemsHere = document.getElementById("general-item-list")
+    for(let i = 0; i < jsonResponse.generalItems.length; i++){
+        const item = jsonResponse.generalItems[i]
+        generalItemsHere.innerHTML += replaceItemHTML(templateText, "general", item.name, item.explanation);
+    }
+    //Course-specific items:
+    const courseItemsHere = document.getElementById("course-item-list")
+    for(let i = 0; i < jsonResponse.majorItems.length; i++){
+        const item = jsonResponse.majorItems[i]
+        courseItemsHere.innerHTML += replaceItemHTML(templateText, "course", item.name, item.explanation);
+    }
+
+    /*Add collapsing effect event to every button as soon as it loads*/
+    addCollapsibleEffect()
 }
 
-/*Add collapsing effect event to every button as soon as it loads*/
-window.onload = addCollapsibleEffect;
+//Gets the HTML that must be put for an item to be displayed
+function replaceItemHTML(templateText, itemType, itemName, itemExplanation){
+    return templateText.replace("$ITEM_TYPE", itemType)
+                       .replace("$ITEM_NAME", itemName)
+                       .replace("$ITEM_NAME", itemName)
+                       .replace("$ITEM_EXPLANATION", itemExplanation)
+}
 
 //So it loads the info from the pertinent major when the page loads
 document.addEventListener('DOMContentLoaded', loadItems, false);
