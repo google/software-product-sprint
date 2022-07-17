@@ -2,13 +2,45 @@
     font-size: 16px;
 }
 
+/*Have two columns for big screens*/
+@media (min-width: 600px) {
+    body {
+        display: flex;
+    }
+
+    .general.item-list, .course.item-list {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+/* Center titles and subtitles */
+h2, p {
+    text-align: center;
+}
+
+/* Positioning titles and subtitles */
+h2 {
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
 /* The button/item description */
 .item-collapsible {
     width: 100%;
     text-align: left;
     border: 1px solid black;
     padding: 1rem;
+    background-color: #F4F2F2;
+    transition: color linear;
     
+}
+
+.item-collapsible:hover {
+    background-color: #EBEBEB;
 }
 
 .item-name, .item-location, .item-price {
