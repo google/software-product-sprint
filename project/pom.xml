@@ -16,8 +16,21 @@
 
     <!-- Project-specific properties -->
     <exec.mainClass>com.google.sps.ServerMain</exec.mainClass>
-    <googleCloudProjectId>YOUR_PROJECT_ID_HERE</googleCloudProjectId>
+    <googleCloudProjectId>summer22-sps-41</googleCloudProjectId>
   </properties>
+
+  <!-- For Datastore -->
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>25.4.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <!-- Java Servlets API -->
@@ -38,6 +51,20 @@
       <artifactId>jetty-annotations</artifactId>
       <version>${jetty.version}</version>
     </dependency>
+
+    <!-- Datastore -->
+    <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datastore</artifactId>
+  </dependency>
+
+    <!-- Json Manipulation -->
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20180130</version>
+    </dependency>
+
   </dependencies>
 
   <build>

@@ -1,0 +1,64 @@
+:root {
+    font-size: 16px;
+}
+
+/*Have two columns for big screens*/
+@media (min-width: 600px) {
+    body {
+        display: flex;
+    }
+
+    #general-item-list, #course-item-list {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: 50%
+    }
+}
+
+/* Center titles and subtitles */
+h2, p {
+    text-align: center;
+}
+
+/* Positioning titles and subtitles */
+h2 {
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* The button/item description */
+.item-collapsible {
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: #F4F2F2;
+    transition: color linear;
+}
+
+.item-collapsible:hover {
+    background-color: #EBEBEB;
+}
+
+.item-name, .item-location, .item-price {
+    display: block;
+}
+
+/* The collapsing paragraph/explanation */
+.item-explanation {
+    border: 0;
+    padding: 0;
+    margin: 0 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+}
+
+/* Puts space between items */
+.item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
